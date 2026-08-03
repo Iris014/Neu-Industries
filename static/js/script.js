@@ -456,17 +456,3 @@ function alternarIdioma() {
         document.getElementById("ods8-desc").textContent = t.ods8Desc;
     }
 }
-document.addEventListener("DOMContentLoaded", () => {
-    const searchInput = document.querySelector(".reddit-search-input");
-
-    if (searchInput) {
-        searchInput.addEventListener("keypress", (e) => {
-            if (e.key === "Enter") {
-                const query = searchInput.value.trim();
-                if (query !== "") {
-                    alert("Buscando: " + query);
-                }
-            }
-        });
-    }
-});
