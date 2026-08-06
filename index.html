@@ -1,11 +1,398 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Espacio Amigable - Portal Completo</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
-    
+
+<body data-sensory="estandar">
+
+    <div class="app-container">
+
+        <!-- ENCABEZADO FIJO DE LA APP -->
+        <header class="app-header">
+            <div class="header-top">
+                <span>09:41</span>
+                <span>Neu Industries</span>
+            </div>
+            <div class="header-main">
+                <div class="app-brand">
+                    <img src="../images/image_4223f367.png" alt="Logo NeuroMundo" class="logo-app">
+                    <span class="app-logo">🌐</span>
+                    <h1>NeuroMundo App</h1>
+                </div>
+                <div class="app-right-brand">
+                    <button class="view-toggle-btn" id="view-toggle" onclick="toggleViewMode()">
+                        Vista PC
+                    </button>
+                    <div class="user-menu">
+                        <input type="checkbox" id="notif-check" class="notif-checkbox">
+                        <label for="notif-check" class="notification-btn" aria-label="Notificaciones">
+                            🔔 <span class="badge"></span>
+                        </label>
+                        <div class="user-menu-dropdown">
+                            <div class="menu-item">
+                                <span>Sin notificaciones pendientes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- CONTENIDO SCROLLEABLE CONTINUO DE LAS 5 PÁGINAS -->
+        <main class="app-content">
+
+            <!-- ==========================================
+                 PÁGINA 1: INICIO (HOME)
+                 ========================================== -->
+            <section id="pagina-inicio" class="seccion-pagina-completa">
+                
+                <article class="welcome-card">
+                    <h2 class="welcome-title">BIENVENIDOS: UN ESPACIO DISEÑADO PARA TI</h2>
+                    <p class="welcome-subtitle">UN PORTAL AMIGABLE Y EDUCATIVO PARA PERSONAS CON AUTISMO, FAMILIAS, DOCENTES Y PROFESIONALES</p>
+                    <div class="speech-bubble">
+                        <p>AMAR, RESPETAR E INCLUIR.</p>
+                    </div>
+                </article>
+
+                <div class="search-section" style="margin-top: 20px;">
+                    <div class="search-box">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" placeholder="Buscar guías metodológicas, pictogramas, técnicas de regulación o investigaciones...">
+                    </div>
+                </div>
+
+                <div class="categories-section" style="margin-top: 20px;">
+                    <h3 class="block-title">Áreas Temáticas e Informativas</h3>
+                    <div class="categories-scroll">
+                        <button class="category-item active">
+                            <span class="cat-icon">🏠</span>
+                            <span class="cat-name">En Casa</span>
+                        </button>
+                        <button class="category-item">
+                            <span class="cat-icon">🏫</span>
+                            <span class="cat-name">Escuela</span>
+                        </button>
+                        <button class="category-item">
+                            <span class="cat-icon">🧠</span>
+                            <span class="cat-name">Terapia</span>
+                        </button>
+                        <button class="category-item">
+                            <span class="cat-icon">🧘</span>
+                            <span class="cat-name">Auto-cuidado</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="tools-section" style="margin-top: 25px;">
+                    <h3 class="block-title">Herramientas Informativas y Prácticas</h3>
+                    
+                    <article class="tool-card">
+                        <div class="tool-icon bg-blue">📅</div>
+                        <div class="tool-info">
+                            <h4>Agenda Visual e Historietas Sociales</h4>
+                            <p>Aprende a estructurar el día paso a paso mediante secuencias visuales que reducen la ansiedad por incertidumbre y facilitan la transición fluida entre actividades cotidianas.</p>
+                        </div>
+                        <span class="arrow-right">➔</span>
+                    </article>
+
+                    <article class="tool-card">
+                        <div class="tool-icon bg-yellow">🚦</div>
+                        <div class="tool-info">
+                            <h4>Semáforo de Alerta Sensorial</h4>
+                            <p>Guía interactiva para identificar detonantes ambientales (auditivos, visuales, táctiles) y aplicar medidas oportunas antes de alcanzar crisis o estados de sobreestimulación (meltdown/shutdown).</p>
+                        </div>
+                        <span class="arrow-right">➔</span>
+                    </article>
+
+                    <article class="tool-card">
+                        <div class="tool-icon bg-blue">📘</div>
+                        <div class="tool-info">
+                            <h4>Guía de Comunicación Augmentativa y Alternativa (CAA)</h4>
+                            <p>Manual explicativo exhaustivo para el uso de pictogramas homologados, tableros de comunicación interactivos y aplicaciones accesibles en la vida cotidiana.</p>
+                        </div>
+                        <span class="arrow-right">➔</span>
+                    </article>
+                </div>
+
+                <div class="copiloto-box" style="margin-top: 25px;">
+                    <span class="copiloto-icon">🤖</span>
+                    <div class="copiloto-text">
+                        <h4>Copiloto Adaptativo de Orientación</h4>
+                        <p>Obtén respuestas automatizadas y fundamentadas científicamente sobre manejo de sobrecarga sensorial, estrategias de desescalada emocional y recomendaciones metodológicas personalizadas.</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <div class="separador-seccion-pagina"><hr><span class="etiqueta-separador">PÁGINA 2: PROBLEMÁTICA</span></div>
+
+            <!-- ==========================================
+                 PÁGINA 2: PROBLEMÁTICA (DIAGNÓSTICO SOCIAL)
+                 ========================================== -->
+            <section id="pagina-problematica" class="seccion-pagina-completa">
+
+                <div style="margin-bottom: 16px;">
+                    <h2 style="font-size: 1.3rem; font-weight: 800; color: var(--bg-dark-blue);" id="prob-hero-title">El Desafío en Cifras y Vivencias</h2>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;" id="prob-hero-sub">Identificamos los puntos donde el entorno urbano y social genera barreras invisibles.</p>
+                </div>
+
+                <section class="bento-container">
+
+                    <div class="bento-card wide">
+                        <div>
+                            <span class="bento-tag tag-warning" id="tag-bento-1">Factor Principal</span>
+                            <h3 style="font-size: 1rem; margin-top: 6px; color: var(--text-main);" id="title-bento-1">Sobrecarga Sensorial Impredecible</h3>
+                        </div>
+                        <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 8px; line-height: 1.4;" id="desc-bento-1">
+                            Estímulos auditivos y luminosos descontrolados en espacios públicos derivan en agotamiento mental y desregulación.
+                        </p>
+                    </div>
+
+                    <div class="bento-card featured">
+                        <span class="bento-tag tag-light" id="tag-bento-2">Impacto</span>
+                        <span style="font-size: 2rem; font-weight: 800; margin: 8px 0; color: var(--accent-yellow);" id="num-bento-2">8/10</span>
+                        <p style="font-size: 0.72rem; opacity: 0.9; line-height: 1.3;" id="desc-bento-2">Familias evitan lugares concurridos por falta de adaptación.</p>
+                    </div>
+
+                    <div class="bento-card">
+                        <span class="bento-tag tag-primary" id="tag-bento-3">Comunicación</span>
+                        <span style="font-size: 2rem; font-weight: 800; color: var(--bg-dark-blue); margin: 8px 0;" id="num-bento-3">75%</span>
+                        <p style="font-size: 0.72rem; color: var(--text-muted); line-height: 1.3;" id="desc-bento-3">
+                            Requiere apoyos visuales y pictogramas estandarizados.</p>
+                    </div>
+
+                    <div class="bento-card wide" style="background: var(--card-background);">
+                        <span class="bento-tag tag-success" id="tag-bento-4">Entorno Escolar y Social</span>
+                        <h4 style="font-size: 0.95rem; margin-top: 6px; color: var(--text-main);" id="title-bento-4">Carencia de Zonas de Calma</h4>
+                        <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 6px; line-height: 1.4;" id="desc-bento-4">
+                            Pocos establecimientos cuentan con espacios de descompresión cognitiva diseñados para recuperar el balance emocional.
+                        </p>
+                    </div>
+
+                </section>
+
+                <section class="problematica-extra-section" style="margin-top: 20px;">
+                    <h3 class="block-title">Barreras Invisibles Más Comunes</h3>
+
+                    <div class="tool-card">
+                        <div class="tool-icon bg-yellow">🔊</div>
+                        <div class="tool-info">
+                            <h4>Contaminación Acústica</h4>
+                            <p>Alarmas, sirenas y aglomeraciones sin áreas alternas de silencio.</p>
+                        </div>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-icon bg-blue">🧩</div>
+                        <div class="tool-info">
+                            <h4>Señalética Compleja</h4>
+                            <p>Instrucciones de orientación ambiguas sin soporte pictográfico.</p>
+                        </div>
+                    </div>
+                </section>
+
+            </section>
+
+            <div class="separador-seccion-pagina"><hr><span class="etiqueta-separador">PÁGINA 3: PROYECTO</span></div>
+
+            <!-- ==========================================
+                 PÁGINA 3: EL PROYECTO
+                 ========================================== -->
+            <section id="pagina-proyecto" class="seccion-pagina-completa">
+
+                <section class="glass-hero">
+                    <span class="glass-hero-badge" id="proy-badge-hero">Propuesta de Valor</span>
+                    <h2 class="glass-hero-title" id="proy-title-hero">Espacio Amigable App</h2>
+                    <p class="glass-hero-desc" id="proy-desc-hero">
+                        Una solución digital interactiva diseñada para conectar a la persona neurodivergente, su familia y los entornos que frecuenta bajo un mismo lenguaje visual accesibilizado.
+                    </p>
+
+                    <div class="feature-pill-list">
+                        <span class="feature-pill" id="pill-1">✨ Interfaz Limpia</span>
+                        <span class="feature-pill" id="pill-2">💬 Pictogramas</span>
+                        <span class="feature-pill" id="pill-3">🛡️ Cero Distractores</span>
+                    </div>
+                </section>
+
+                <section class="ejes-container">
+                    <h3 class="block-title" id="proy-sec-title">Ejes Fundamentales</h3>
+
+                    <div class="eje-card">
+                        <span class="eje-icon">🤝</span>
+                        <div class="eje-text">
+                            <h4 id="eje1-title">Puente de Comunicación</h4>
+                            <p id="eje1-desc">Facilita el diálogo entre terapeutas, educadores y cuidadores.</p>
+                        </div>
+                    </div>
+
+                    <div class="eje-card">
+                        <span class="eje-icon">🌿</span>
+                        <div class="eje-text">
+                            <h4 id="eje2-title">Prevención y Calma</h4>
+                            <p id="eje2-desc">Anticipa situaciones de sobrecarga mediante rutinas ajustables.</p>
+                        </div>
+                    </div>
+
+                    <div class="eje-card">
+                        <span class="eje-icon">🎯</span>
+                        <div class="eje-text">
+                            <h4 id="eje3-title">Inclusión Autónoma</h4>
+                            <p id="eje3-desc">Promueve la toma de decisiones y el desarrollo de rutinas propias.</p>
+                        </div>
+                    </div>
+                </section>
+
+            </section>
+
+            <div class="separador-seccion-pagina"><hr><span class="etiqueta-separador">PÁGINA 4: METODOLOGÍA</span></div>
+
+            <!-- ==========================================
+                 PÁGINA 4: METODOLOGÍA (CON BOTÓN DESPLEGABLE)
+                 ========================================== -->
+            <section id="pagina-metodologia" class="seccion-pagina-completa">
+
+                <div class="section-header-badge" style="display: inline-block; background: #0070ff; color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; margin-bottom: 12px;">
+                    Sección Especializada
+                </div>
+                <h2 class="block-title" style="font-size: 1.5rem; margin-bottom: 8px;">Marco Metodológico de Intervención</h2>
+                <p style="color: var(--text-muted, #aaa); line-height: 1.5; margin-bottom: 20px;">
+                    Nuestra metodología se fundamenta en principios neurodiversos, prácticas basadas en la evidencia y estrategias de apoyo comportamental positivo.
+                </p>
+
+                <!-- BOTÓN DESPLEGABLE INTERACTIVO DE METODOLOGÍA -->
+                <details class="metodologia-revealer" style="background: rgba(18, 28, 45, 0.6); border: 1px solid rgba(56, 239, 125, 0.3); border-radius: 16px; padding: 16px;">
+                    <summary style="list-style: none; cursor: pointer;">
+                        <div class="btn-toggle-view" style="display: flex; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(135deg, #0070ff, #00c6ff); color: #fff; font-weight: bold; padding: 12px 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 112, 255, 0.3);">
+                            <span class="icon-eye">👁️</span>
+                            <span class="text-label">Elegir: Desplegar / Ocultar Módulos de Metodología</span>
+                        </div>
+                    </summary>
+
+                    <!-- CONTENIDO DE LOS MÓDULOS REVELADO TRAS EL CLIC -->
+                    <div class="revealed-content-container" style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed rgba(255, 255, 255, 0.15);">
+                        
+                        <article class="tarjeta-modulo-app color-azul" style="margin-bottom: 20px;">
+                            <div class="encabezado-tarjeta-app">
+                                <h4 class="titulo-tarjeta-app">Módulo 1: Comunicación Mediante Pictogramas y Sistemas CAA</h4>
+                            </div>
+                            <p class="desc-tarjeta-app" style="margin-bottom: 12px;">
+                                Fundamentos teóricos y prácticos para implementar tableros visuales, secuencias de tareas diarias e historias sociales cortas que facilitan la expresión clara de necesidades, emociones e intenciones comunicativas en diversos contextos sociales.
+                            </p>
+                            <p class="desc-tarjeta-app" style="margin-bottom: 15px;">
+                                <strong>Contenido clave:</strong> Selección de vocabularios núcleo, estructuración de carpetas de comunicación, uso de apoyos visuales en situaciones de transición y erradicación de barreras comunicativas.
+                            </p>
+                            <button class="boton-app-primario">Leer Guía Completa del Módulo 1</button>
+                        </article>
+
+                        <article class="tarjeta-modulo-app color-morado" style="margin-bottom: 20px;">
+                            <div class="encabezado-tarjeta-app">
+                                <h4 class="titulo-tarjeta-app">Módulo 2: Técnicas de Autorregulación y Dieta Sensorial</h4>
+                            </div>
+                            <p class="desc-tarjeta-app" style="margin-bottom: 12px;">
+                                Estrategias preventivas y de afrontamiento diseñadas para gestionar estados de sobreestimulación auditiva, visual, propioceptiva o táctil. Ofrece pautas concretas para diseñar una "dieta sensorial" equilibrada a lo largo del día.
+                            </p>
+                            <p class="desc-tarjeta-app" style="margin-bottom: 15px;">
+                                <strong>Contenido clave:</strong> Ejercicios de respiración profunda con apoyos gráficos, pausas activas, identificación de 'puntos seguros' de regulación y protocolos para familiares en momentos de crisis.
+                            </p>
+                            <button class="boton-app-primario">Leer Guía Completa del Módulo 2</button>
+                        </article>
+
+                        <article class="tarjeta-modulo-app color-azul" style="margin-bottom: 20px;">
+                            <div class="encabezado-tarjeta-app">
+                                <h4 class="titulo-tarjeta-app">Módulo 3: Adaptaciones Escolares e Inclusión en el Aula</h4>
+                            </div>
+                            <p class="desc-tarjeta-app" style="margin-bottom: 12px;">
+                                Pautas metodológicas orientadas a equipos docentes y directivos para la preparación de espacios físicamente accesibles y predecibles en instituciones educativas.
+                            </p>
+                            <p class="desc-tarjeta-app" style="margin-bottom: 15px;">
+                                <strong>Contenido clave:</strong> Organización física e iconográfica del aula, diseño de itinerarios visuales clase por clase, técnicas de evaluación adaptada y fomento del compañerismo informado.
+                            </p>
+                            <button class="boton-app-primario">Leer Guía Completa del Módulo 3</button>
+                        </article>
+
+                    </div>
+                </details>
+
+            </section>
+
+            <div class="separador-seccion-pagina"><hr><span class="etiqueta-separador">PÁGINA 5: COMUNIDAD Y PERFIL</span></div>
+
+            <!-- ==========================================
+                 PÁGINA 5: COMUNIDAD Y USUARIO
+                 ========================================== -->
+            <section id="pagina-comunidad" class="seccion-pagina-completa">
+
+                <div class="community-header">
+                    <h2 class="block-title">Red de Apoyo y Comunidad</h2>
+                    <p class="section-desc">Conecta con familias, profesionales y docentes para compartir experiencias y recursos.</p>
+                </div>
+
+                <div class="community-actions" style="margin: 20px 0;">
+                    <button class="boton-app-primario" style="width: 100%;">+ Crear Nueva Publicación</button>
+                </div>
+
+                <div class="feed-posts">
+                    <article class="post-card" style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 16px; margin-bottom: 16px;">
+                        <div class="post-author" style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                            <span class="author-avatar" style="font-size: 1.5rem;">👩‍🏫</span>
+                            <div>
+                                <h4 style="margin: 0;">María Giménez</h4>
+                                <small style="color: #aaa;">Educadora Especial • Hace 2h</small>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.9rem; line-height: 1.4;">Comparto nuestro nuevo tablero visual interactivo adaptado para actividades al aire libre en escuelas primarias.</p>
+                    </article>
+
+                    <article class="post-card" style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 16px; margin-bottom: 16px;">
+                        <div class="post-author" style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                            <span class="author-avatar" style="font-size: 1.5rem;">👨‍👩‍👦</span>
+                            <div>
+                                <h4 style="margin: 0;">Familia Silva</h4>
+                                <small style="color: #aaa;">Miembros de la Comunidad • Hace 5h</small>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.9rem; line-height: 1.4;">¿Alguien conoce centros con salas de estimulación multisensorial o áreas de baja densidad sonora en el sector norte?</p>
+                    </article>
+                </div>
+
+            </section>
+
+            <div class="scroll-spacing"></div>
+        </main>
+
+        <!-- NAVEGACIÓN INFERIOR FIJA -->
+        <nav class="app-nav">
+            <a href="#pagina-inicio" class="nav-item active">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Inicio</span>
+            </a>
+            <a href="#pagina-problematica" class="nav-item">
+                <span class="nav-icon">🔍</span>
+                <span class="nav-label">Problema</span>
+            </a>
+            <a href="#pagina-proyecto" class="nav-item">
+                <span class="nav-icon">🚀</span>
+                <span class="nav-label">Proyecto</span>
+            </a>
+            <a href="#pagina-metodologia" class="nav-item">
+                <span class="nav-icon">🛠️</span>
+                <span class="nav-label">Metodología</span>
+            </a>
+            <a href="#pagina-comunidad" class="nav-item">
+                <span class="nav-icon">👥</span>
+                <span class="nav-label">Comunidad</span>
+            </a>
+        </nav>
+
+    </div>
+
+    <script src="../js/script.js"></script>
+
 </body>
+
 </html>
