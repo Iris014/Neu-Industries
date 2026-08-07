@@ -145,6 +145,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 32px !important;
+    margin-top: 30px;
 }
 
 .bloque-modulo {
