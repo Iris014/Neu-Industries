@@ -13,186 +13,574 @@
 
     <div class="app-container">
 
-        <!-- CABECERA INSTITUCIONAL Y DE LA APP -->
-        <header class="app-header">
+        <!-- CABECERA DE LA DOCUMENTACIÓN TÉCNICA -->
+        <header class="app-header header-espaciado">
             <div class="header-top">
-                <span>Plataforma e Investigación</span>
-                <span>Neu Industries</span>
+                <span class="badge-header">Plataforma e Innovación Social</span>
+                <span class="badge-header">Neu Industries</span>
             </div>
             <div class="header-main">
                 <div class="app-brand">
                     <img src="../images/image_4223f367.png" alt="Logo NeuroMundo" class="logo-app">
-                    <h1>Información del Proyecto NeuroMundo</h1>
+                    <div>
+                        <h1>Ecosistema NeuroMundo</h1>
+                        <p class="subtitle-brand">Ficha Técnica, Marco Conceptual y Arquitectura Web/VR</p>
+                    </div>
                 </div>
             </div>
+            <!-- Botón Selector de Idioma (Muestra 'EN' en español y 'ES' en inglés) -->
+            <!-- Botón en el Header -->
+    <button id="btn-idioma" class="lang-btn" onclick="alternarIdioma()">EN</button>
         </header>
 
-        <main class="app-content">
+        <main class="app-content content-espaciado">
 
-            <!-- 1. PRESENTACIÓN GENERAL -->
-            <section class="tool-card" style="margin-bottom: 20px;">
-                <h2 class="welcome-title" style="margin-bottom: 4px;">BIENVENIDOS: UN ESPACIO DISEÑADO PARA TI</h2>
-                <p class="welcome-subtitle" style="margin-bottom: 12px;">UN PORTAL AMIGABLE, EDUCATIVO Y COMUNITARIO PARA PERSONAS DENTRO DEL ESPECTRO AUTISTA, FAMILIAS, DOCENTES Y PROFESIONALES</p>
+            <!-- BANNER PRINCIPAL Y MANIFIESTO -->
+            <section class="tool-card card-hero-welcome">
+                <div class="hero-badge-top">BIENVENIDOS: UN ESPACIO DISEÑADO PARA TI</div>
+                <h2 class="welcome-title">Love, Respect and Include</h2>
                 
-                <div class="speech-bubble" style="margin-bottom: 14px;">
-                    <p>AMAR, RESPETAR E INCLUIR • LOVE, RESPECT AND INCLUDE</p>
+                <div class="speech-bubble speech-bubble-destacado">
+                    <p>AMAR, RESPETAR E INCLUIR • UN ENFOQUE HUMANO Y TECNOLÓGICO</p>
                 </div>
 
-                <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
-                    NeuroMundo es una iniciativa diseñada para conectar la evidencia clínica con el entorno cotidiano. A través de herramientas digitales integradas, buscamos reducir las barreras de desinformación, promover la autorregulación y acompañar tanto en la crianza como en los espacios de educación y terapia.
+                <p class="hero-description">
+                    NeuroMundo es un ecosistema digital e inmersivo orientado a acompañar a familias de personas neurodivergentes. Combina contención comunitaria, tecnología predictiva y experiencias de simulador para reducir el colapso, el estigma y la sobrecarga emocional.
                 </p>
             </section>
 
-            <!-- 2. CONTEXTO DE DIAGNÓSTICO Y ORIENTACIÓN EN EL HOGAR (CASA Y AUTO-CUIDADO) -->
-            <section class="tool-card" style="margin-bottom: 20px;">
-                <h3 class="block-title" style="margin-bottom: 8px;">🏠 El Desafío del Diagnóstico y Acompañamiento en Casa</h3>
-                <p style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px;">
-                    El 25% de los niños menores de 8 años con criterios de autismo no cuentan con un diagnóstico oficial (Estudios de la Univ. de Rutgers), cifra que se mantiene en un 25% en la adolescencia al confundirse con timidez o depresión. Esto genera un vacío donde entre el 35% y 40% de las familias enfrentan dudas angustiantes al inicio.
-                </p>
+            <!-- ================================================================= -->
+            <!-- BLOQUE: FICHA INSTITUCIONAL Y MÉTRICAS DE IMPACTO                 -->
+            <!-- ================================================================= -->
 
-                <!-- Integración con las herramientas de la app para el hogar -->
-                <div style="display: grid; grid-template-columns: 1fr; gap: 10px; margin-bottom: 12px;">
-                    <div class="eje-card">
-                        <span class="eje-icon">📅</span>
-                        <div class="eje-text">
-                            <h4>Agenda Visual e Historietas Sociales</h4>
-                            <p>Estructuración de rutinas paso a paso para reducir la incertidumbre diaria y facilitar las transiciones cotidianas.</p>
-                        </div>
+            <section class="bloque-modulo">
+                <div class="seccion-bloque-titulo">
+                    <span class="badge-subtitulo">INFORMACIÓN DE LA APP Y FICHA DEL PROYECTO</span>
+                    <h3>Ficha Técnica e Indicadores Clave</h3>
+                </div>
+
+                <!-- GRID DE MÉTRICAS CLAVE (DISEÑO ESPACIOSO) -->
+                <div class="grid-cuatro-metricas-amplio">
+                    <div class="stat-card-pro border-blue">
+                        <div class="stat-icon-wrapper">📉</div>
+                        <span class="stat-number">40%</span>
+                        <span class="stat-label">Reducción del Estrés Familiar</span>
                     </div>
+                    <div class="stat-card-pro border-green">
+                        <div class="stat-icon-wrapper">🔍</div>
+                        <span class="stat-number">25%</span>
+                        <span class="stat-label">Subdiagnóstico Identificado</span>
+                    </div>
+                    <div class="stat-card-pro border-yellow">
+                        <div class="stat-icon-wrapper">🛡️</div>
+                        <span class="stat-number">80.2%</span>
+                        <span class="stat-label">Atención a la Ansiedad del Cuidador</span>
+                    </div>
+                    <div class="stat-card-pro border-purple">
+                        <div class="stat-icon-wrapper">🌐</div>
+                        <span class="stat-number">4 Páginas</span>
+                        <span class="stat-label">Ecosistema Integrado Web/VR</span>
+                    </div>
+                </div>
 
-                    <div class="eje-card">
-                        <span class="eje-icon">💡</span>
-                        <div class="eje-text">
-                            <h4>Capacitación Temprana en el Hogar</h4>
-                            <p>El entrenamiento en pautas de regulación emocional reduce el estrés familiar hasta en un 40%, protegiendo la salud mental de los cuidadores, donde el 72.5% reporta síntomas depresivos y el 80.2% ansiedad.</p>
+                <!-- DETALLES DE FICHA TÉCNICA EN TARJETAS ESTRUCTURADAS -->
+                <div class="tool-card card-ficha-detalles">
+                    <div class="ficha-proyecto-grid-amplio">
+                        <div class="ficha-item-pro">
+                            <span class="ficha-label">Nombre del Proyecto</span>
+                            <span class="ficha-val">NeuroMundo — Ecosistema Digital e Inmersivo para Neurodivergencias</span>
+                        </div>
+                        <div class="ficha-item-pro">
+                            <span class="ficha-label">Organización / Desarrollador</span>
+                            <span class="ficha-val">Neu Industries</span>
+                        </div>
+                        <div class="ficha-item-pro">
+                            <span class="ficha-label">Enfoque Metodológico</span>
+                            <span class="ficha-val">Apoyo Comunitario Pseudónimo, Corregulación Sensorial, Simulación VR/IoT</span>
+                        </div>
+                        <div class="ficha-item-pro">
+                            <span class="ficha-label">Población Objetivo</span>
+                            <span class="ficha-val">Familias, Cuidadores de Primer Diagnóstico, Docentes y Profesionales de Apoyo</span>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 3. PREVENCIÓN SENSORIAL Y SIMULACIÓN INMERSIVA (TERAPIA Y TECNOLOGÍA) -->
-            <section class="tool-card" style="margin-bottom: 20px;">
-                <h3 class="block-title" style="margin-bottom: 8px;">🚦 Regulación Sensorial y Empatía Inmersiva</h3>
-                <p style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px;">
-                    Las crisis o desregulaciones emocionales (<em>meltdown</em>/<em>shutdown</em>) ocurren frecuentemente por sobrecarga de estímulos ambientales no detectados a tiempo.
-                </p>
+            <hr class="divider-seccion">
 
-                <div style="display: grid; grid-template-columns: 1fr; gap: 10px;">
-                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color);">
-                        <h4 style="margin: 0 0 4px 0; color: var(--accent-yellow); font-size: 0.88rem;">Semáforo de Alerta Sensorial</h4>
-                        <p style="margin: 0; font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">
-                            Sistema de autoregistro dentro de la app para identificar detonantes (auditivos, visuales, táctiles) y aplicar medidas preventivas antes de llegar al agotamiento.
+            <!-- ================================================================= -->
+            <!-- BLOQUE 1: MAQUETA DE LA PLATAFORMA WEB (ESTRUCTURA DE 4 PÁGINAS)   -->
+            <!-- ================================================================= -->
+
+            <section class="bloque-modulo">
+                <div class="seccion-bloque-titulo">
+                    <span class="badge-subtitulo">ARQUITECTURA DE NAVEGACIÓN</span>
+                    <h3>1. Maqueta de la Plataforma Web (4 Páginas Interactivas)</h3>
+                </div>
+
+                <!-- PÁGINA 1: DIAGNÓSTICO E INVISIBILIDAD -->
+                <div class="tool-card card-pagina-maqueta border-left-yellow">
+                    <div class="card-header-flex">
+                        <span class="page-tag tag-yellow">PÁGINA 1</span>
+                        <h3 class="block-title">Diagnóstico e Invisibilidad — El Desafío Oculto del Autismo</h3>
+                    </div>
+                    
+                    <div class="proposito-box">
+                        <strong>¿Por qué existe?</strong> Visibiliza la realidad del subdiagnóstico y rompe la barrera de la desinformación inicial (35%-40% de ideas erróneas). Ayuda a identificar señales tempranas sin caer en culpa o confusión con "rebeldía".
+                    </div>
+
+                    <div class="diseno-grid-amplio">
+                        <div class="hero-mini-banner">
+                            <span class="banner-tag">HERO BANNER IMPACTANTE</span>
+                            <h4>"No es rebeldía, es neurodivergencia: Entendiendo las señales no vistas"</h4>
+                        </div>
+
+                        <div class="grid-dos-col-amplio">
+                            <div class="tarjeta-interna-pro border-yellow">
+                                <h5>📊 Infografía Rutgers (Datos Casos)</h5>
+                                <p>Tarjetas interactivas que destacan el 25% de casos no detectados en menores de 8 años y en la adolescencia (16 años).</p>
+                            </div>
+                            <div class="tarjeta-interna-pro border-blue">
+                                <h5>🗺️ Módulo de Brecha Social</h5>
+                                <p>Gráfico comparativo que expone cómo la falta de acceso a especialistas afecta con mayor gravedad a comunidades vulnerables.</p>
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-interna-pro border-green">
+                            <h5>🧩 Test de Orientación Sensorial y Conductual (No Clínico)</h5>
+                            <p>Cuestionario interactivo para ayudar a cuidadores a diferenciar entre un berrinche convencional y un colapso sensorial (meltdown).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PÁGINA 2: COMUNIDAD Y RESPUESTAS (RED PSEUDÓNIMA) -->
+                <div class="tool-card card-pagina-maqueta border-left-blue">
+                    <div class="card-header-flex">
+                        <span class="page-tag tag-blue">PÁGINA 2</span>
+                        <h3 class="block-title">Comunidad y Respuestas — Red Pseudónima de Apoyo (Estilo Reddit)</h3>
+                    </div>
+                    
+                    <div class="proposito-box">
+                        <strong>¿Por qué existe?</strong> Núcleo operativo del proyecto. Resuelve el soporte del día a día manteniendo la privacidad del menor y reduciendo el estigma social mediante perfiles basados en patrones conductuales.
+                    </div>
+
+                    <div class="diseno-grid-amplio">
+                        <div class="tarjeta-interna-pro border-blue">
+                            <h5>🔍 Barra de Búsqueda y Filtros Conductuales</h5>
+                            <p>Filtros por variables: Sensibilidad Sensorial, Nivel de Comunicación, Manejo de Crisis en Público y Rutinas de Sueño/Alimentación.</p>
+                        </div>
+
+                        <div class="tarjeta-interna-pro border-purple">
+                            <h5>💬 Feed de Hilos con Sistema de Votación</h5>
+                            <p>Visualización clara tipo foro con dudas reales y respuestas comunitarias validadas (las soluciones más efectivas quedan arriba).</p>
+                        </div>
+
+                        <div class="tarjeta-interna-pro border-green">
+                            <h5>🤖 Asistente "Copiloto Comunitario IA"</h5>
+                            <p>Widget discreto e inteligente en el margen inferior. Sintetiza y resume las mejores soluciones del foro para preguntas rápidas del usuario.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PÁGINA 3: EMPATÍA Y SIMULACIÓN (VR e IoT) -->
+                <div class="tool-card card-pagina-maqueta border-left-purple">
+                    <div class="card-header-flex">
+                        <span class="page-tag tag-purple">PÁGINA 3</span>
+                        <h3 class="block-title">Empatía y Simulación — Experiencia Inmersiva VR e IoT</h3>
+                    </div>
+                    
+                    <div class="proposito-box">
+                        <strong>¿Por qué existe?</strong> Traduce la teoría en una experiencia transformadora. Permite a los padres experimentar la hiper o hiposensibilidad sensorial para acelerar la adaptación del entorno en casa.
+                    </div>
+
+                    <div class="diseno-grid-amplio">
+                        <div class="grid-dos-col-amplio">
+                            <div class="tarjeta-interna-pro border-yellow">
+                                <h5>🥽 Centro de Conexión VR</h5>
+                                <p>Vinculación de visores accesibles para ajustar parámetros de luz, ruido ambiental o texturas según el perfil del niño.</p>
+                            </div>
+                            <div class="tarjeta-interna-pro border-blue">
+                                <h5>🖥️ Simulador Web Interactivo</h5>
+                                <p>Muestra visual y auditiva de un supermercado o centro médico con sobrecarga sensorial, explicando el origen del aleteo.</p>
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-interna-pro border-green">
+                            <h5>📥 Guías Visuales Descargables</h5>
+                            <p>Plantillas con pictogramas para el refrigerador, secuencias visuales médicas y temporizadores de uso de pantallas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PÁGINA 4: IMPACTO Y BIENESTAR -->
+                <div class="tool-card card-pagina-maqueta border-left-green">
+                    <div class="card-header-flex">
+                        <span class="page-tag tag-green">PÁGINA 4</span>
+                        <h3 class="block-title">Impacto y Bienestar — Reducción del Estrés y Sostenibilidad</h3>
+                    </div>
+                    
+                    <div class="proposito-box">
+                        <strong>¿Por qué existe?</strong> Demuestra el valor social y la efectividad del modelo. Presenta los datos de salud mental de los cuidadores y los resultados del entrenamiento en corregulación.
+                    </div>
+
+                    <div class="diseno-grid-amplio">
+                        <div class="grid-tres-col-amplio">
+                            <div class="tarjeta-interna-pro border-green">
+                                <h5>📈 Dashboard Familiar</h5>
+                                <p>Gráficos que muestran la reducción del estrés en un 40% al aplicar corregulación en lugar de castigos.</p>
+                            </div>
+                            <div class="tarjeta-interna-pro border-yellow">
+                                <h5>💚 Salud Mental Cuidador</h5>
+                                <p>Recursos para validar y acompañar la ansiedad (80.2%) y depresión (72.5%) de las madres.</p>
+                            </div>
+                            <div class="tarjeta-interna-pro border-blue">
+                                <h5>🌍 Panel ODS ONU</h5>
+                                <p>Exposición clara del impacto alineado con las metas globales (ODS 3, 4, 8 y 10).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="divider-seccion">
+
+            <!-- ================================================================= -->
+            <!-- BLOQUE 2: MATRIZ GRÁFICA DE IMPACTO ODS                           -->
+            <!-- ================================================================= -->
+
+            <section class="bloque-modulo">
+                <div class="seccion-bloque-titulo">
+                    <span class="badge-subtitulo">SOSTENIBILIDAD Y RESULTADOS</span>
+                    <h3>2. Matriz Gráfica de Impacto ODS</h3>
+                </div>
+
+                <div class="tool-card card-ods-wrapper">
+                    <div class="ods-header-banner">
+                        MATRIZ DE IMPACTO EN OBJETIVOS DE DESARROLLO SOSTENIBLE (ONU)
+                    </div>
+
+                    <div class="ods-grid-espacioso">
+                        
+                        <!-- ODS 3 -->
+                        <div class="ods-box-pro border-ods-3">
+                            <div class="ods-top-bar">
+                                <span class="ods-badge badge-3">ODS 3</span>
+                                <h4>Salud y Bienestar</h4>
+                            </div>
+                            <p class="ods-problema"><strong>Problema:</strong> 72.5% de madres presentan depresión y 80.2% ansiedad por agotamiento y sobrecarga.</p>
+                            <div class="ods-solucion">
+                                <strong>Impacto:</strong> Reducción del 40% del estrés familiar mediante corregulación e intervención preventiva en salud mental.
+                            </div>
+                        </div>
+
+                        <!-- ODS 4 -->
+                        <div class="ods-box-pro border-ods-4">
+                            <div class="ods-top-bar">
+                                <span class="ods-badge badge-4">ODS 4</span>
+                                <h4>Educación de Calidad</h4>
+                            </div>
+                            <p class="ods-problema"><strong>Problema:</strong> 35%-40% de padres primerizos enfrentan el diagnóstico con desinformación o castigos.</p>
+                            <div class="ods-solucion">
+                                <strong>Impacto:</strong> Ecosistema no formal de educación continua con pictogramas, CAA y guías sin violencia.
+                            </div>
+                        </div>
+
+                        <!-- ODS 10 -->
+                        <div class="ods-box-pro border-ods-10">
+                            <div class="ods-top-bar">
+                                <span class="ods-badge badge-10">ODS 10</span>
+                                <h4>Reducción de Desigualdades</h4>
+                            </div>
+                            <p class="ods-problema"><strong>Problema:</strong> Falta de acceso especialista en sectores vulnerables o comunidades latinas/afro.</p>
+                            <div class="ods-solucion">
+                                <strong>Impacto:</strong> Democratización del conocimiento especializado a través de una web gratuita y ligera.
+                            </div>
+                        </div>
+
+                        <!-- ODS 8 -->
+                        <div class="ods-box-pro border-ods-8">
+                            <div class="ods-top-bar">
+                                <span class="ods-badge badge-8">ODS 8</span>
+                                <h4>Trabajo Decente</h4>
+                            </div>
+                            <p class="ods-problema"><strong>Problema:</strong> 25% a 45% de cuidadores deben reducir jornada o renunciar al empleo por desregulación.</p>
+                            <div class="ods-solucion">
+                                <strong>Impacto:</strong> Estabilización del hogar, recuperación de autonomía de tiempo y sostenibilidad laboral.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <hr class="divider-seccion">
+
+            <!-- ================================================================= -->
+            <!-- BLOQUE 3: IDEAS DE RESPALDO Y PROFUNDIZACIÓN TÉCNICA               -->
+            <!-- ================================================================= -->
+
+            <section class="bloque-modulo">
+                <div class="seccion-bloque-titulo">
+                    <span class="badge-subtitulo">INNOVACIÓN Y TECNOLOGÍA</span>
+                    <h3>3. Componentes de Respaldo para Profundizar la Solución</h3>
+                </div>
+
+                <div class="respaldos-grid-espacioso">
+                    
+                    <div class="respaldo-card-pro">
+                        <div class="respaldo-header">
+                            <span class="respaldo-icon-large">🏷️</span>
+                            <h4>A. Biblioteca de Patrones Sensoriales y Conductuales</h4>
+                        </div>
+                        <div class="respaldo-body">
+                            <p><strong>Detalle:</strong> En lugar de grados rígidos, las fichas mapean desencadenantes (ruidos, texturas) y reguladores (aleteo, abrazos de compresión).</p>
+                            <div class="respaldo-why-box">
+                                <strong>Por qué respalda:</strong> Permite encontrar cuidadores con la combinación exacta de sensibilidad para compartir soluciones.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="respaldo-card-pro">
+                        <div class="respaldo-header">
+                            <span class="respaldo-icon-large">⚖️</span>
+                            <h4>B. Algoritmo de Consenso Empático</h4>
+                        </div>
+                        <div class="respaldo-body">
+                            <p><strong>Detalle:</strong> Sistema de votación que prioriza respuestas con el indicador "Esto funcionó en mi caso en [X] semanas".</p>
+                            <div class="respaldo-why-box">
+                                <strong>Por qué respalda:</strong> Posiciona soluciones por tasa real de éxito en la práctica cotidiana y no solo por popularidad.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="respaldo-card-pro">
+                        <div class="respaldo-header">
+                            <span class="respaldo-icon-large">🤖</span>
+                            <h4>C. Protocolo de "Traducción Sintomática" para Copiloto IA</h4>
+                        </div>
+                        <div class="respaldo-body">
+                            <p><strong>Detalle:</strong> La IA actúa como traductor no verbal. Si un padre ingresa "se muerde la mano en la cocina", la IA sugiere causas probables según la comunidad.</p>
+                            <div class="respaldo-why-box">
+                                <strong>Por qué respalda:</strong> Pasa del enojo o miedo a la empatía inmediata sugiriendo apoyos visuales antes de la crisis.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="respaldo-card-pro">
+                        <div class="respaldo-header">
+                            <span class="respaldo-icon-large">🎧</span>
+                            <h4>D. Sesiones de "Descompresión Guiada" en VR (IoT)</h4>
+                        </div>
+                        <div class="respaldo-body">
+                            <p><strong>Detalle:</strong> Modo de contraste interactivo en VR donde el padre siente la sobrecarga del supermercado y luego aplica "filtros de regulación".</p>
+                            <div class="respaldo-why-box">
+                                <strong>Por qué respalda:</strong> Demuestra visual y auditivamente cómo un pequeño ajuste reduce la carga cognitiva del niño.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <hr class="divider-seccion">
+
+            <!-- ================================================================= -->
+            <!-- BLOQUE 4: BANCO DE CASOS Y RESPUESTAS INTEGRADAS (FORO PÁGINA 2)   -->
+            <!-- ================================================================= -->
+
+            <section class="bloque-modulo">
+                <div class="seccion-bloque-titulo">
+                    <span class="badge-subtitulo">INTERFAZ DE COMUNIDAD</span>
+                    <h3>4. Banco de Casos Reales Integrados en la Plataforma</h3>
+                </div>
+
+                <!-- CATEGORÍA 1 -->
+                <div class="categoria-header-destacado cat-red">
+                    <span class="cat-icon">🔴</span>
+                    <div>
+                        <h4>Categoría 1: Crisis e Sobrecarga Sensorial en Espacios Públicos</h4>
+                        <span class="cat-sub">Casos relacionados con desregulación en supermercados y salas médicas</span>
+                    </div>
+                </div>
+
+                <!-- CASO 1 -->
+                <article class="foro-post-card-pro">
+                    <div class="post-pregunta-box">
+                        <div class="user-meta-pro">
+                            <div class="avatar-circle red-avatar">A1</div>
+                            <div>
+                                <strong class="username">Cuidador Anon_8241</strong>
+                                <span class="post-time-tag">Caso 1: El colapso en el supermercado</span>
+                            </div>
+                        </div>
+                        <p class="post-text">
+                            "Hola. Hoy fuimos al supermercado y mi hijo de 6 años se tiró al suelo a gritar y patear cerca de las cajas. Sentí muchísimo miedo y vergüenza por cómo nos miraba la gente. Pensé que me estaba haciendo un berrinche para que le comprara un dulce, así que me enojé, lo regañé y lo saqué a la fuerza. Llegamos a casa exhaustos y llorando los dos. No sé cómo quitarle esa maña."
                         </p>
                     </div>
-
-                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color);">
-                        <h4 style="margin: 0 0 4px 0; color: var(--accent-green); font-size: 0.88rem;">Simulador VR (Componente IoT)</h4>
-                        <p style="margin: 0; font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">
-                            Tecnología inmersiva en Realidad Virtual para que padres y profesionales sientan en primera persona la hiper o hiposensibilidad sensorial, comprendiendo el origen de la sobrecarga.
+                    <div class="post-respuesta-box">
+                        <div class="valida-badge-pro">
+                            <span class="check-icon">✓</span> Respuesta Validada por la Comunidad (+142 confirmaciones)
+                        </div>
+                        <p class="respuesta-text">
+                            "Uff, te entiendo perfectamente porque a mí me pasó exactamente lo mismo al principio y también sentí muchísima vergüenza, pero créeme que no es una maña ni un berrinche, sino que el pobre se saturó con tanta luz, ruido y gente. Lo que a mí me sirvió para que no me vuelva a pasar fue empezar a hacer compras cortas a horas donde no hay casi nadie y llevarlo siempre con sus audífonos para el ruido o su juguete favorito para distraerlo; pero si de verdad le da la crisis ahí mismo, lo mejor que puedes hacer es olvidarte de la gente que mira feo, no perder el control regañándolo porque en ese momento ni te escucha, y simplemente agarrarlo con amor, llevarlo al auto o a un sitio solo y quedarte a su lado abrazándolo o acompañándolo en silencio hasta que se le pase el colapso."
                         </p>
                     </div>
+                </article>
+
+                <!-- CASO 2 -->
+                <article class="foro-post-card-pro">
+                    <div class="post-pregunta-box">
+                        <div class="user-meta-pro">
+                            <div class="avatar-circle red-avatar">A2</div>
+                            <div>
+                                <strong class="username">Cuidador Anon_3190</strong>
+                                <span class="post-time-tag">Caso 2: Regulación y aleteo en la sala de espera médica</span>
+                            </div>
+                        </div>
+                        <p class="post-text">
+                            "Le tocó vacuna a mi hijo de 5 años. En la sala de espera empezó a caminar en círculos y a aletear muy fuerte con las manos. Me dio miedo que la gente pensara que está mal o que se saliera de control, así que le agarré las manos con fuerza y le dije que se quedara quieto. Se puso rígido, empezó a llorar desconsoladamente y no dejamos que el doctor lo revisara. ¿Cómo le quito esos movimientos tan raros?"
+                        </p>
+                    </div>
+                    <div class="post-respuesta-box">
+                        <div class="valida-badge-pro">
+                            <span class="check-icon">✓</span> Respuesta Validada por la Comunidad (+98 confirmaciones)
+                        </div>
+                        <p class="respuesta-text">
+                            "Te entiendo el susto y la pena con los demás, pero agarrarle las manos es lo peor que podemos hacer porque ese aleteo es su forma de sacar todo el estrés y el miedo que siente de estar ahí. Lo que me enseñaron a mí para prevenir ese pánico antes de salir de casa es dibujarle en una hojita la secuencia de lo que va a pasar, tipo el auto, la sala de espera, el doctor y luego la casa, para que él ya sepa qué viene y no esté tan asustado; y ya estando en la sala de espera, de verdad no le frenes las manos ni te preocupes por lo que piense la gente, déjalo aletear tranquilo porque así es como su propio cuerpo se calma solo para poder entrar con el doctor."
+                        </p>
+                    </div>
+                </article>
+
+                <!-- CATEGORÍA 2 -->
+                <div class="categoria-header-destacado cat-yellow">
+                    <span class="cat-icon">🟡</span>
+                    <div>
+                        <h4>Categoría 2: Comunicación No Verbal y Frustración</h4>
+                        <span class="cat-sub">Estrategias de comunicación alternativa y prevención de autoagresión</span>
+                    </div>
                 </div>
+
+                <!-- CASO 3 -->
+                <article class="foro-post-card-pro">
+                    <div class="post-pregunta-box">
+                        <div class="user-meta-pro">
+                            <div class="avatar-circle yellow-avatar">A3</div>
+                            <div>
+                                <strong class="username">Cuidador Anon_1042</strong>
+                                <span class="post-time-tag">Caso 3: Autoagresión por falta de comunicación</span>
+                            </div>
+                        </div>
+                        <p class="post-text">
+                            "Estoy desesperada. Mi hija de 4 años no habla y lleva toda la tarde mordiéndose la mano y empujándome hacia la cocina. Me da miedo que se haga daño o que esto se vuelva su forma de reaccionar siempre. Intenté adivinar qué quería dándole comida, pero se frustró más y me lanzó un vaso. Siento que no logro conectar con ella y me da pánico que nunca podamos comunicarnos."
+                        </p>
+                    </div>
+                    <div class="post-respuesta-box">
+                        <div class="valida-badge-pro">
+                            <span class="check-icon">✓</span> Respuesta Validada por la Comunidad (+210 confirmaciones)
+                        </div>
+                        <p class="respuesta-text">
+                            "Sé lo feo que se siente esa desesperación y ver que se lastima, pero piensa que ella solo está desesperada por no poder decirte algo tan simple como que tiene sed. A mí me salvó la vida pegar fotos de la comida, el agua y la leche en la puerta del refrigerador a la altura de mi hijo para prevenir esos momentos, y lo que te recomiendo hacer hoy que pase de nuevo es no ponerte a adivinar como loca, sino llevarla de la mano hasta donde están las fotos, guiarle suavemente el dedito para que toque la imagen del agua, dársela enseguida y decirle 'mira, agua', para que así vaya entendiendo que mostrándote la foto le vas a dar lo que necesita sin necesidad de morderse."
+                        </p>
+                    </div>
+                </article>
+
+                <!-- CATEGORÍA 3 -->
+                <div class="categoria-header-destacado cat-green">
+                    <span class="cat-icon">🟢</span>
+                    <div>
+                        <h4>Categoría 3: Estrategias Sensoriales y Rutinas Diarias</h4>
+                        <span class="cat-sub">Avances graduales en alimentación, sueño y límites tecnológicos</span>
+                    </div>
+                </div>
+
+                <!-- CASO 4 -->
+                <article class="foro-post-card-pro">
+                    <div class="post-pregunta-box">
+                        <div class="user-meta-pro">
+                            <div class="avatar-circle green-avatar">A4</div>
+                            <div>
+                                <strong class="username">Cuidador Anon_7512</strong>
+                                <span class="post-time-tag">Caso 4: Selectividad alimentaria y avance gradual</span>
+                            </div>
+                        </div>
+                        <p class="post-text">
+                            "Hola a todos. Les cuento mi caso por si a alguien le sirve. Mi hijo tiene 8 años y su alimentación es súper limitada. Come pan, fideos, yogurt y manzana. Si intento darle algo nuevo hace arcadas y no hay caso. La nutricionista nos recomendó no forzarlo y trabajar primero la parte sensorial. Empezamos a 'jugar' con la comida sin presión: tocar fideos crudos, oler verduras, pintar con yogurt. La idea era que se familiarizara. Llevamos un mes así. Ayer por primera vez probó una papa frita solo. No come variado aún, pero al menos ya no hay llanto en la mesa. Para nosotros eso ya es un avance enorme."
+                        </p>
+                    </div>
+                    <div class="post-respuesta-box">
+                        <div class="valida-badge-pro">
+                            <span class="check-icon">✓</span> Respuesta Validada por la Comunidad (+85 confirmaciones)
+                        </div>
+                        <p class="respuesta-text">
+                            "Leí tu comentario y se me ocurrió intentar lo mismo con mi hija. Llevamos 2 semanas haciendo la parte sensorial sin obligarla a comer y nos ha funcionado bastante bien. Todavía no come de todo, pero ya no hay tanto rechazo ni llanto en la mesa. Gracias por el dato, de verdad ayuda saber que no somos los únicos."
+                        </p>
+                    </div>
+                </article>
+
+                <!-- CASO 5 -->
+                <article class="foro-post-card-pro">
+                    <div class="post-pregunta-box">
+                        <div class="user-meta-pro">
+                            <div class="avatar-circle green-avatar">A5</div>
+                            <div>
+                                <strong class="username">Cuidador Anon_9011</strong>
+                                <span class="post-time-tag">Caso 5: Alteraciones del sueño y anticipación visual</span>
+                            </div>
+                        </div>
+                        <p class="post-text">
+                            "Hola a todos. Les cuento porque ya no sabía qué hacer. Mi hijo de 4 años se despertaba entre 3 y 4am todos los días con mucha energía y no se dormía más hasta las 7. Yo estaba agotada. Fuimos al neurólogo y nos recomendó rutina fija: baño, cuento y luz baja siempre a la misma hora. Nada de pantallas 1 hora antes. Además compramos una luz nocturna con reloj que cambia de color cuando ya se puede levantar. Llevamos 3 semanas y nos ha funcionado bastante bien. Ahora se despierta 1 o 2 veces por semana en vez de todos los días. Quería preguntarles, ¿a alguien más le funcionó esto por un tiempo y después volvió a despertarse? Me da miedo que cuando le deje de funcionar no sepa qué más hacer."
+                        </p>
+                    </div>
+                    <div class="post-respuesta-box">
+                        <div class="valida-badge-pro">
+                            <span class="check-icon">✓</span> Respuesta Validada por la Comunidad (+114 confirmaciones)
+                        </div>
+                        <p class="respuesta-text">
+                            "Te entiendo, pasamos por lo mismo con mi hijo de 5. La rutina y la luz del reloj nos ayudaron harto las primeras semanas, pero después volvió a despertarse. Lo que nos sirvió fue agregar una siesta corta en el día y quitarle cualquier jugo o chocolate después de las 5pm. No es perfecto, hay noches que igual se despierta, pero bajó mucho. Ánimo, es de prueba y error. Si quieres te paso el modelo de luz que usamos nosotros."
+                        </p>
+                    </div>
+                </article>
+
+                <!-- CASO 6 -->
+                <article class="foro-post-card-pro">
+                    <div class="post-pregunta-box">
+                        <div class="user-meta-pro">
+                            <div class="avatar-circle green-avatar">A6</div>
+                            <div>
+                                <strong class="username">Cuidador Anon_4402</strong>
+                                <span class="post-time-tag">Caso 6: Transiciones difíciles y límites con la tecnología</span>
+                            </div>
+                        </div>
+                        <p class="post-text">
+                            "Les comparto algo que nos pasaba en casa. Mi hijo de 7 años se obsesiona con la tablet. Cuando teníamos que quitársela para cenar o dormir eran gritos y mucho enojo. Yo terminaba cediendo para evitar la pelea. La psicóloga nos dijo que el problema era quitarla de golpe. Ahora usamos avisos y un horario. 20 min antes le digo 'ya te quedan 20 min', luego '10 min' y pongo un reloj. Cuando suena le damos 2 opciones: '¿guardas tú la tablet o la guardo yo?' No es perfecto. Hay días que igual le cuesta soltarla. Pero los berrinches bajaron bastante. Siento que al darle un poco de control y avisarle antes, entiende mejor que no es un castigo."
+                        </p>
+                    </div>
+                    <div class="post-respuesta-box">
+                        <div class="valida-badge-pro">
+                            <span class="check-icon">✓</span> Respuesta Validada por la Comunidad (+165 confirmaciones)
+                        </div>
+                        <p class="respuesta-text">
+                            "Gracias por compartir esto. Me hizo sentir tan acompañada. Pensé que solo me pasaba a mí y que era mala mamá por ceder. Saber que a otros también les cuesta me alivia un montón no estar sola en esto."
+                        </p>
+                    </div>
+                </article>
             </section>
 
-            <!-- 4. COMUNICACIÓN, COMUNIDAD Y RED PSEUDÓNIMA -->
-            <section class="tool-card" style="margin-bottom: 20px;">
-                <h3 class="block-title" style="margin-bottom: 8px;">🤝 Red Comunitaria Pseudónima y Comunicación (CAA)</h3>
-                <p style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px;">
-                    Para apoyar el desarrollo del lenguaje y evitar el aislamiento social sin comprometer la privacidad de los usuarios:
-                </p>
-
-                <div style="display: grid; grid-template-columns: 1fr; gap: 10px;">
-                    <div class="eje-card">
-                        <span class="eje-icon">💬</span>
-                        <div class="eje-text">
-                            <h4>Guía de Comunicación CAA</h4>
-                            <p>Manual explicativo de pictogramas homologados y tableros interactivos para promover la expresión autónoma.</p>
-                        </div>
-                    </div>
-
-                    <div class="eje-card">
-                        <span class="eje-icon">🔒</span>
-                        <div class="eje-text">
-                            <h4>Comunidad Protegida por Patrones Conductuales</h4>
-                            <p>Foro de intercambio entre cuidadores bajo perfiles pseudónimos. Las experiencias se organizan por necesidades sensoriales o del desarrollo, validadas con el voto de la comunidad y un asistente de IA.</p>
-                        </div>
+            <!-- PIE DE DOCUMENTACIÓN TÉCNICA Y COPYRIGHT -->
+            <footer class="footer-neu">
+                <div class="copiloto-box-pro">
+                    <span class="copiloto-icon-large">🏢</span>
+                    <div class="copiloto-text">
+                        <h4>Neu Industries</h4>
+                        <p>Ficha del Proyecto e Información de la App • Ecosistema NeuroMundo</p>
                     </div>
                 </div>
-            </section>
-
-            <!-- 5. INCLUSIÓN EDUCATIVA, ODS Y MARCO METODOLÓGICO -->
-            <section class="tool-card" style="margin-bottom: 20px;">
-                <h3 class="block-title" style="margin-bottom: 8px;">🏫 Inclusión Educativa y Compromiso con los ODS</h3>
-                <p style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px;">
-                    El marco metodológico de la aplicación aporta directamente a los Objetivos de Desarrollo Sostenible (ODS 3, 4, 8 y 10), democratizando la orientación y facilitando la conciliación laboral y escolar de los cuidadores (evitando la reducción de jornada o abandono laboral que afecta a entre el 25% y 45% de los hogares).
-                </p>
-
-                <!-- BOTÓN DESPLEGABLE PARA LOS MÓDULOS TÉCNICOS -->
-                <button type="button" class="boton-app-primario" id="btn-toggle-metodologia" onclick="toggleSeccionMetodologia()" style="width: 100%; margin-bottom: 12px;">
-                    👁️ Consultar Módulos Metodológicos de Intervención
-                </button>
-
-                <div id="contenedor-desplegable-metodologia" style="display: none; padding-top: 10px; border-top: 1px dashed var(--border-color);">
-                    <div class="eje-card" style="margin-bottom: 8px;">
-                        <span class="eje-icon">📘</span>
-                        <div class="eje-text">
-                            <h4>Módulo 1: Comunicación CAA</h4>
-                            <p>Implementación de tableros visuales, carpetas de comunicación e historias sociales adaptadas.</p>
-                        </div>
-                    </div>
-
-                    <div class="eje-card" style="margin-bottom: 8px;">
-                        <span class="eje-icon">🚦</span>
-                        <div class="eje-text">
-                            <h4>Módulo 2: Autorregulación y Dieta Sensorial</h4>
-                            <p>Estrategias preventivas ante la sobrecarga de estímulos y pautas de pausas activas.</p>
-                        </div>
-                    </div>
-
-                    <div class="eje-card">
-                        <span class="eje-icon">🏫</span>
-                        <div class="eje-text">
-                            <h4>Módulo 3: Adaptaciones Escolares</h4>
-                            <p>Estructuración visual en aulas, itinerarios predecibles y pautas de evaluación adaptadas.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 6. COPILOTO Y PIE INSTITUCIONAL -->
-            <section class="tool-card" style="margin-bottom: 20px;">
-                <div class="eje-card" style="border: none; padding: 0; background: transparent;">
-                    <span class="eje-icon" style="font-size: 1.5rem;">🤖</span>
-                    <div class="eje-text">
-                        <h4 style="color: var(--accent-green);">Copiloto Adaptativo de Orientación</h4>
-                        <p>Asistente interactivo integrado en la plataforma que combina la evidencia científica del proyecto con respuestas oportunas ante sobrecargas sensoriales y manejo de crisis.</p>
-                    </div>
-                </div>
-            </section>
-
-            <div class="copiloto-box">
-                <span class="copiloto-icon">🏢</span>
-                <div class="copiloto-text">
-                    <h4>Neu Industries</h4>
-                    <p>Proyecto Espacio Amigable • NeuroMundo</p>
-                </div>
-            </div>
+            </footer>
 
             <div class="scroll-spacing"></div>
         </main>
 
     </div>
-
-    <script>
-        function toggleSeccionMetodologia() {
-            var bloque = document.getElementById('contenedor-desplegable-metodologia');
-            if (bloque.style.display === 'none' || bloque.style.display === '') {
-                bloque.style.display = 'block';
-            } else {
-                bloque.style.display = 'none';
-            }
-        }
-    </script>
 <!-- 
         NAVEGACIÓN INFERIOR FIJA
         <nav class="app-nav">
@@ -217,10 +605,37 @@
                 <span class="nav-label">Comunidad</span>
             </a>
         </nav> -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+    const langBtn = document.getElementById('btn-lang');
 
-    </div>
+    if (langBtn) {
+        langBtn.addEventListener('click', (event) => {
+            event.stopPropagation(); // Evita interferencias con otros eventos globales
+            
+            // Ejemplo de cambio de idioma sencillo:
+            const currentLang = document.documentElement.lang || 'es';
+            const newLang = currentLang === 'es' ? 'en' : 'es';
 
-    <script src="../js/script.js"></script>
+            // Actualizar atributo global
+            document.documentElement.lang = newLang;
+
+            // Actualizar texto del botón
+            langBtn.textContent = newLang === 'es' ? 'ES / EN' : 'EN / ES';
+
+            // Disparar función personalizada de traducción (si la tienes)
+            cambiarIdioma(newLang);
+        });
+    }
+});
+
+function cambiarIdioma(lang) {
+    console.log(`Idioma cambiado a: ${lang}`);
+    // Aquí puedes invocar tu función i18n o alternar textos dinámicos
+}
+        </script>
+
+    <script src="static/js/script.js"></script>
 
 </body>
 

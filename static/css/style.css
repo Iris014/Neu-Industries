@@ -1,327 +1,718 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* ==========================================================================
-   SISTEMA DE ESTILOS BASE Y VARIABLES - NEUROMUNDO / ESPACIO AMIGABLE
-   ========================================================================== */
+/* ===================================================
+   VARIABLES Y PALETA DE COLORES (INSPIRADO EN LÍNEA CÁLIDA)
+   =================================================== */
 
 :root {
-    /* Paleta cromática principal */
-    --bg-dark-blue: #121824;
-    --bg-card: #1a2232;
-    --card-background: rgba(26, 34, 50, 0.75);
-    --border-color: rgba(255, 255, 255, 0.08);
+    /* Fondos */
+    --bg-main: #FAF9F6;         /* Blanco cálido / marfil */
+    --bg-card: #FFFFFF;         /* Blanco puro para tarjetas */
+    --bg-subtle: #EAEAE8;       /* Gris cálido suave */
+    --border-color: #E2E8F0;    /* Borde gris tenue */
+
+    /* Colores Acento */
+    --accent-primary: #4A6C6F;   /* Verde azulejo / turquesa oscuro */
+    --accent-primary-hover: #385255;
+    --accent-dark: #2D3142;      /* Gris oscuro principal */
+    --accent-badge-bg: #EBF1F1;  /* Verde muy claro para badges */
     
-    /* Colores de acento */
-    --accent-blue: #0070ff;
-    --accent-blue-hover: #0080ff;
-    --accent-yellow: #f1e05a;
-    --accent-green: #38ef7d;
-    --accent-purple: #9d4edd;
-    
-    /* Tipografía y textos */
-    --text-main: #ffffff;
-    --text-muted: #a0aec0;
-    --font-family-base: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    /* Acentos para estados, tags y métricas */
+    --accent-yellow: #D97706;    /* Ámbar cálido (accesible) */
+    --accent-green: #059669;     /* Verde esmeralda suave */
+    --accent-purple: #7C3AED;    /* Violeta sobrio */
+    --accent-blue: #2563EB;      /* Azul profesional */
+    --accent-red: #DC2626;       /* Rojo alerta suave */
+
+    /* Tipografía */
+    --text-main: #2D3142;        /* Texto principal oscuro */
+    --text-muted: #6C757D;       /* Texto secundario gris */
+    --font-family-base: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 }
 
-/* Restablecimiento básico */
+/* ===================================================
+   ESTILOS BASE
+   =================================================== */
+
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--bg-dark-blue);
+    background-color: var(--bg-main);
     color: var(--text-main);
     font-family: var(--font-family-base);
     line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
 }
 
-/* Contenedor tipo Aplicación */
 .app-container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 16px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    padding: 24px;
 }
 
-/* ==========================================================================
-   ENCABEZADO FIJO DE LA PÁGINA
-   ========================================================================== */
+/* ===================================================
+   CABECERA (HEADER)
+   =================================================== */
 
 .app-header {
-    background: var(--bg-card);
+    background-color: rgba(250, 249, 246, 0.9);
+    backdrop-filter: blur(8px);
     border: 1px solid var(--border-color);
     border-radius: 16px;
-    padding: 12px 18px;
-    margin-bottom: 20px;
-    backdrop-filter: blur(10px);
+    padding: 16px 24px !important;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
 }
 
 .header-top {
     display: flex;
     justify-content: space-between;
-    font-size: 0.75rem;
+    align-items: center;
+    font-size: 0.8rem;
     color: var(--text-muted);
-    font-weight: 600;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
-.header-main {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.badge-header {
+    background: var(--accent-badge-bg);
+    color: var(--accent-primary);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid rgba(74, 108, 111, 0.2);
 }
 
 .app-brand {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .app-brand img.logo-app {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     object-fit: contain;
 }
 
 .app-brand h1 {
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: var(--text-main);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent-dark);
+    letter-spacing: -0.5px;
 }
 
-/* ==========================================================================
-   TARJETAS DE CONTENIDO E INFORMACIÓN
-   ========================================================================== */
-
-.welcome-card {
-    background: linear-gradient(135deg, rgba(0, 112, 255, 0.15) 0%, rgba(26, 34, 50, 0.9) 100%);
-    border: 1px solid rgba(0, 112, 255, 0.3);
-    border-radius: 20px;
-    padding: 22px;
-}
-
-.welcome-title {
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: var(--accent-yellow);
-    margin-bottom: 6px;
-    letter-spacing: 0.5px;
-}
-
-.welcome-subtitle {
-    font-size: 0.8rem;
+.subtitle-brand {
+    font-size: 0.85rem;
     color: var(--text-muted);
-    font-weight: 600;
-    margin-bottom: 14px;
+    margin-top: 2px;
 }
 
-.speech-bubble {
-    background: rgba(255, 255, 255, 0.05);
-    border-left: 3px solid var(--accent-green);
-    padding: 8px 12px;
-    border-radius: 4px 8px 8px 4px;
+/* ===================================================
+   SECCIONES Y MÓDULOS GENERALES
+   =================================================== */
+
+.seccion-bloque-titulo {
+    margin: 36px 0 16px 0;
 }
 
-.speech-bubble p {
-    font-size: 0.82rem;
-    font-weight: 800;
-    color: var(--accent-green);
-    letter-spacing: 1px;
+.badge-subtitulo {
+    font-size: 0.75rem;
+    color: var(--accent-primary);
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
 }
 
-.tool-card {
-    background: var(--bg-card);
+.seccion-bloque-titulo h3 {
+    font-size: 1.35rem;
+    color: var(--accent-dark);
+    letter-spacing: -0.3px;
+}
+
+.divider-seccion {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+    margin: 24px 0;
+}
+
+.content-espaciado {
+    display: flex;
+    flex-direction: column;
+    gap: 32px !important;
+}
+
+.bloque-modulo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ===================================================
+   TARJETAS Y HERO
+   =================================================== */
+
+.tool-card, 
+.card-hero-welcome, 
+.card-ficha-detalles, 
+.card-pagina-maqueta, 
+.card-ods-wrapper {
+    background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: 16px;
-    padding: 18px;
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    padding: 24px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.block-title {
-    font-size: 1.05rem;
+.card-hero-welcome {
+    background: linear-gradient(135deg, #FFFFFF, #F4F7F7);
+    border: 1px solid #CBD5E1 !important;
+}
+
+.hero-badge-top {
+    font-size: 0.75rem;
     font-weight: 700;
-    color: var(--text-main);
-}
-
-/* ==========================================================================
-   EJES Y BLOQUES DE INFORMACIÓN
-   ========================================================================== */
-
-.eje-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 12px 14px;
-}
-
-.eje-icon {
-    font-size: 1.4rem;
-    line-height: 1;
-}
-
-.eje-text h4 {
-    font-size: 0.88rem;
-    color: var(--text-main);
-    margin-bottom: 2px;
-}
-
-.eje-text p {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    line-height: 1.35;
-}
-
-/* Separadores de sección */
-.separador-seccion-pagina {
-    margin: 35px 0 25px 0;
-    position: relative;
-    text-align: center;
-}
-
-.separador-seccion-pagina hr {
-    border: none;
-    border-top: 1px dashed rgba(255, 255, 255, 0.15);
-}
-
-.etiqueta-separador {
-    position: absolute;
-    top: -9px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--bg-dark-blue);
-    padding: 0 12px;
-    color: var(--accent-blue);
-    font-size: 0.7rem;
-    font-weight: 800;
     letter-spacing: 1px;
-}
-
-/* ==========================================================================
-   ESTILOS ESPECIALES PARA EL BOTÓN Y CONTENEDOR DESPLEGABLE (METODOLOGÍA)
-   Inspirado en módulos interactivos de portales educativos
-   ========================================================================== */
-
-.boton-app-primario {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: linear-gradient(135deg, var(--accent-blue) 0%, #00c6ff 100%);
-    color: var(--text-main);
-    font-family: var(--font-family-base);
-    font-size: 0.9rem;
-    font-weight: 700;
-    padding: 14px 20px;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0, 112, 255, 0.25);
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.boton-app-primario:hover {
-    background: linear-gradient(135deg, var(--accent-blue-hover) 0%, #00d4ff 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 112, 255, 0.4);
-}
-
-.boton-app-primario:active {
-    transform: translateY(1px) scale(0.99);
-}
-
-/* Animación de apertura para el contenido desplegado */
-#contenedor-desplegable-metodologia {
-    animation: slideDownFade 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@keyframes slideDownFade {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Tarjetas de Módulos dentro del Desplegable */
-.tarjeta-modulo-app {
-    background: rgba(255, 255, 255, 0.025);
-    border-radius: 12px;
-    padding: 16px;
-    border-left: 4px solid var(--accent-blue);
-}
-
-.tarjeta-modulo-app.color-azul {
-    border-left-color: var(--accent-blue);
-    background: linear-gradient(90deg, rgba(0, 112, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
-}
-
-.tarjeta-modulo-app.color-morado {
-    border-left-color: var(--accent-purple);
-    background: linear-gradient(90deg, rgba(157, 78, 221, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
-}
-
-.titulo-tarjeta-app {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--text-main);
+    color: var(--accent-primary);
     margin-bottom: 8px;
 }
 
-.desc-tarjeta-app {
-    font-size: 0.82rem;
+.welcome-title {
+    font-size: 1.3rem;
+    color: var(--accent-dark);
+    font-weight: 700;
+}
+
+.welcome-subtitle {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+.hero-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.speech-bubble, 
+.speech-bubble-destacado {
+    background: var(--accent-badge-bg);
+    border-left: 4px solid var(--accent-primary);
+    padding: 12px 16px;
+    border-radius: 0 12px 12px 0;
+    margin: 16px 0;
+    color: var(--accent-dark);
+    font-weight: 600;
+}
+
+.speech-bubble p {
+    font-size: 0.88rem;
+    color: var(--accent-primary);
+}
+
+/* ===================================================
+   MÉTRICAS Y STATS
+   =================================================== */
+
+.grid-cuatro-metricas-amplio,
+.grid-cuatro-metricas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+}
+
+.stat-card-pro, 
+.stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 20px 16px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.stat-card-pro:hover, 
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.04);
+}
+
+.stat-icon-wrapper {
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+}
+
+.stat-number {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--accent-dark);
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* ===================================================
+   FICHA TÉCNICA DEL PROYECTO
+   =================================================== */
+
+.ficha-proyecto-grid-amplio, 
+.ficha-proyecto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.ficha-item-pro, 
+.ficha-item {
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    padding: 14px 16px;
+    border-radius: 12px;
+}
+
+.ficha-label {
+    font-size: 0.75rem;
+    color: var(--accent-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ficha-val {
+    font-size: 0.9rem;
+    color: var(--accent-dark);
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+/* ===================================================
+   TARJETAS DE NAVEGACIÓN Y DIVERSITY (PÁGINAS)
+   =================================================== */
+
+.card-pagina-maqueta {
+    background: var(--bg-card) !important;
+}
+
+.border-left-yellow, .border-yellow { border-left: 5px solid var(--accent-yellow) !important; }
+.border-left-blue,   .border-blue   { border-left: 5px solid var(--accent-blue) !important; }
+.border-left-purple, .border-purple { border-left: 5px solid var(--accent-purple) !important; }
+.border-left-green,  .border-green  { border-left: 5px solid var(--accent-green) !important; }
+
+.tag-yellow { background: #FEF3C7; color: #B45309; }
+.tag-blue   { background: #DBEAFE; color: #1E40AF; }
+.tag-purple { background: #F3E8FF; color: #6B21A8; }
+.tag-green  { background: #D1FAE5; color: #065F46; }
+
+.page-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.block-title {
+    font-size: 1.1rem;
+    color: var(--accent-dark);
+    font-weight: 600;
+}
+
+.explicacion-proposito, 
+.proposito-box {
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin: 16px 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+}
+
+.hero-mini-banner {
+    background: var(--accent-badge-bg);
+    border: 1px solid rgba(74, 108, 111, 0.3);
+    padding: 16px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.banner-tag, 
+.hero-mini-banner span {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    letter-spacing: 0.8px;
+}
+
+.hero-mini-banner h4 {
+    margin-top: 4px;
+    font-size: 1rem;
+    color: var(--accent-dark);
+}
+
+.grid-dos-col, .grid-dos-col-amplio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.grid-tres-col, .grid-tres-col-amplio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.tarjeta-interna, 
+.tarjeta-interna-pro {
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.tarjeta-interna h5, 
+.tarjeta-interna-pro h5 {
+    font-size: 0.92rem;
+    margin-bottom: 6px;
+    color: var(--accent-dark);
+    font-weight: 600;
+}
+
+.tarjeta-interna p, 
+.tarjeta-interna-pro p {
+    font-size: 0.84rem;
     color: var(--text-muted);
     line-height: 1.45;
 }
 
-.desc-tarjeta-app strong {
-    color: var(--text-main);
+/* ===================================================
+   MATRIZ ODS
+   =================================================== */
+
+.ods-header-banner {
+    background: #D1FAE5;
+    border: 1px solid #10B981;
+    color: #065F46;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
-/* ==========================================================================
-   CAJA DE PIE INSTITUCIONAL
-   ========================================================================== */
+.ods-grid, 
+.ods-grid-espacioso {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+}
 
-.copiloto-box {
+.ods-box, 
+.ods-box-pro {
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ods-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    color: #FFF;
+    margin-bottom: 8px;
+}
+
+.badge-3 { background: #4C9F38; }
+.badge-4 { background: #C5192D; }
+.badge-10 { background: #DD1367; }
+.badge-8 { background: #A21942; }
+
+.ods-box h4, .ods-top-bar h4 {
+    font-size: 0.95rem;
+    color: var(--accent-dark);
+    font-weight: 600;
+}
+
+.ods-problema {
+    font-size: 0.84rem;
+    color: var(--text-muted);
+    margin: 8px 0;
+    line-height: 1.45;
+}
+
+.ods-solucion {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    color: var(--accent-dark);
+    line-height: 1.4;
+}
+
+/* ===================================================
+   RESPALDOS DE INNOVACIÓN
+   =================================================== */
+
+.respaldos-grid, 
+.respaldos-grid-espacioso {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.respaldo-card, 
+.respaldo-card-pro {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.respaldo-icon-large, .respaldo-icon {
+    font-size: 1.8rem;
+    background: var(--bg-main);
+    padding: 8px 12px;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.respaldo-content h4, .respaldo-header h4 {
+    font-size: 0.95rem;
+    color: var(--accent-dark);
+    font-weight: 600;
+}
+
+.respaldo-content p, .respaldo-body p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+}
+
+.respaldo-why-box, .respaldo-why {
+    background: var(--accent-badge-bg);
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: var(--accent-primary);
+    line-height: 1.4;
+    border-left: 3px solid var(--accent-primary);
+    font-weight: 600;
+}
+
+/* ===================================================
+   FORO Y COMUNIDAD (BANCO DE CASOS)
+   =================================================== */
+
+.categoria-header, 
+.categoria-header-destacado {
     display: flex;
     align-items: center;
-    gap: 14px;
-    background: rgba(56, 239, 125, 0.05);
-    border: 1px solid rgba(56, 239, 125, 0.2);
-    border-radius: 16px;
-    padding: 16px;
+    gap: 12px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    margin: 20px 0 12px 0;
 }
 
-.copiloto-icon {
-    font-size: 1.8rem;
+.cat-red    { background: #FEE2E2; border-left: 4px solid var(--accent-red); color: #991B1B; }
+.cat-yellow { background: #FEF3C7; border-left: 4px solid var(--accent-yellow); color: #92400E; }
+.cat-green  { background: #D1FAE5; border-left: 4px solid var(--accent-green); color: #065F46; }
+
+.categoria-header h4, .categoria-header-destacado h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
 }
 
-.copiloto-text h4 {
-    font-size: 0.9rem;
-    color: var(--accent-green);
-    margin-bottom: 2px;
-}
-
-.copiloto-text p {
+.cat-sub {
     font-size: 0.78rem;
+    opacity: 0.85;
+}
+
+.foro-post-card, 
+.foro-post-card-pro {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.post-pregunta, .post-pregunta-box {
+    padding: 20px;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.user-meta, .user-meta-pro {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.avatar-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #FFFFFF;
+}
+
+.red-avatar    { background: var(--accent-red); }
+.yellow-avatar { background: var(--accent-yellow); }
+.green-avatar  { background: var(--accent-green); }
+
+.username, .user-meta strong {
+    font-size: 0.9rem;
+    color: var(--accent-dark);
+    font-weight: 600;
+}
+
+.post-time, .post-time-tag {
+    font-size: 0.75rem;
     color: var(--text-muted);
 }
 
-.scroll-spacing {
-    height: 30px;
+.post-body, .post-text {
+    font-size: 0.88rem;
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+.post-respuesta, .post-respuesta-box {
+    background: #F8FAFC;
+    padding: 20px;
+}
+
+.valida-badge, .valida-badge-pro {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #D1FAE5;
+    color: #065F46;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+}
+
+.respuesta-body, .respuesta-text {
+    font-size: 0.86rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* ===================================================
+   PIE Y COPILOTO INSTITUCIONAL
+   =================================================== */
+
+.footer-neu {
+    margin-top: 32px;
+}
+
+.copiloto-box, .copiloto-box-pro {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 20px;
+}
+
+.copiloto-icon-large, .copiloto-icon {
+    font-size: 2rem;
+}
+
+.copiloto-text h4 {
+    font-size: 0.95rem;
+    color: var(--accent-dark);
+    font-weight: 600;
+}
+
+.copiloto-text p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* ===================================================
+   BOTÓN SELECTOR DE IDIOMA (Mantiene la funcionalidad previa)
+   =================================================== */
+
+.lang-btn {
+    background-color: var(--accent-dark);
+    color: #FFFFFF;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    z-index: 9999;
+    pointer-events: auto;
+}
+
+.lang-btn:hover {
+    background-color: var(--accent-primary);
+}
+
+.lang-btn:active {
+    background-color: var(--accent-primary-hover);
+    transform: scale(0.96);
+}
+
+/* ===================================================
+   DISEÑO RESPONSIVO (MÓVILES Y TABLETS)
+   =================================================== */
+
+@media (max-width: 768px) {
+    .app-container {
+        padding: 16px;
+    }
+
+    .app-header {
+        padding: 16px !important;
+    }
+
+    .grid-dos-col, .grid-tres-col, .ods-grid, .respaldos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .copiloto-box-pro {
+        flex-direction: column;
+        text-align: center;
+    }
 }
