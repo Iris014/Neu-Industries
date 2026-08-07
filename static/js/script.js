@@ -1,3 +1,4 @@
+console.log("Conexión con JS")
 // Variable global para controlar el idioma actual ('es' o 'en')
 let idioma = 'es';
 
