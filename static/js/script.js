@@ -15,7 +15,7 @@ const traducciones = {
     // --- BANNER PRINCIPAL ---
     'hero-badge': { es: 'BIENVENIDOS: UN ESPACIO DISEÑADO PARA TI', en: 'WELCOME: A SPACE DESIGNED FOR YOU' },
     'hero-title': { es: 'Amar, Respetar e Incluir', en: 'Love, Respect and Include' },
-    'hero-subtitle': { es: 'LOVE, RESPECT AND INCLUDE • UN ENFOQUE HUMANO Y TECNOLÓGICO', en: 'AMAR, RESPETAR E INCLUIR • A HUMAN & TECHNOLOGICAL APPROACH' },
+    'hero-subtitle': { es: 'AMAR, RESPETAR E INCLUIR • UN ENFOQUE HUMANO Y TECNOLÓGICO', en: 'LOVE, RESPECT AND INCLUDE • A HUMAN & TECHNOLOGICAL APPROACH' },
     'hero-description': { 
         es: 'NeuroMundo es un ecosistema digital e inmersivo orientado a acompañar a familias de personas neurodivergentes. Combina contención comunitaria, tecnología predictiva y experiencias de simulador para reducir el colapso, el estigma y la sobrecarga emocional.', 
         en: 'NeuroMundo is a digital and immersive ecosystem designed to support families of neurodivergent individuals. It combines community support, predictive technology, and simulation experiences to reduce burnout, stigma, and emotional overload.' 

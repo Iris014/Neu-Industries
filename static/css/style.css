@@ -1,13 +1,14 @@
-/* ===================================================
-   VARIABLES Y PALETA DE COLORES INDUSTRIALES
-   =================================================== */
+/* ==========================================================================
+   VARIABLES Y PALETA DE COLORES INDUSTRIALES & GLOBALES
+   ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap');
 
 :root {
     /* Fondos Base */
-    --bg-main: #F4F4F2;         /* Gris hormigón/marfil industrial */
-    --bg-card: #FFFFFF;         /* Blanco puro para contraste de datos */
+    --bg-main: #F4F4F2;         /* Gris hormigón / marfil industrial */
+    --card-bg: #FFFFFF;         /* Blanco puro para contraste de datos */
+    --bg-card: #FFFFFF;         /* Alias unificado */
     --border-color: #D1D5DB;    /* Borde metálico suave */
 
     /* Colores Acento Industriales */
@@ -16,39 +17,57 @@
     --accent-dark: #1F2937;      /* Pizarra oscura / hierro */
     --accent-badge-bg: #EAECE9;  /* Fondo neutro para elementos destacados */
     --text-main: #111827;        /* Texto principal de alta legibilidad */
+    --text-dark: #1e293b;
+    --text-medium: #475569;
     --text-muted: #4B5563;       /* Texto secundario */
 
     /* SECCIONES: Fondos y Bordes Distintivos Suaves */
-    --sec-hero-bg: #EAECE9;      /* Sage / Musgo técnico muy suave */
+    --sec-hero-bg: #EAECE9;      
     --sec-hero-border: #8A9A86;
-
-    --sec-metrics-bg: #EBF1F5;   /* Azul acero suave */
+    --sec-metrics-bg: #EBF1F5;   
     --sec-metrics-border: #7B92A8;
-
-    --sec-pages-bg: #F5EFEA;     /* Arcilla / Cerámica técnica suave */
+    --sec-pages-bg: #F5EFEA;     
     --sec-pages-border: #C4A482;
-
-    --sec-ods-bg: #EAF2ED;       /* Verde institucional eco */
+    --sec-ods-bg: #EAF2ED;       
     --sec-ods-border: #72A082;
-
-    --sec-forum-bg: #F3F3F5;     /* Pizarra neutra clara */
+    --sec-forum-bg: #F3F3F5;     
     --sec-forum-border: #9EA3B0;
 
-    /* Acentos para Estados, Tags y Categorías */
+    /* Categorías - Colores e Indicadores */
     --accent-yellow: #B45309;    
     --accent-green: #047857;     
     --accent-purple: #6D28D9;    
     --accent-blue: #1D4ED8;      
     --accent-red: #B91C1C;       
 
+    --cat-blue-primary: #2563eb;
+    --cat-blue-dark: #1d4ed8;
+    --cat-blue-bg: #eff6ff;
+    --cat-blue-border: #bfdbfe;
+
+    --cat-orange-primary: #f97316;
+    --cat-orange-dark: #c2410c;
+    --cat-orange-bg: #fff7ed;
+    --cat-orange-border: #fed7aa;
+
+    --cat-green-primary: #10b981;
+    --cat-green-dark: #047857;
+    --cat-green-bg: #ecfdf5;
+    --cat-green-border: #a7f3d0;
+
     /* Tipografía */
     --font-heading: 'Space Grotesk', system-ui, sans-serif;
     --font-body: 'Inter', system-ui, sans-serif;
+
+    /* Sombras y Bordes */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px -2px rgba(0,0,0,0.08), 0 2px 6px -1px rgba(0,0,0,0.04);
+    --radius-main: 16px;
 }
 
-/* ===================================================
-   ESTILOS BASE (GEOMETRÍA RECTA Y LETRAS GRANDES)
-   =================================================== */
+/* ==========================================================================
+   ESTILOS BASE (GEOMETRÍA RECTA Y GENERALES)
+   ========================================================================== */
 
 * {
     margin: 0;
@@ -69,15 +88,51 @@ body {
     line-height: 1.7;
 }
 
-.app-container {
+/* ==========================================================================
+   LAYOUT Y ESTRUCTURA GENERAL
+   ========================================================================== */
+
+/* Se aplica el ancho más extenso (1080px) a los contenedores principales del contenido */
+.app-container,
+.main-layout-container {
     max-width: 1080px;
     margin: 0 auto;
-    padding: 40px 24px;
+    padding: 32px 24px;
 }
 
-/* ===================================================
-   ESTRUCTURA DE SECCIONES CON COLORES SUAVES
-   =================================================== */
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.content-espaciado {
+    display: flex;
+    flex-direction: column;
+    gap: 32px !important;
+    margin-top: 30px;
+}
+
+.bloque-modulo {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.divider-seccion {
+    border: none;
+    height: 1px;
+    background: var(--border-color);
+    margin: 32px 0;
+}
+
+.scroll-spacing {
+    height: 48px;
+}
+
+/* ==========================================================================
+   ESTRUCTURA DE SECCIONES
+   ========================================================================== */
 
 .seccion-bloque-contenedor {
     padding: 32px;
@@ -134,33 +189,9 @@ body {
     text-transform: uppercase;
 }
 
-.divider-seccion {
-    border: none;
-    height: 1px;
-    background: var(--border-color);
-    margin: 32px 0;
-}
-
-.content-espaciado {
-    display: flex;
-    flex-direction: column;
-    gap: 32px !important;
-    margin-top: 30px;
-}
-
-.bloque-modulo {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-/* ===================================================
-   CABECERA (HEADER INDUSTRIAL)
-   =================================================== */
-
-/* ===================================================
-   BARRA DE NAVEGACIÓN INDUSTRIAL (STICKY / CERO BORDES ROUND)
-   =================================================== */
+/* ==========================================================================
+   BARRA DE NAVEGACIÓN (HEADER)
+   ========================================================================== */
 
 .header {
     position: sticky;
@@ -229,19 +260,19 @@ body {
     color: var(--accent-primary);
 }
 
-/* Botón de Idioma dentro del Menú Nav (.btn-nav) */
+/* Botón Selector de Idioma y Nav */
 .btn-nav, 
 .lang-btn {
     background-color: var(--accent-dark);
     color: #FFFFFF !important;
     font-family: var(--font-heading);
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 700;
-    padding: 10px 18px;
+    padding: 10px 20px;
     border: 1px solid var(--accent-dark);
     cursor: pointer;
     text-transform: uppercase;
-    letter-spacing: 0.8px;
+    letter-spacing: 1px;
     transition: background-color 0.2s ease, border-color 0.2s ease;
     position: relative;
     z-index: 9999;
@@ -260,31 +291,9 @@ body {
     border-color: var(--accent-primary-hover);
 }
 
-/* Ajustes Responsivos para la Navegación */
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        gap: 16px;
-        align-items: flex-start;
-    }
-
-    .nav {
-        width: 100%;
-        flex-wrap: wrap;
-        gap: 12px;
-        justify-content: space-between;
-    }
-
-    .btn-nav {
-        width: 100%;
-        text-align: center;
-        margin-top: 8px;
-    }
-}
-
-/* ===================================================
+/* ==========================================================================
    TARJETAS Y MÓDULOS HERO DE CONTENIDO
-   =================================================== */
+   ========================================================================== */
 
 .tool-card, 
 .card-hero-welcome, 
@@ -355,9 +364,9 @@ body {
     color: var(--accent-primary);
 }
 
-/* ===================================================
+/* ==========================================================================
    MÉTRICAS Y STATS
-   =================================================== */
+   ========================================================================== */
 
 .grid-cuatro-metricas-amplio,
 .grid-cuatro-metricas {
@@ -402,9 +411,9 @@ body {
     text-transform: uppercase;
 }
 
-/* ===================================================
+/* ==========================================================================
    FICHA TÉCNICA DEL PROYECTO
-   =================================================== */
+   ========================================================================== */
 
 .ficha-proyecto-grid-amplio, 
 .ficha-proyecto-grid {
@@ -436,9 +445,9 @@ body {
     margin-top: 6px;
 }
 
-/* ===================================================
-   TARJETAS DE NAVEGACIÓN Y PÁGINAS
-   =================================================== */
+/* ==========================================================================
+   TARJETAS DE NAVEGACIÓN Y PÁGINAS (GRIDS Y VARIACIONES DE BORDES)
+   ========================================================================== */
 
 .card-pagina-maqueta {
     background: var(--bg-card) !important;
@@ -541,9 +550,9 @@ body {
     line-height: 1.5;
 }
 
-/* ===================================================
+/* ==========================================================================
    MATRIZ ODS
-   =================================================== */
+   ========================================================================== */
 
 .ods-header-banner {
     background: #D1FAE5;
@@ -612,9 +621,9 @@ body {
     line-height: 1.5;
 }
 
-/* ===================================================
+/* ==========================================================================
    RESPALDOS DE INNOVACIÓN
-   =================================================== */
+   ========================================================================== */
 
 .respaldos-grid, 
 .respaldos-grid-espacioso {
@@ -666,22 +675,50 @@ body {
     font-weight: 600;
 }
 
-/* ===================================================
-   FORO Y COMUNIDAD (BANCO DE CASOS)
-   =================================================== */
+/* ==========================================================================
+   FORO Y COMUNIDAD (BANCO DE CASOS Y CATEGORÍAS)
+   ========================================================================== */
+
+.foro-header-main {
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.foro-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+}
+
+.foro-description {
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+.foro-casos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
 .categoria-header, 
 .categoria-header-destacado {
     display: flex;
     align-items: center;
-    gap: 14px;
-    padding: 16px 20px;
+    gap: 16px;
+    padding: 18px 24px;
+    border-radius: var(--radius-main);
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow-sm);
     margin: 24px 0 16px 0;
 }
 
-.cat-red    { background: #FEE2E2; border-left: 5px solid var(--accent-red); color: #991B1B; }
-.cat-yellow { background: #FEF3C7; border-left: 5px solid var(--accent-yellow); color: #92400E; }
-.cat-green  { background: #D1FAE5; border-left: 5px solid var(--accent-green); color: #065F46; }
+.cat-icon {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
 
 .categoria-header h4, .categoria-header-destacado h4 {
     font-family: var(--font-heading);
@@ -690,94 +727,145 @@ body {
 }
 
 .cat-sub {
-    font-size: 0.85rem;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    display: block;
     opacity: 0.9;
 }
 
+/* Variantes de Color de Categoría */
+.cat-red    { background: #FEE2E2; border-left: 5px solid var(--accent-red); color: #991B1B; }
+.cat-yellow { background: #FEF3C7; border-left: 5px solid var(--accent-yellow); color: #92400E; }
+.cat-green  { background: #D1FAE5; border-left: 5px solid var(--accent-green); color: #065F46; }
+
+.categoria-header-destacado.cat-blue {
+    border-left: 6px solid var(--cat-blue-primary);
+    background: linear-gradient(135deg, var(--cat-blue-bg) 0%, #ffffff 100%);
+}
+.categoria-header-destacado.cat-blue h4 { color: var(--cat-blue-dark); font-size: 1.15rem; font-weight: 700; }
+
+.categoria-header-destacado.cat-orange {
+    border-left: 6px solid var(--cat-orange-primary);
+    background: linear-gradient(135deg, var(--cat-orange-bg) 0%, #ffffff 100%);
+}
+.categoria-header-destacado.cat-orange h4 { color: var(--cat-orange-dark); font-size: 1.15rem; font-weight: 700; }
+
+.categoria-header-destacado.cat-green {
+    border-left: 6px solid var(--cat-green-primary);
+    background: linear-gradient(135deg, var(--cat-green-bg) 0%, #ffffff 100%);
+}
+.categoria-header-destacado.cat-green h4 { color: var(--cat-green-dark); font-size: 1.15rem; font-weight: 700; }
+
+/* Tarjetas de Foro (Post Cards) */
 .foro-post-card, 
 .foro-post-card-pro {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    background: var(--card-bg);
+    border-radius: var(--radius-main);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    overflow: hidden;
     margin-bottom: 24px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.foro-post-card-pro:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.1);
 }
 
 .post-pregunta, .post-pregunta-box {
     padding: 24px;
-    border-bottom: 1px dashed var(--border-color);
+    border-bottom: 1px solid #f1f5f9;
 }
 
 .user-meta, .user-meta-pro {
     display: flex;
     align-items: center;
     gap: 14px;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 }
 
 .avatar-circle {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: var(--font-heading);
     font-weight: 700;
     font-size: 0.95rem;
-    color: #FFFFFF;
+    color: #ffffff;
+    flex-shrink: 0;
 }
 
 .red-avatar    { background: var(--accent-red); }
 .yellow-avatar { background: var(--accent-yellow); }
 .green-avatar  { background: var(--accent-green); }
 
+.blue-avatar { background-color: var(--cat-blue-primary); box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3); }
+.orange-avatar { background-color: var(--cat-orange-primary); box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3); }
+
 .username, .user-meta strong {
-    font-size: 0.95rem;
+    display: block;
+    font-size: 1rem;
     color: var(--accent-dark);
     font-weight: 600;
 }
 
 .post-time, .post-time-tag {
-    font-size: 0.8rem;
+    display: block;
+    font-size: 0.82rem;
     color: var(--text-muted);
+    margin-top: 1px;
 }
 
 .post-body, .post-text {
-    font-size: 1rem;
-    color: var(--text-main);
-    line-height: 1.6;
+    font-size: 0.98rem;
+    color: var(--text-medium);
+    line-height: 1.65;
 }
 
+/* Respuesta Validada */
 .post-respuesta, .post-respuesta-box {
-    background: var(--bg-main);
-    padding: 24px;
+    padding: 22px 24px;
+    background-color: #f8fafc;
 }
 
 .valida-badge, .valida-badge-pro {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: #D1FAE5;
-    color: #065F46;
+    background-color: var(--cat-green-bg);
+    color: var(--cat-green-dark);
     font-family: var(--font-heading);
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     font-weight: 700;
-    padding: 6px 12px;
-    margin-bottom: 12px;
-    border: 1px solid #10B981;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+    border: 1px solid var(--cat-green-border);
     text-transform: uppercase;
 }
 
+.check-icon { font-weight: 800; }
+
 .respuesta-body, .respuesta-text {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    line-height: 1.6;
+    font-size: 0.96rem;
+    color: var(--text-dark);
+    line-height: 1.65;
 }
 
-/* ===================================================
-   PIE Y COPILOTO INSTITUCIONAL
-   =================================================== */
+/* ==========================================================================
+   PIE DE PÁGINA (NEUMÓRFICO) Y COPILOTO INSTITUCIONAL
+   ========================================================================== */
 
 .footer-neu {
     margin-top: 40px;
+    padding: 20px 24px;
+    background-color: var(--bg-main);
+    border-radius: var(--radius-main);
+    box-shadow: inset 2px 2px 5px #e2e8f0, inset -2px -2px 5px #ffffff;
 }
 
 .copiloto-box, .copiloto-box-pro {
@@ -792,55 +880,24 @@ body {
 
 .copiloto-icon-large, .copiloto-icon {
     font-size: 2.2rem;
+    line-height: 1;
 }
 
-.copiloto-text h4 {
+.copiloto-text h4, #footer-org {
     font-family: var(--font-heading);
     font-size: 1.1rem;
     color: var(--accent-dark);
+    font-weight: 700;
 }
 
-.copiloto-text p {
+.copiloto-text p, #footer-desc {
     font-size: 0.9rem;
     color: var(--text-muted);
 }
 
-/* ===================================================
-   BOTÓN SELECTOR DE IDIOMA (SOLUCIÓN DE EVENTOS Y CLICS)
-   =================================================== */
-
-.lang-btn {
-    background-color: var(--accent-dark);
-    color: #FFFFFF;
-    font-family: var(--font-heading);
-    font-size: 0.85rem;
-    font-weight: 700;
-    padding: 10px 20px;
-    border: 1px solid var(--accent-dark);
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
-
-    /* Prioridad de apilamiento e interacción */
-    position: relative;
-    z-index: 9999;
-    pointer-events: auto !important;
-}
-
-.lang-btn:hover {
-    background-color: var(--accent-primary);
-    border-color: var(--accent-primary);
-}
-
-.lang-btn:active {
-    background-color: var(--accent-primary-hover);
-    border-color: var(--accent-primary-hover);
-}
-
-/* ===================================================
-   DISEÑO RESPONSIVO
-   =================================================== */
+/* ==========================================================================
+   DISEÑO RESPONSIVO (MEDIA QUERIES)
+   ========================================================================== */
 
 @media (max-width: 768px) {
     .app-container {
@@ -855,6 +912,25 @@ body {
         padding: 20px !important;
     }
 
+    .header-container {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+
+    .nav {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: space-between;
+    }
+
+    .btn-nav {
+        width: 100%;
+        text-align: center;
+        margin-top: 8px;
+    }
+
     .grid-dos-col, .grid-tres-col, .ods-grid, .respaldos-grid, .grid-cuatro-metricas {
         grid-template-columns: 1fr;
     }
@@ -863,4 +939,11 @@ body {
         flex-direction: column;
         text-align: center;
     }
+}
+
+@media (max-width: 640px) {
+    .main-layout-container { padding: 16px 12px; }
+    .post-pregunta-box, .post-respuesta-box { padding: 16px; }
+    .categoria-header-destacado { padding: 14px 16px; }
+    .foro-title { font-size: 1.4rem; }
 }

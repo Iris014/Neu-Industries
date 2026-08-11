@@ -30,7 +30,10 @@
             </div>
         </header>
 
-        <main class="app-content content-espaciado">
+
+<div class="main-layout-container">
+
+        <main class="content-wrapper">
 
             <!-- BANNER PRINCIPAL Y MANIFIESTO -->
             <section class="tool-card card-hero-welcome">
@@ -385,18 +388,22 @@
             <!-- BLOQUE 4: BANCO DE CASOS Y RESPUESTAS INTEGRADAS (FORO PÁGINA 2)   -->
             <!-- ================================================================= -->
 
-            <section class="bloque-modulo">
-                <div class="seccion-bloque-titulo">
-                    <span id="foro-badge" class="badge-subtitulo">INTERFAZ DE COMUNIDAD</span>
-                    <h3 id="foro-titulo">4. Banco de Casos Reales Integrados en la Plataforma</h3>
-                </div>
+            <!-- ENCABEZADO Y PRESENTACIÓN -->
+            <header class="foro-header-main">
+                <h1 id="foro-title" class="foro-title">Comunidad y Foro de Casos Reales</h1>
+                <p id="foro-desc" class="foro-description">
+                    Espacio de acompañamiento, testimonios y respuestas validadas por la comunidad y especialistas para el desarrollo neurodivergente.
+                </p>
+            </header>
+
+            <section class="foro-casos-container">
 
                 <!-- CATEGORÍA 1 -->
-                <div class="categoria-header-destacado cat-red">
-                    <span class="cat-icon">🔴</span>
+                <div class="categoria-header-destacado cat-blue">
+                    <span class="cat-icon">🔵</span>
                     <div>
-                        <h4 id="cat1-title">Categoría 1: Crisis e Sobrecarga Sensorial en Espacios Públicos</h4>
-                        <span id="cat1-sub" class="cat-sub">Casos relacionados con desregulación en supermercados y salas médicas</span>
+                        <h4 id="cat1-title">Categoría 1: Diagnóstico Temprano e Integración Escolar</h4>
+                        <span id="cat1-sub" class="cat-sub">Acompañamiento inicial, trámites y adaptación académica</span>
                     </div>
                 </div>
 
@@ -404,14 +411,14 @@
                 <article class="foro-post-card-pro">
                     <div class="post-pregunta-box">
                         <div class="user-meta-pro">
-                            <div class="avatar-circle red-avatar">A1</div>
+                            <div class="avatar-circle blue-avatar">A1</div>
                             <div>
-                                <strong id="c1-user" class="username">Cuidador Anon_8241</strong>
-                                <span id="c1-tag" class="post-time-tag">Caso 1: El colapso en el supermercado</span>
+                                <strong id="c1-user" class="username">Cuidador Anon_1024</strong>
+                                <span id="c1-tag" class="post-time-tag">Caso 1: Proceso de diagnóstico y apoyo escolar</span>
                             </div>
                         </div>
                         <p id="c1-q" class="post-text">
-                            "Hola. Hoy fuimos al supermercado y mi hijo de 6 años se tiró al suelo a gritar y patear cerca de las cajas. Sentí muchísimo miedo y vergüenza por cómo nos miraba la gente. Pensé que me estaba haciendo un berrinche para que le comprara un dulce, así que me enojé, lo regañé y lo saqué a la fuerza. Llegamos a casa exhaustos y llorando los dos. No sé cómo quitarle esa maña."
+                            "Hola a todos. Mi hijo de 4 años recién fue diagnosticado con TEA leve. En el jardín me dicen que necesita una sombra o tutor de apoyo pero no sé por dónde empezar con los trámites ni cómo manejarlo emocionalmente con la familia. ¿Alguien ha pasado por esto que me pueda guiar?"
                         </p>
                     </div>
                     <div class="post-respuesta-box">
@@ -419,7 +426,7 @@
                             <span class="check-icon">✓</span> <span id="c1-badge">Respuesta Validada por la Comunidad (+142 confirmaciones)</span>
                         </div>
                         <p id="c1-a" class="respuesta-text">
-                            "Uff, te entiendo perfectamente porque a mí me pasó exactamente lo mismo al principio y también sentí muchísima vergüenza, pero créeme que no es una maña ni un berrinche, sino que el pobre se saturó con tanta luz, ruido y gente. Lo que a mí me sirvió para que no me vuelva a pasar fue empezar a hacer compras cortas a horas donde no hay casi nadie y llevarlo siempre con sus audífonos para el ruido o su juguete favorito para distraerlo; pero si de verdad le da la crisis ahí mismo, lo mejor que puedes hacer es olvidarte de la gente que mira feo, no perder el control regañándolo porque en ese momento ni te escucha, y simplemente agarrarlo con amor, llevarlo al auto o a un sitio solo y quedarte a su lado abrazándolo o acompañándolo en silencio hasta que se le pase el colapso."
+                            "Tranquila, el primer paso siempre es el más abrumador. Te recomiendo solicitar en el colegio el informe psicopedagógico y acercarte a la dirección de educación local para averiguar los convenios de integración PIE o equivalentes. No estás sola en este camino."
                         </p>
                     </div>
                 </article>
@@ -428,14 +435,14 @@
                 <article class="foro-post-card-pro">
                     <div class="post-pregunta-box">
                         <div class="user-meta-pro">
-                            <div class="avatar-circle red-avatar">A2</div>
+                            <div class="avatar-circle blue-avatar">A2</div>
                             <div>
-                                <strong id="c2-user" class="username">Cuidador Anon_3190</strong>
-                                <span id="c2-tag" class="post-time-tag">Caso 2: Regulación y aleteo en la sala de espera médica</span>
+                                <strong id="c2-user" class="username">Cuidador Anon_3081</strong>
+                                <span id="c2-tag" class="post-time-tag">Caso 2: Adaptaciones curriculares</span>
                             </div>
                         </div>
                         <p id="c2-q" class="post-text">
-                            "Le tocó vacuna a mi hijo de 5 años. En la sala de espera empezó a caminar en círculos y a aletear muy fuerte con las manos. Me dio miedo que la gente pensara que está mal o que se saliera de control, así que le agarré las manos con fuerza y le dije que se quedara quieto. Se puso rígido, empezó a llorar desconsoladamente y no dejamos que el doctor lo revisara. ¿Cómo le quito esos movimientos tan raros?"
+                            "¿Cómo lograron que el colegio adapte las evaluaciones de sus hijos sin que se sientan excluidos?"
                         </p>
                     </div>
                     <div class="post-respuesta-box">
@@ -443,17 +450,17 @@
                             <span class="check-icon">✓</span> <span id="c2-badge">Respuesta Validada por la Comunidad (+98 confirmaciones)</span>
                         </div>
                         <p id="c2-a" class="respuesta-text">
-                            "Te entiendo el susto y la pena con los demás, pero agarrarle las manos es lo peor que podemos hacer porque ese aleteo es su forma de sacar todo el estrés y el miedo que siente de estar ahí. Lo que me enseñaron a mí para prevenir ese pánico antes de salir de casa es dibujarle en una hojita la secuencia de lo que va a pasar, tipo el auto, la sala de espera, el doctor y luego la casa, para que él ya sepa qué viene y no esté tan asustado; y ya estando en la sala de espera, de verdad no le frenes las manos ni te preocupes por lo que piense la gente, déjalo aletear tranquilo porque así es como su propio cuerpo se calma solo para poder entrar con el doctor."
+                            "En nuestro caso solicitamos evaluaciones orales o con pictogramas en lugar de extensas pruebas escritas. Es fundamental coordinar directamente con el equipo diferencial del colegio."
                         </p>
                     </div>
                 </article>
 
                 <!-- CATEGORÍA 2 -->
-                <div class="categoria-header-destacado cat-yellow">
-                    <span class="cat-icon">🟡</span>
+                <div class="categoria-header-destacado cat-orange">
+                    <span class="cat-icon">🟠</span>
                     <div>
-                        <h4 id="cat2-title">Categoría 2: Comunicación No Verbal y Frustración</h4>
-                        <span id="cat2-sub" class="cat-sub">Estrategias de comunicación alternativa y prevención de autoagresión</span>
+                        <h4 id="cat2-title">Categoría 2: Manejo de Crisis y Comunicación No Verbal</h4>
+                        <span id="cat2-sub" class="cat-sub">Pautas de autorregulación y pictogramas de contención</span>
                     </div>
                 </div>
 
@@ -461,14 +468,14 @@
                 <article class="foro-post-card-pro">
                     <div class="post-pregunta-box">
                         <div class="user-meta-pro">
-                            <div class="avatar-circle yellow-avatar">A3</div>
+                            <div class="avatar-circle orange-avatar">A3</div>
                             <div>
-                                <strong id="c3-user" class="username">Cuidador Anon_1042</strong>
-                                <span id="c3-tag" class="post-time-tag">Caso 3: Autoagresión por falta de comunicación</span>
+                                <strong id="c3-user" class="username">Cuidador Anon_5590</strong>
+                                <span id="c3-tag" class="post-time-tag">Caso 3: Desregulación severa y autolesiones</span>
                             </div>
                         </div>
                         <p id="c3-q" class="post-text">
-                            "Estoy desesperada. Mi hija de 4 años no habla y lleva toda la tarde mordiéndose la mano y empujándome hacia la cocina. Me da miedo que se haga daño o que esto se vuelva su forma de reaccionar siempre. Intenté adivinar qué quería dándole comida, pero se frustró más y me lanzó un vaso. Siento que no logro conectar con ella y me da pánico que nunca podamos comunicarnos."
+                            "Mi hija de 3 años cuando no le entiendo lo que quiere empieza a morderse las manitos y gritar. Me da desesperación no saber qué hacer en ese instante."
                         </p>
                     </div>
                     <div class="post-respuesta-box">
@@ -513,6 +520,7 @@
                         </p>
                     </div>
                 </article>
+
             </section>
 
             <!-- PIE DE DOCUMENTACIÓN TÉCNICA Y COPYRIGHT -->
@@ -527,6 +535,7 @@
             </footer>
 
             <div class="scroll-spacing"></div>
+
         </main>
 
     </div>
