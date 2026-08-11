@@ -16,9 +16,9 @@ const traducciones = {
     'hero-badge': { es: 'BIENVENIDOS: UN ESPACIO DISEÑADO PARA TI', en: 'WELCOME: A SPACE DESIGNED FOR YOU' },
     'hero-title': { es: 'Amar, Respetar e Incluir', en: 'Love, Respect and Include' },
     'hero-subtitle': { es: 'AMAR, RESPETAR E INCLUIR • UN ENFOQUE HUMANO Y TECNOLÓGICO', en: 'LOVE, RESPECT AND INCLUDE • A HUMAN & TECHNOLOGICAL APPROACH' },
-    'hero-description': { 
-        es: 'NeuroMundo es un ecosistema digital e inmersivo orientado a acompañar a familias de personas neurodivergentes. Combina contención comunitaria, tecnología predictiva y experiencias de simulador para reducir el colapso, el estigma y la sobrecarga emocional.', 
-        en: 'NeuroMundo is a digital and immersive ecosystem designed to support families of neurodivergent individuals. It combines community support, predictive technology, and simulation experiences to reduce burnout, stigma, and emotional overload.' 
+    'hero-description': {
+        es: 'NeuroMundo es un ecosistema digital e inmersivo orientado a acompañar a familias de personas neurodivergentes. Combina contención comunitaria, tecnología predictiva y experiencias de simulador para reducir el colapso, el estigma y la sobrecarga emocional.',
+        en: 'NeuroMundo is a digital and immersive ecosystem designed to support families of neurodivergent individuals. It combines community support, predictive technology, and simulation experiences to reduce burnout, stigma, and emotional overload.'
     },
 
     // --- FICHA TÉCNICA E INDICADORES ---
@@ -96,7 +96,7 @@ const traducciones = {
     'ods-badge': { es: 'SOSTENIBILIDAD Y RESULTADOS', en: 'SUSTAINABILITY AND RESULTS' },
     'ods-titulo': { es: '2. Matriz Gráfica de Impacto ODS', en: '2. SDG Impact Matrix' },
     'ods-header-banner': { es: 'MATRIZ DE IMPACTO EN OBJETIVOS DE DESARROLLO SOSTENIBLE (ONU)', en: 'IMPACT MATRIX ON UN SUSTAINABLE DEVELOPMENT GOALS' },
-    
+
     'ods3-title': { es: 'Salud y Bienestar', en: 'Good Health & Well-being' },
     'ods3-problem': { es: '<strong>Problema:</strong> 72.5% de madres presentan depresión y 80.2% ansiedad por agotamiento y sobrecarga.', en: '<strong>Problem:</strong> 72.5% of mothers face depression and 80.2% anxiety due to burnout.' },
     'ods3-impact': { es: '<strong>Impacto:</strong> Reducción del 40% del estrés familiar mediante corregulación e intervención preventiva en salud mental.', en: '<strong>Impact:</strong> 40% family stress reduction through co-regulation and preventive mental health intervention.' },
@@ -136,17 +136,17 @@ const traducciones = {
     // --- BLOQUE 4: FORO / CASOS ---
     'foro-badge': { es: 'INTERFAZ DE COMUNIDAD', en: 'COMMUNITY INTERFACE' },
     'foro-titulo': { es: '4. Banco de Casos Reales Integrados en la Plataforma', en: '4. Real Community Cases Integrated into Platform' },
-    
+
     'cat1-title': { es: 'Categoría 1: Crisis e Sobrecarga Sensorial en Espacios Públicos', en: 'Category 1: Public Sensory Overload & Meltdowns' },
     'cat1-sub': { es: 'Casos relacionados con desregulación en supermercados y salas médicas', en: 'Cases related to dysregulation in grocery stores and medical waiting rooms' },
 
-    'c1-user': { es: 'Cuidador Anon_8241', en: 'Caregiver Anon_8241' },
+    'c1-user': { es: 'Cuidador Anon_8241', en: 'Caregiver Unknown_8241' },
     'c1-tag': { es: 'Caso 1: El colapso en el supermercado', en: 'Case 1: Meltdown at the grocery store' },
     'c1-q': { es: '"Hola. Hoy fuimos al supermercado y mi hijo de 6 años se tiró al suelo a gritar y patear cerca de las cajas. Sentí muchísimo miedo y vergüenza por cómo nos miraba la gente. Pensé que me estaba haciendo un berrinche para que le comprara un dulce, así que me enojé, lo regañé y lo saqué a la fuerza. Llegamos a casa exhaustos y llorando los dos. No sé cómo quitarle esa maña."', en: '"Hi. Today at the supermarket my 6yo son threw himself on the floor screaming near checkout. I felt terrified and embarrassed by stares. Thought it was a tantrum for candy, got angry, scolded him, and dragged him out. We both ended up crying at home. How do I stop this habit?"' },
     'c1-badge': { es: 'Respuesta Validada por la Comunidad (+142 confirmaciones)', en: 'Community Validated Answer (+142 confirmations)' },
     'c1-a': { es: '"Uff, te entiendo perfectamente porque a mí me pasó exactamente lo mismo al principio y también sentí muchísima vergüenza, pero créeme que no es una maña ni un berrinche, sino que el pobre se saturó con tanta luz, ruido y gente. Lo que a mí me sirvió para que no me vuelva a pasar fue empezar a hacer compras cortas a horas donde no hay casi nadie y llevarlo siempre con sus audífonos para el ruido o su juguete favorito para distraerlo; pero si de verdad le da la crisis ahí mismo, lo mejor que puedes hacer es olvidarte de la gente que mira feo, no perder el control regañándolo porque en ese momento ni te escucha, y simplemente agarrarlo con amor, llevarlo al auto o a un sitio solo y quedarte a su lado abrazándolo o acompañándolo en silencio hasta que se le pase el colapso."', en: '"I completely feel you. I experienced the same shame early on. Trust me, it is not a tantrum; he was overwhelmed by lights, noise, and crowds. Short shopping trips during quiet hours with noise-canceling headphones helped us immensely. If a meltdown happens, ignore stares, stay calm, move to a quiet spot, and hold him lovingly until it passes."' },
 
-    'c2-user': { es: 'Cuidador Anon_3190', en: 'Caregiver Anon_3190' },
+    'c2-user': { es: 'Cuidador Anon_3190', en: 'Caregiver Unknown_3190' },
     'c2-tag': { es: 'Caso 2: Regulación y aleteo en la sala de espera médica', en: 'Case 2: Stimming in the medical waiting room' },
     'c2-q': { es: '"Le tocó vacuna a mi hijo de 5 años. En la sala de espera empezó a caminar en círculos y a aletear muy fuerte con las manos. Me dio miedo que la gente pensara que está mal o que se saliera de control, así que le agarré las manos con fuerza y le dije que se quedara quieto. Se puso rígido, empezó a llorar desconsoladamente y no dejamos que el doctor lo revisara. ¿Cómo le quito esos movimientos tan raros?"', en: '"My 5yo had a vaccine appointment. In the waiting room he walked in circles and flapped his hands hard. Fearing judgment, I grabbed his hands firmly and told him to stop. He went rigid and cried hysterically. How do I stop these strange movements?"' },
     'c2-badge': { es: 'Respuesta Validada por la Comunidad (+98 confirmaciones)', en: 'Community Validated Answer (+98 confirmations)' },
@@ -155,7 +155,7 @@ const traducciones = {
     'cat2-title': { es: 'Categoría 2: Comunicación No Verbal y Frustración', en: 'Category 2: Non-Verbal Communication & Frustration' },
     'cat2-sub': { es: 'Estrategias de comunicación alternativa y prevención de autoagresión', en: 'Alternative communication techniques and self-harm prevention' },
 
-    'c3-user': { es: 'Cuidador Anon_1042', en: 'Caregiver Anon_1042' },
+    'c3-user': { es: 'Cuidador Anon_1042', en: 'Caregiver Unknown_1042' },
     'c3-tag': { es: 'Caso 3: Autoagresión por falta de comunicación', en: 'Case 3: Self-injurious behavior from communication gaps' },
     'c3-q': { es: '"Estoy desesperada. Mi hija de 4 años no habla y lleva toda la tarde mordiéndose la mano y empujándome hacia la cocina. Me da miedo que se haga daño o que esto se vuelva su forma de reaccionar siempre. Intenté adivinar qué quería dándole comida, pero se frustró más y me lanzó un vaso. Siento que no logro conectar con ella y me da pánico que nunca podamos comunicarnos."', en: '"Desperate mom here. Non-verbal 4yo has spent the afternoon biting her hand and pushing me towards the kitchen. I tried guessing with food, but she got frustrated and threw a cup. I panic thinking we will never communicate."' },
     'c3-badge': { es: 'Respuesta Validada por la Comunidad (+210 confirmaciones)', en: 'Community Validated Answer (+210 confirmations)' },
@@ -164,7 +164,7 @@ const traducciones = {
     'cat3-title': { es: 'Categoría 3: Estrategias Sensoriales y Rutinas Diarias', en: 'Category 3: Sensory Strategies & Daily Routines' },
     'cat3-sub': { es: 'Avances graduales en alimentación, sueño y límites tecnológicos', en: 'Gradual progress in eating, sleep, and technology boundaries' },
 
-    'c4-user': { es: 'Cuidador Anon_7512', en: 'Caregiver Anon_7512' },
+    'c4-user': { es: 'Cuidador Anon_7512', en: 'Caregiver Unknown_7512' },
     'c4-tag': { es: 'Caso 4: Selectividad alimentaria y avance gradual', en: 'Case 4: Selective eating and gradual progress' },
     'c4-q': { es: '"Hola a todos. Les cuento mi caso por si a alguien le sirve. Mi hijo tiene 8 años y su alimentación es súper limitada. Come pan, fideos, yogurt y manzana. Si intento darle algo nuevo hace arcadas y no hay caso. La nutricionista nos recomendó no forzarlo y trabajar primero la parte sensorial. Empezamos a \'jugar\' con la comida sin presión: tocar fideos crudos, oler verduras, pintar con yogurt. La idea era que se familiarizara. Llevamos un mes así. Ayer por primera vez probó una papa frita solo. No come variado aún, pero al menos ya no hay llanto en la mesa. Para nosotros eso ya es un avance enorme."', en: '"Sharing our win: 8yo son has a very selective diet (bread, pasta, yogurt, apples). New foods caused gagging. Nutritionist advised sensory play without pressure: touching raw pasta, smelling veggies, yogurt painting. After a month, he tried a french fry on his own! No more tears at dinner."' },
     'c4-badge': { es: 'Respuesta Validada por la Comunidad (+165 confirmaciones)', en: 'Community Validated Answer (+165 confirmations)' },
@@ -209,11 +209,33 @@ function actualizarTextosDOM() {
 document.addEventListener('DOMContentLoaded', () => {
     // Comprobar si hay un idioma guardado previamente
     const idiomaGuardado = localStorage.getItem('neu_idioma_preferido');
-    
+
     if (idiomaGuardado && (idiomaGuardado === 'es' || idiomaGuardado === 'en')) {
         idioma = idiomaGuardado;
     }
 
     // Aplicar los textos iniciales correspondientes
     actualizarTextosDOM();
+});
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const botonesToggle = document.querySelectorAll('.btn-toggle-respuesta');
+
+    botonesToggle.forEach(boton => {
+        boton.addEventListener('click', () => {
+            const respuestaBox = boton.nextElementSibling;
+            const textoBtn = boton.querySelector('.texto-btn');
+
+            boton.classList.toggle('oculto');
+            respuestaBox.classList.toggle('cerrado');
+
+            if (respuestaBox.classList.contains('cerrado')) {
+                textoBtn.textContent = '✓ Ver respuesta validada (+142 confirmaciones)';
+            } else {
+                textoBtn.textContent = '✓ Ocultar respuesta validada (+142 confirmaciones)';
+            }
+        });
+    });
 });

@@ -5,64 +5,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap');
 
 :root {
-    /* Fondos Base */
-    --bg-main: #F4F4F2;         /* Gris hormigón / marfil industrial */
-    --card-bg: #FFFFFF;         /* Blanco puro para contraste de datos */
-    --bg-card: #FFFFFF;         /* Alias unificado */
-    --border-color: #D1D5DB;    /* Borde metálico suave */
+    /* Fondos Base - Cambiados a los tonos de la app */
+    --bg-main: #F3F7FF;         /* Azul ultra claro de fondo general */
+    --card-bg: #FFFFFF;         /* Blanco puro para las tarjetas interiores */
+    --bg-card: #FFFFFF;         
+    --border-color: #E2E8F0;    /* Bordes mucho más suaves y limpios */
 
-    /* Colores Acento Industriales */
-    --accent-primary: #3B5A5C;   /* Verde azulejo / acero templado */
-    --accent-primary-hover: #2C4446;
-    --accent-dark: #1F2937;      /* Pizarra oscura / hierro */
-    --accent-badge-bg: #EAECE9;  /* Fondo neutro para elementos destacados */
-    --text-main: #111827;        /* Texto principal de alta legibilidad */
-    --text-dark: #1e293b;
-    --text-medium: #475569;
-    --text-muted: #4B5563;       /* Texto secundario */
+    /* Colores Acento Claves de la Imagen */
+    --accent-primary: #0A53CD;   /* Azul eléctrico vibrante del banner y barra inferior */
+    --accent-primary-hover: #073E9B;
+    --accent-dark: #002266;      /* Azul marino muy oscuro para textos de títulos */
+    --accent-badge-bg: #FFE5EC;  
+    
+    /* Textos Principales */
+    --text-main: #1E293B;        /* Gris oscuro de alta legibilidad para cuerpo */
+    --text-dark: #0F172A;        /* Casi negro para contrastes fuertes */
+    --text-medium: #475569;      /* Gris medio para descripciones (ej: "Selecciona una categoría...") */
+    --text-muted: #64748B;       /* Gris claro para marcas de agua o deshabilitados */
 
-    /* SECCIONES: Fondos y Bordes Distintivos Suaves */
-    --sec-hero-bg: #EAECE9;      
-    --sec-hero-border: #8A9A86;
-    --sec-metrics-bg: #EBF1F5;   
-    --sec-metrics-border: #7B92A8;
-    --sec-pages-bg: #F5EFEA;     
-    --sec-pages-border: #C4A482;
-    --sec-ods-bg: #EAF2ED;       
-    --sec-ods-border: #72A082;
-    --sec-forum-bg: #F3F3F5;     
-    --sec-forum-border: #9EA3B0;
+    /* El Amarillo/Dorado Característico de la App (Botón "Vista PC" e "Inicio") */
+    --accent-yellow: #E9A923;    /* Amarillo dorado vibrante */
+    --accent-yellow-hover: #D09319;
+    --accent-yellow-bg: #FFF4D9; /* Fondo suave para botones activos */
 
-    /* Categorías - Colores e Indicadores */
-    --accent-yellow: #B45309;    
-    --accent-green: #047857;     
-    --accent-purple: #6D28D9;    
-    --accent-blue: #1D4ED8;      
-    --accent-red: #B91C1C;       
+    /* SECCIONES: Adaptadas a la estética limpia y colorida de la imagen */
+    --sec-hero-bg: linear-gradient(135deg, #0A43A4 0%, #0A65F3 100%); /* Degradado azul del banner */      
+    --sec-hero-border: transparent;
+    --sec-metrics-bg: #E0EBFF;   
+    --sec-metrics-border: #B3D1FF;
+    --sec-pages-bg: #FFFFFF;     
+    --sec-pages-border: #E2E8F0;
+    --sec-ods-bg: #E6F7ED;       
+    --sec-ods-border: #A3E635;
+    --sec-forum-bg: #F8FAFC;     
+    --sec-forum-border: #E2E8F0;
 
-    --cat-blue-primary: #2563eb;
-    --cat-blue-dark: #1d4ed8;
-    --cat-blue-bg: #eff6ff;
-    --cat-blue-border: #bfdbfe;
+    /* Categorías y Estados Alerta */
+    --accent-green: #22C55E;     
+    --accent-purple: #A855F7;    
+    --accent-blue: #3B82F6;      
+    --accent-red: #EF4444;       
 
-    --cat-orange-primary: #f97316;
-    --cat-orange-dark: #c2410c;
-    --cat-orange-bg: #fff7ed;
-    --cat-orange-border: #fed7aa;
-
-    --cat-green-primary: #10b981;
-    --cat-green-dark: #047857;
-    --cat-green-bg: #ecfdf5;
-    --cat-green-border: #a7f3d0;
-
-    /* Tipografía */
-    --font-heading: 'Space Grotesk', system-ui, sans-serif;
+    /* Tipografía (Mantenemos fuentes legibles y modernas) */
+    --font-heading: 'Inter', system-ui, sans-serif;
     --font-body: 'Inter', system-ui, sans-serif;
 
-    /* Sombras y Bordes */
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-    --shadow-md: 0 4px 12px -2px rgba(0,0,0,0.08), 0 2px 6px -1px rgba(0,0,0,0.04);
-    --radius-main: 16px;
+    /* Sombras y Bordes (Bordes más redondeados como los de la imagen) */
+    --shadow-sm: 0 2px 8px rgba(10, 83, 205, 0.04);
+    --shadow-md: 0 10px 25px -5px rgba(10, 83, 205, 0.08), 0 8px 16px -6px rgba(10, 83, 205, 0.04);
+    --radius-main: 24px;         /* Esquinas bien curvadas como el buscador y el banner */
 }
 
 /* ==========================================================================
@@ -89,7 +80,7 @@ body {
 }
 
 /* ==========================================================================
-   LAYOUT Y ESTRUCTURA GENERAL
+    LAYOUT Y ESTRUCTURA GENERAL
    ========================================================================== */
 
 /* Se aplica el ancho más extenso (1080px) a los contenedores principales del contenido */
@@ -734,35 +725,45 @@ body {
 }
 
 /* Variantes de Color de Categoría */
-.cat-red    { background: #FEE2E2; border-left: 5px solid var(--accent-red); color: #991B1B; }
-.cat-yellow { background: #FEF3C7; border-left: 5px solid var(--accent-yellow); color: #92400E; }
-.cat-green  { background: #D1FAE5; border-left: 5px solid var(--accent-green); color: #065F46; }
+/* Cambiados a los tonos exactos de los botones de la imagen ("Inicio", "Pictogramas", "Regu") */
+.cat-red    { background: #FEE2E2; border: none; border-radius: 50px; color: #991B1B; font-weight: bold; }
+.cat-yellow { background: #FFD43A; border: none; border-radius: 50px; color: #1E293B; font-weight: bold; } /* Como el botón amarillo de "Inicio" */
+.cat-green  { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 50px; color: #1E293B; font-weight: bold; } /* Como el botón "Pictogramas" */
 
+/* Cabeceras destacadas: ahora usan el degradado azul del banner superior */
 .categoria-header-destacado.cat-blue {
-    border-left: 6px solid var(--cat-blue-primary);
-    background: linear-gradient(135deg, var(--cat-blue-bg) 0%, #ffffff 100%);
+    border-left: none;
+    border-radius: var(--radius-main);
+    background: linear-gradient(135deg, #0A43A4 0%, #0A65F3 100%);
+    padding: 16px;
 }
-.categoria-header-destacado.cat-blue h4 { color: var(--cat-blue-dark); font-size: 1.15rem; font-weight: 700; }
+.categoria-header-destacado.cat-blue h4 { color: #FFFFFF; font-size: 1.15rem; font-weight: 700; }
 
 .categoria-header-destacado.cat-orange {
-    border-left: 6px solid var(--cat-orange-primary);
-    background: linear-gradient(135deg, var(--cat-orange-bg) 0%, #ffffff 100%);
+    border-left: none;
+    border-radius: var(--radius-main);
+    background: #FFD43A; /* Tono dorado del botón Vista PC */
+    padding: 16px;
 }
-.categoria-header-destacado.cat-orange h4 { color: var(--cat-orange-dark); font-size: 1.15rem; font-weight: 700; }
+.categoria-header-destacado.cat-orange h4 { color: #002266; font-size: 1.15rem; font-weight: 700; }
 
 .categoria-header-destacado.cat-green {
-    border-left: 6px solid var(--cat-green-primary);
-    background: linear-gradient(135deg, var(--cat-green-bg) 0%, #ffffff 100%);
+    border-left: none;
+    border-radius: var(--radius-main);
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    padding: 16px;
 }
-.categoria-header-destacado.cat-green h4 { color: var(--cat-green-dark); font-size: 1.15rem; font-weight: 700; }
+.categoria-header-destacado.cat-green h4 { color: #0A53CD; font-size: 1.15rem; font-weight: 700; }
 
 /* Tarjetas de Foro (Post Cards) */
+/* Ahora usan la sombra suave azulada y esquinas más redondeadas de la tarjeta "Vista General" */
 .foro-post-card, 
 .foro-post-card-pro {
     background: var(--card-bg);
-    border-radius: var(--radius-main);
-    box-shadow: var(--shadow-md);
-    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 24px; /* Bordes redondeados más amplios como la app */
+    box-shadow: 0 10px 25px -5px rgba(10, 83, 205, 0.06), 0 8px 16px -6px rgba(10, 83, 205, 0.04);
+    border: 1px solid #EFF6FF;
     overflow: hidden;
     margin-bottom: 24px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -770,12 +771,12 @@ body {
 
 .foro-post-card-pro:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 24px rgba(10, 83, 205, 0.12);
 }
 
 .post-pregunta, .post-pregunta-box {
     padding: 24px;
-    border-bottom: 1px solid #f1f5f9;
+    border-bottom: 1px solid #EFF6FF;
 }
 
 .user-meta, .user-meta-pro {
@@ -785,6 +786,7 @@ body {
     margin-bottom: 16px;
 }
 
+/* Avatars: Actualizados con sombras modernas basadas en el azul y amarillo de la app */
 .avatar-circle {
     width: 44px;
     height: 44px;
@@ -799,38 +801,40 @@ body {
     flex-shrink: 0;
 }
 
-.red-avatar    { background: var(--accent-red); }
-.yellow-avatar { background: var(--accent-yellow); }
-.green-avatar  { background: var(--accent-green); }
+.red-avatar    { background: #EF4444; box-shadow: 0 4px 10px rgba(239, 68, 68, 0.2); }
+.yellow-avatar { background: #FFD43A; color: #002266; box-shadow: 0 4px 10px rgba(255, 212, 58, 0.3); }
+.green-avatar  { background: #22C55E; box-shadow: 0 4px 10px rgba(34, 197, 94, 0.2); }
 
-.blue-avatar { background-color: var(--cat-blue-primary); box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3); }
-.orange-avatar { background-color: var(--cat-orange-primary); box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3); }
+.blue-avatar   { background-color: #0A53CD; box-shadow: 0 4px 10px rgba(10, 83, 205, 0.3); }
+.orange-avatar { background-color: #F97316; box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3); }
 
 .username, .user-meta strong {
     display: block;
     font-size: 1rem;
-    color: var(--accent-dark);
-    font-weight: 600;
+    color: #002266; /* Azul marino ultra oscuro para los nombres de usuario */
+    font-weight: 700;
 }
 
 .post-time, .post-time-tag {
     display: block;
     font-size: 0.82rem;
-    color: var(--text-muted);
+    color: #64748B; /* Gris azulado limpio */
     margin-top: 1px;
 }
 
 .post-body, .post-text {
     font-size: 0.98rem;
-    color: var(--text-medium);
+    color: #475569; /* Gris oscuro suave para el texto del post, igual al de la app */
     line-height: 1.65;
 }
 
 /* Respuesta Validada */
+/* Cambiado de un gris genérico a un tono celeste-azul purificado de fondo */
 .post-respuesta, .post-respuesta-box {
     padding: 22px 24px;
-    background-color: #f8fafc;
+    background-color: #F3F7FF; 
 }
+
 
 .valida-badge, .valida-badge-pro {
     display: inline-flex;
@@ -946,4 +950,293 @@ body {
     .post-pregunta-box, .post-respuesta-box { padding: 16px; }
     .categoria-header-destacado { padding: 14px 16px; }
     .foro-title { font-size: 1.4rem; }
+}sss
+/* --- VARIABLES DE COLOR (Extraídas de tu Landing Page) --- */
+:root {
+    --azul-marino: #001F60;    /* Color de tus títulos principales */
+    --azul-electrico: #0046C7;  /* Color del botón LANGUAGE y acentos */
+    --azul-celeste: #EBF2FF;    /* Fondo suave del bloque secundario */
+    --texto-cuerpo: #334155;    /* Gris oscuro profesional */
+    --blanco: #FFFFFF;
+    --fondo-gris: #F8FAFC;     
+    
+    /* Colores de tus indicadores (Detalles de marca) */
+    --ind-azul: #0070F3;
+    --ind-verde: #00B474;
+    --ind-naranja: #FF9900;
+    --ind-violeta: #7928CA;
+}
+
+/* --- CONTENEDOR DEL BANNER --- */
+.hero-banner {
+    background-color: var(--blanco);
+    min-height: 480px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    padding: 40px 8%;
+    gap: 40px;
+    border-bottom: 4px solid var(--azul-marino);
+    position: relative;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- COLUMNA IZQUIERDA: CONTENIDO --- */
+.hero-content {
+    z-index: 2;
+}
+
+.hero-tagline {
+    color: var(--azul-electrico);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.hero-title {
+    color: var(--azul-marino);
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin: 0 0 20px 0;
+    letter-spacing: -0.5px;
+}
+
+.hero-highlight-box {
+    background-color: var(--azul-celeste);
+    border-left: 5px solid var(--azul-electrico);
+    padding: 12px 20px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 24px;
+}
+
+.hero-highlight-text {
+    color: var(--azul-marino);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+.hero-description {
+    color: var(--texto-cuerpo);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0 0 30px 0;
+    max-width: 620px;
+}
+
+/* Botones de Acción */
+.hero-actions {
+    display: flex;
+    gap: 16px;
+}
+
+.btn-primary {
+    background-color: var(--azul-marino);
+    color: var(--blanco);
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 31, 96, 0.15);
+}
+
+.btn-primary:hover {
+    background-color: var(--azul-electrico);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--azul-marino);
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid var(--azul-marino);
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--azul-celeste);
+}
+
+/* --- COLUMNA DERECHA: DISEÑO VISUAL --- */
+.hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.abstract-graphic {
+    width: 300px;
+    height: 300px;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    background: linear-gradient(135deg, var(--ind-azul), var(--ind-violeta));
+    animation: morphing 10s infinite ease-in-out;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.tech-badge {
+    position: absolute;
+    background: var(--blanco);
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border-top: 3px solid var(--ind-verde);
+    bottom: 40px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--azul-marino);
+}
+
+@keyframes morphing {
+    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+    100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 968px) {
+    .hero-banner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 60px 5%;
+    }
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero-actions {
+        justify-content: center;
+    }
+    .hero-highlight-box {
+        border-left: none;
+        border-top: 4px solid var(--azul-electrico);
+        border-radius: 8px;
+    }
+    .hero-visual {
+        display: none; /* Oculta el gráfico animado en pantallas móviles */
+    }
+}
+
+
+
+
+
+
+/* ==========================================================================
+   DESPLEGABLE DE RESPUESTAS CON ANIMACIÓN FLUIDA
+   ========================================================================== */
+
+/* Botón estilo limpio */
+.btn-desplegar-respuestas {
+    background: none;
+    border: none;
+    color: var(--accent-primary, #3B5A5C);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Rotación suave de la flecha indicador */
+.btn-desplegar-respuestas .flecha {
+    display: inline-block;
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+/* Panel oculto por defecto */
+.panel-respuestas {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(-8px);
+    
+    /* Animación fluida de apertura con ease */
+    transition: max-height 0.4s ease, 
+                opacity 0.3s ease, 
+                transform 0.3s ease;
+}
+
+/* ESTADO ACTIVO: Se despliega suavemente */
+.panel-respuestas.desplegado {
+    max-height: 500px; /* Altura máxima para permitir que fluya el contenido */
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 12px;
+}
+
+/* Rotación de la flecha al desplegar */
+.btn-desplegar-respuestas.activo .flecha {
+    transform: rotate(180deg);
+}
+
+/* Estilo del botón interactivo desplegable */
+.btn-toggle-respuesta {
+  width: 100%;
+  background-color: #f8fafc;
+  border: none;
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+  padding: 12px 24px;
+  text-align: left;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--cat-green-dark, #047857);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.btn-toggle-respuesta:hover {
+  background-color: #f1f5f9;
+}
+
+.btn-toggle-respuesta .flecha-icon {
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+/* Rotación de la flecha cuando se oculta */
+.btn-toggle-respuesta.oculto .flecha-icon {
+  transform: rotate(-90deg);
+}
+
+/* Transición fluida del panel de respuesta */
+.post-respuesta-box {
+  max-height: 1000px;
+  opacity: 1;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+}
+
+/* Estado oculto */
+.post-respuesta-box.cerrado {
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
