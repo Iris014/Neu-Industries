@@ -176,65 +176,70 @@ const traducciones = {
 };
 
 /**
- * Función principal para alternar entre idiomas (Español e Inglés)
+ * Cambia dinámicamente el Modo Sensorial en el DOM
+ * @param {string} modo - 'estandar', 'calm' o 'high-contrast'
  */
-function alternarIdioma() {
-    // Alternar la variable global
-    idioma = (idioma === 'es') ? 'en' : 'es';
+function cambiarModoSensorial(modo) {
+    document.body.setAttribute('data-sensory', modo);
+    localStorage.setItem('neu_modo_sensorial', modo);
 
-    // Actualizar los elementos en el DOM según el idioma actual
-    actualizarTextosDOM();
+    // Actualizar estados visuales de los botones del selector
+    const btnStd = document.getElementById('btn-sensory-std');
+    const btnCalm = document.getElementById('btn-sensory-calm');
+    const btnHC = document.getElementById('btn-sensory-hc');
 
-    // Guardar preferencia en el almacenamiento local del navegador
-    localStorage.setItem('neu_idioma_preferido', idioma);
+    if (btnStd) btnStd.classList.toggle('active', modo === 'estandar');
+    if (btnCalm) btnCalm.classList.toggle('active', modo === 'calm');
+    if (btnHC) btnHC.classList.toggle('active', modo === 'high-contrast');
 }
 
 /**
- * Recorre el objeto de traducciones y actualiza la interfaz
+ * Alterna el idioma actual (Español / Inglés)
  */
+function alternarIdioma() {
+    idioma = (idioma === 'es') ? 'en' : 'es';
+    actualizarTextosDOM();
+    localStorage.setItem('neu_idioma_preferido', idioma);
+}
+
 function actualizarTextosDOM() {
     Object.keys(traducciones).forEach(id => {
         const elemento = document.getElementById(id);
         if (elemento && traducciones[id][idioma]) {
-            // Si el texto incluye etiquetas HTML (como <strong> o 📊), usamos innerHTML
             elemento.innerHTML = traducciones[id][idioma];
         }
     });
-
-    // Actualizar el atributo lang global de la página
     document.documentElement.lang = idioma;
 }
 
-// Inicialización cuando el documento está completamente cargado
 document.addEventListener('DOMContentLoaded', () => {
-    // Comprobar si hay un idioma guardado previamente
+    // Cargar preferencia de idioma
     const idiomaGuardado = localStorage.getItem('neu_idioma_preferido');
-
     if (idiomaGuardado && (idiomaGuardado === 'es' || idiomaGuardado === 'en')) {
         idioma = idiomaGuardado;
     }
-
-    // Aplicar los textos iniciales correspondientes
     actualizarTextosDOM();
-});
 
+    // Cargar preferencia de modo sensorial
+    const modoGuardado = localStorage.getItem('neu_modo_sensorial');
+    if (modoGuardado) {
+        cambiarModoSensorial(modoGuardado);
+    }
 
-
-document.addEventListener('DOMContentLoaded', () => {
+    // Listener para acordeón de respuestas del foro
     const botonesToggle = document.querySelectorAll('.btn-toggle-respuesta');
-
     botonesToggle.forEach(boton => {
         boton.addEventListener('click', () => {
             const respuestaBox = boton.nextElementSibling;
             const textoBtn = boton.querySelector('.texto-btn');
 
             boton.classList.toggle('oculto');
-            respuestaBox.classList.toggle('cerrado');
+            if (respuestaBox) respuestaBox.classList.toggle('cerrado');
 
-            if (respuestaBox.classList.contains('cerrado')) {
-                textoBtn.textContent = '✓ Ver respuesta validada (+142 confirmaciones)';
+            if (respuestaBox && respuestaBox.classList.contains('cerrado')) {
+                if (textoBtn) textoBtn.textContent = '✓ Ver respuesta validada (+142 confirmaciones)';
             } else {
-                textoBtn.textContent = '✓ Ocultar respuesta validada (+142 confirmaciones)';
+                if (textoBtn) textoBtn.textContent = '✓ Ocultar respuesta validada (+142 confirmaciones)';
             }
         });
     });
