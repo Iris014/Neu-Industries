@@ -20,65 +20,210 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        :root {
-            --nm-primary: #3b66f5;
-            --nm-primary-rgb: 59, 102, 245;
-            --nm-primary-dark: #2242b5;
-            --nm-secondary: #0d9488;
-            --nm-secondary-rgb: 13, 148, 136;
-            --nm-accent-amber: #f59e0b;
-            --nm-accent-purple: #8b5cf6;
-            --nm-accent-emerald: #10b981;
-            --nm-accent-rose: #f43f5e;
-            
-            --nm-bg-main: #f8fafc;
-            --nm-card-bg: #ffffff;
-            --nm-text-main: #1e293b;
-            --nm-text-muted: #64748b;
-            --nm-border: #e2e8f0;
-            --nm-border-focus: #94a3b8;
-            --nm-soft-blue: #eef2ff;
-            --nm-soft-teal: #f0fdfa;
-            --nm-soft-amber: #fffbeb;
-            --nm-soft-purple: #f5f3ff;
-            --nm-soft-green: #f0fdf4;
-            
-            --nm-radius-lg: 1.25rem;
-            --nm-radius-md: 0.875rem;
-            --nm-radius-sm: 0.5rem;
-            
-            --nm-shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.04);
-            --nm-shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
-            --nm-shadow-lg: 0 12px 28px -4px rgba(15, 23, 42, 0.1), 0 4px 12px -2px rgba(15, 23, 42, 0.05);
-            --nm-shadow-hover: 0 20px 30px -10px rgba(59, 102, 245, 0.15);
-        }
+/* ==========================================================================
+   SISTEMA COMPLETO DE MODOS SENSORIALES (ACCESIBILIDAD MEJORADA)
+   ========================================================================== */
 
-        /* Sensory-Friendly Calming Theme */
-        [data-sensory="calm"] {
-            --nm-bg-main: #f4f6f8;
-            --nm-card-bg: #fafbfc;
-            --nm-text-main: #2d3748;
-            --nm-text-muted: #718096;
-            --nm-primary: #4a6fa5;
-            --nm-secondary: #4d908e;
-            --nm-soft-blue: #ebf1f8;
-            filter: contrast(0.95) saturate(0.9);
-        }
+/* 1. MODO ESTÁNDAR (Por defecto) */
+:root, body[data-sensory="estandar"] {
+    /* Paleta Principal */
+    --nm-primary: #3b66f5;
+    --nm-primary-dark: #2242b5;
+    --nm-secondary: #0d9488;
+    
+    /* Acentos */
+    --nm-accent-amber: #f59e0b;
+    --nm-accent-purple: #8b5cf6;
+    --nm-accent-emerald: #10b981;
+    
+    /* Fondos y Superficies */
+    --nm-bg-main: #f8fafc;
+    --nm-card-bg: #ffffff;
+    
+    /* Textos (Alto contraste para lectura normal) */
+    --nm-text-main: #1e293b;
+    --nm-text-muted: #475569; /* Oscurecido ligeramente para mayor legibilidad */
+    
+    /* Bordes y Sombras */
+    --nm-border: #e2e8f0;
+    --nm-soft-blue: #eef2ff;
+    --nm-soft-teal: #f0fdfa;
+    
+    filter: none;
+}
 
-        /* High Contrast Theme */
-        [data-sensory="high-contrast"] {
-            --nm-bg-main: #090d16;
-            --nm-card-bg: #131b2e;
-            --nm-text-main: #f8fafc;
-            --nm-text-muted: #cbd5e1;
-            --nm-border: #334155;
-            --nm-primary: #60a5fa;
-            --nm-soft-blue: #1e293b;
-            --nm-soft-teal: #132a2f;
-            --nm-soft-amber: #2e2612;
-            --nm-soft-purple: #261d3b;
-            --nm-soft-green: #142e20;
-        }
+/* 2. MODO CALMADO (Prevención de Sobrecarga Sensorial) */
+body[data-sensory="calm"] {
+    /* Fondos más cálidos y menos reflectantes (evita el blanco puro) */
+    --nm-bg-main: #f0f4f8;
+    --nm-card-bg: #f8f9fa;
+    
+    /* Textos con menor estridencia pero legibles */
+    --nm-text-main: #334155;
+    --nm-text-muted: #64748b;
+    
+    /* Colores primarios desaturados (tonos pastel apagados) */
+    --nm-primary: #5c7cfa;
+    --nm-secondary: #4d908e;
+    --nm-border: #cbd5e1;
+    --nm-soft-blue: #e2e8f0;
+    
+    /* Filtro general para reducir fatiga visual */
+    filter: contrast(0.95) saturate(0.85);
+}
+
+/* 3. MODO ALTO CONTRASTE (Oscuro / Legibilidad Extrema) */
+
+/* 1. Asegurar que las variables de alto contraste sean ultra legibles */
+body[data-sensory="high-contrast"] {
+    --nm-text-main: #ffffff;       /* Blanco puro para legibilidad máxima */
+    --nm-text-muted: #94a3b8;      /* Gris muy claro, en lugar de gris oscuro */
+    --text-dark: #ffffff;
+
+    /* Fondos profundos para evitar el deslumbramiento */
+    --nm-bg-main: #090d16;
+    --nm-card-bg: #131b2e;
+    
+    /* Colores de acento vibrantes para destacar la información */
+    --nm-primary: #60a5fa;
+    --nm-secondary: #2dd4bf;
+    --nm-accent-amber: #fbbf24;
+    --nm-accent-emerald: #34d399;
+    
+    /* Bordes visibles y fondos suaves adaptados */
+    --nm-border: #334155;
+    --nm-soft-blue: #1e293b;
+    --nm-soft-teal: #132a2f;
+}
+
+/* 2. Forzar el color del texto principal en todas las tarjetas */
+body[data-sensory="high-contrast"] .module-card,
+body[data-sensory="high-contrast"] .stat-card-modern,
+body[data-sensory="high-contrast"] .page-architecture-card,
+body[data-sensory="high-contrast"] .forum-card {
+    color: var(--nm-text-main) !important;
+}
+
+/* 3. Evitar que párrafos, listas y encabezados conserven el color negro por defecto del framework */
+body[data-sensory="high-contrast"] .module-card p,
+body[data-sensory="high-contrast"] .module-card span,
+body[data-sensory="high-contrast"] .module-card li,
+body[data-sensory="high-contrast"] .module-card h1,
+body[data-sensory="high-contrast"] .module-card h2,
+body[data-sensory="high-contrast"] .module-card h3,
+body[data-sensory="high-contrast"] .module-card h4,
+body[data-sensory="high-contrast"] .forum-card p,
+body[data-sensory="high-contrast"] .forum-card span,
+body[data-sensory="high-contrast"] .forum-card li {
+    color: var(--nm-text-main);
+}
+
+/* 4. Corregir clases utilitarias de texto secundario (ej. .text-muted de Bootstrap) */
+body[data-sensory="high-contrast"] .text-muted,
+body[data-sensory="high-contrast"] .small.text-muted,
+body[data-sensory="high-contrast"] [class*="text-secondary"] {
+    color: var(--nm-text-muted) !important;
+}
+
+/* Corregir clase utilitaria .text-dark de Bootstrap en Alto Contraste */
+body[data-sensory="high-contrast"] .text-dark {
+    color: var(--nm-text-main) !important; /* Forzará el color a blanco (#ffffff) */
+}
+
+/* Corregir fondos utilitarios claros que pueden tener texto blanco encima */
+body[data-sensory="high-contrast"] .bg-light {
+    background-color: var(--nm-soft-blue) !important;
+    border-color: var(--nm-border) !important;
+}
+
+/* Corregir el color de los iconos oscuros dentro de fondos claros */
+body[data-sensory="high-contrast"] .bg-warning.bg-opacity-10.text-dark {
+    color: var(--nm-text-main) !important;
+}
+
+
+/* ==========================================================================
+   REGLAS DE TRANSICIÓN Y ACCESIBILIDAD
+   ========================================================================== */
+body {
+    transition: background-color 0.4s ease, color 0.4s ease, filter 0.4s ease;
+}
+
+.module-card, .stat-card-modern, .page-architecture-card, .forum-card {
+    background-color: var(--nm-card-bg);
+    color: var(--nm-text-main);
+    border-color: var(--nm-border);
+    transition: all 0.3s ease;
+}
+
+/* Asegurar que los textos secundarios obedezcan a las variables */
+.text-muted, .small.text-muted {
+    color: var(--nm-text-muted) !important;
+}
+
+
+/* ==========================================================================
+   PARCHE DE VISIBILIDAD: ETIQUETAS RECTANGULARES Y FORO
+   ========================================================================== */
+
+/* 1. Declaración de variables de fondos suaves faltantes */
+:root {
+    --nm-soft-amber: #fffbeb;
+    --nm-soft-green: #f0fdf4;
+    --nm-soft-purple: #f5f3ff;
+}
+
+body[data-sensory="high-contrast"] {
+    --nm-soft-amber: #2a1f10;
+    --nm-soft-green: #08281e;
+    --nm-soft-purple: #1e132b;
+}
+
+/* 2. Garantizar legibilidad en la etiqueta de "Respuesta Validada" */
+.verified-solution-tag {
+    background-color: #d1fae5 !important;
+    border: 1px solid #a7f3d0 !important;
+}
+
+.verified-solution-tag,
+.verified-solution-tag span,
+.verified-solution-tag i {
+    color: #065f46 !important; /* Verde oscuro para alto contraste sobre fondo claro */
+}
+
+/* Adaptación de etiqueta verificada para Modo Alto Contraste */
+body[data-sensory="high-contrast"] .verified-solution-tag {
+    background-color: #064e3b !important;
+    border-color: #059669 !important;
+}
+
+body[data-sensory="high-contrast"] .verified-solution-tag,
+body[data-sensory="high-contrast"] .verified-solution-tag span,
+body[data-sensory="high-contrast"] .verified-solution-tag i {
+    color: #a7f3d0 !important;
+}
+
+/* 3. Corrección para etiquetas pequeñas e insignias dentro del foro */
+.forum-card .badge.bg-light,
+.forum-card .badge-light {
+    background-color: #e2e8f0 !important;
+    color: #1e293b !important;
+    border: 1px solid #cbd5e1 !important;
+}
+
+body[data-sensory="high-contrast"] .forum-card .badge.bg-light,
+body[data-sensory="high-contrast"] .forum-card .badge-light {
+    background-color: #1e293b !important;
+    color: #f8fafc !important;
+    border-color: #475569 !important;
+}
+
+/* 4. Evitar que la regla general de Alto Contraste rompa etiquetas con fondo propio */
+body[data-sensory="high-contrast"] .forum-card .verified-solution-tag span,
+body[data-sensory="high-contrast"] .forum-card .badge span {
+    color: inherit !important;
+}
+
 
         body {
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
