@@ -244,3 +244,101 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+
+
+
+        // Cambiar Modo Sensorial
+        function cambiarModoSensorial(modo) {
+            document.body.setAttribute('data-sensory', modo);
+
+            // Actualizar botones activos
+            document.getElementById('btn-sensory-std').classList.remove('active');
+            document.getElementById('btn-sensory-calm').classList.remove('active');
+            document.getElementById('btn-sensory-hc').classList.remove('active');
+
+            if (modo === 'estandar') {
+                document.getElementById('btn-sensory-std').classList.add('active');
+                document.documentElement.setAttribute('data-bs-theme', 'light');
+            } else if (modo === 'calm') {
+                document.getElementById('btn-sensory-calm').classList.add('active');
+                document.documentElement.setAttribute('data-bs-theme', 'light');
+            } else if (modo === 'high-contrast') {
+                document.getElementById('btn-sensory-hc').classList.add('active');
+                document.documentElement.setAttribute('data-bs-theme', 'dark');
+            }
+        }
+
+        // Alternar Idioma (Español / Inglés)
+        let idiomaActual = 'ESP';
+
+        const textos = {
+            ESP: {
+                btnIdioma: 'ESP',
+                navProblematica: 'Problemática',
+                navOds: 'ODS ONU',
+                navSolucion: 'Solución y VR',
+                navForo: 'Casos y Foro',
+                heroBadge: 'BIENVENIDOS: UN ESPACIO DISEÑADO PARA TI',
+                heroTitle: 'Amar, Respetar e Incluir',
+                heroSubtitle: 'LOVE, RESPECT AND INCLUDE • UN ENFOQUE HUMANO Y TECNOLÓGICO',
+                heroDesc: 'NeuroMundo es un ecosistema digital e inmersivo orientado a acompañar a familias de personas neurodivergentes. Combina contención comunitaria, tecnología predictiva y experiencias de simulador para reducir el colapso, el estigma y la sobrecarga emocional.',
+                stat1Lbl: 'Reducción del Estrés Familiar',
+                stat2Lbl: 'Subdiagnóstico Identificado',
+                stat3Lbl: 'Atención a la Ansiedad del Cuidador',
+                stat4Lbl: 'Ecosistema Integrado Web/VR',
+                fichaBadge: 'INFORMACIÓN DE LA APP Y FICHA DEL PROYECTO',
+                fichaTitulo: 'Ficha Técnica e Indicadores Clave',
+                odsTitulo: '2. Matriz Gráfica de Impacto ODS',
+                foroTitle: 'Comunidad y Foro de Casos Reales',
+                foroDesc: 'Espacio de acompañamiento, testimonios y respuestas validadas por la comunidad y especialistas para el desarrollo neurodivergente.'
+            },
+            ENG: {
+                btnIdioma: 'ENG',
+                navProblematica: 'Issues & Reality',
+                navOds: 'UN SDGs',
+                navSolucion: 'Solution & VR',
+                navForo: 'Cases & Forum',
+                heroBadge: 'WELCOME: A SPACE DESIGNED FOR YOU',
+                heroTitle: 'Love, Respect and Include',
+                heroSubtitle: 'LOVE, RESPECT AND INCLUDE • A HUMAN & TECH APPROACH',
+                heroDesc: 'NeuroMundo is a digital and immersive ecosystem dedicated to supporting families of neurodivergent individuals. It combines community care, predictive technology, and simulator experiences to reduce meltdown, stigma, and caregiver burnout.',
+                stat1Lbl: 'Family Stress Reduction',
+                stat2Lbl: 'Identified Underdiagnosis',
+                stat3Lbl: 'Caregiver Anxiety Support',
+                stat4Lbl: 'Integrated Web/VR Ecosystem',
+                fichaBadge: 'APP SPECS & PROJECT OVERVIEW',
+                fichaTitulo: 'Technical Sheet & Key Indicators',
+                odsTitulo: '2. UN SDG Impact Matrix',
+                foroTitle: 'Community & Real Case Forum',
+                foroDesc: 'A supportive safe space with community and specialist validated solutions for neurodivergent development.'
+            }
+        };
+
+        function alternarIdioma() {
+            idiomaActual = idiomaActual === 'ESP' ? 'ENG' : 'ESP';
+            const data = textos[idiomaActual];
+
+            document.getElementById('lbl-idioma-btn').textContent = data.btnIdioma;
+            document.getElementById('nav-link-problematica').innerHTML = '<i class="bi bi-diagram-3 me-1 text-primary"></i> ' + data.navProblematica;
+            document.getElementById('nav-link-ods').innerHTML = '<i class="bi bi-globe-americas me-1 text-success"></i> ' + data.navOds;
+            document.getElementById('nav-link-solucion').innerHTML = '<i class="bi bi-cpu me-1 text-purple"></i> ' + data.navSolucion;
+            document.getElementById('nav-link-foro').innerHTML = '<i class="bi bi-chat-heart me-1 text-danger"></i> ' + data.navForo;
+
+            document.getElementById('hero-badge').innerHTML = '<i class="bi bi-sparkles"></i> ' + data.heroBadge;
+            document.getElementById('hero-title').textContent = data.heroTitle;
+            document.getElementById('hero-subtitle').textContent = data.heroSubtitle;
+            document.getElementById('hero-description').textContent = data.heroDesc;
+
+            document.getElementById('stat1-lbl').textContent = data.stat1Lbl;
+            document.getElementById('stat2-lbl').textContent = data.stat2Lbl;
+            document.getElementById('stat3-lbl').textContent = data.stat3Lbl;
+            document.getElementById('stat4-lbl').textContent = data.stat4Lbl;
+
+            document.getElementById('ficha-badge').textContent = data.fichaBadge;
+            document.getElementById('ficha-titulo').textContent = data.fichaTitulo;
+            document.getElementById('ods-titulo').textContent = data.odsTitulo;
+            document.getElementById('foro-title').textContent = data.foroTitle;
+            document.getElementById('foro-desc').textContent = data.foroDesc;
+        }

@@ -1,1242 +1,655 @@
-/* ==========================================================================
-   VARIABLES Y PALETA DE COLORES INDUSTRIALES & GLOBALES
+
+        /* ==========================================================================
+   SISTEMA COMPLETO DE MODOS SENSORIALES (ACCESIBILIDAD MEJORADA)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap');
+        /* 1. MODO ESTÁNDAR (Por defecto) */
+        :root,
+        body[data-sensory="estandar"] {
+            /* Paleta Principal */
+            --nm-primary: #3b66f5;
+            --nm-primary-dark: #2242b5;
+            --nm-secondary: #0d9488;
 
-:root {
-    /* Fondos Base - Cambiados a los tonos de la app */
-    --bg-main: #F3F7FF;         /* Azul ultra claro de fondo general */
-    --card-bg: #FFFFFF;         /* Blanco puro para las tarjetas interiores */
-    --bg-card: #FFFFFF;         
-    --border-color: #E2E8F0;    /* Bordes mucho más suaves y limpios */
+            /* Acentos */
+            --nm-accent-amber: #f59e0b;
+            --nm-accent-purple: #8b5cf6;
+            --nm-accent-emerald: #10b981;
 
-    /* Colores Acento Claves de la Imagen */
-    --accent-primary: #0A53CD;   /* Azul eléctrico vibrante del banner y barra inferior */
-    --accent-primary-hover: #073E9B;
-    --accent-dark: #002266;      /* Azul marino muy oscuro para textos de títulos */
-    --accent-badge-bg: #FFE5EC;  
-    
-    /* Textos Principales */
-    --text-main: #1E293B;        /* Gris oscuro de alta legibilidad para cuerpo */
-    --text-dark: #0F172A;        /* Casi negro para contrastes fuertes */
-    --text-medium: #475569;      /* Gris medio para descripciones (ej: "Selecciona una categoría...") */
-    --text-muted: #64748B;       /* Gris claro para marcas de agua o deshabilitados */
+            /* Fondos y Superficies */
+            --nm-bg-main: #f8fafc;
+            --nm-card-bg: #ffffff;
 
-    /* El Amarillo/Dorado Característico de la App (Botón "Vista PC" e "Inicio") */
-    --accent-yellow: #E9A923;    /* Amarillo dorado vibrante */
-    --accent-yellow-hover: #D09319;
-    --accent-yellow-bg: #FFF4D9; /* Fondo suave para botones activos */
+            /* Textos (Alto contraste para lectura normal) */
+            --nm-text-main: #1e293b;
+            --nm-text-muted: #475569;
+            /* Oscurecido ligeramente para mayor legibilidad */
 
-    /* SECCIONES: Adaptadas a la estética limpia y colorida de la imagen */
-    --sec-hero-bg: linear-gradient(135deg, #0A43A4 0%, #0A65F3 100%); /* Degradado azul del banner */      
-    --sec-hero-border: transparent;
-    --sec-metrics-bg: #E0EBFF;   
-    --sec-metrics-border: #B3D1FF;
-    --sec-pages-bg: #FFFFFF;     
-    --sec-pages-border: #E2E8F0;
-    --sec-ods-bg: #E6F7ED;       
-    --sec-ods-border: #A3E635;
-    --sec-forum-bg: #F8FAFC;     
-    --sec-forum-border: #E2E8F0;
+            /* Bordes y Sombras */
+            --nm-border: #e2e8f0;
+            --nm-soft-blue: #eef2ff;
+            --nm-soft-teal: #f0fdfa;
 
-    /* Categorías y Estados Alerta */
-    --accent-green: #22C55E;     
-    --accent-purple: #A855F7;    
-    --accent-blue: #3B82F6;      
-    --accent-red: #EF4444;       
+            filter: none;
+        }
 
-    /* Tipografía (Mantenemos fuentes legibles y modernas) */
-    --font-heading: 'Inter', system-ui, sans-serif;
-    --font-body: 'Inter', system-ui, sans-serif;
+        /* 2. MODO CALMADO (Prevención de Sobrecarga Sensorial) */
+        body[data-sensory="calm"] {
+            /* Fondos más cálidos y menos reflectantes (evita el blanco puro) */
+            --nm-bg-main: #f0f4f8;
+            --nm-card-bg: #f8f9fa;
 
-    /* Sombras y Bordes (Bordes más redondeados como los de la imagen) */
-    --shadow-sm: 0 2px 8px rgba(10, 83, 205, 0.04);
-    --shadow-md: 0 10px 25px -5px rgba(10, 83, 205, 0.08), 0 8px 16px -6px rgba(10, 83, 205, 0.04);
-    --radius-main: 24px;         /* Esquinas bien curvadas como el buscador y el banner */
-}
+            /* Textos con menor estridencia pero legibles */
+            --nm-text-main: #334155;
+            --nm-text-muted: #64748b;
 
-/* ==========================================================================
-   ESTILOS BASE (GEOMETRÍA RECTA Y GENERALES)
+            /* Colores primarios desaturados (tonos pastel apagados) */
+            --nm-primary: #5c7cfa;
+            --nm-secondary: #4d908e;
+            --nm-border: #cbd5e1;
+            --nm-soft-blue: #e2e8f0;
+
+            /* Filtro general para reducir fatiga visual */
+            filter: contrast(0.95) saturate(0.85);
+        }
+
+        /* 3. MODO ALTO CONTRASTE (Oscuro / Legibilidad Extrema) */
+
+        /* 1. Asegurar que las variables de alto contraste sean ultra legibles */
+        body[data-sensory="high-contrast"] {
+            --nm-text-main: #ffffff;
+            /* Blanco puro para legibilidad máxima */
+            --nm-text-muted: #94a3b8;
+            /* Gris muy claro, en lugar de gris oscuro */
+            --text-dark: #ffffff;
+
+            /* Fondos profundos para evitar el deslumbramiento */
+            --nm-bg-main: #090d16;
+            --nm-card-bg: #131b2e;
+
+            /* Colores de acento vibrantes para destacar la información */
+            --nm-primary: #60a5fa;
+            --nm-secondary: #2dd4bf;
+            --nm-accent-amber: #fbbf24;
+            --nm-accent-emerald: #34d399;
+
+            /* Bordes visibles y fondos suaves adaptados */
+            --nm-border: #334155;
+            --nm-soft-blue: #1e293b;
+            --nm-soft-teal: #132a2f;
+        }
+
+        /* 2. Forzar el color del texto principal en todas las tarjetas */
+        body[data-sensory="high-contrast"] .module-card,
+        body[data-sensory="high-contrast"] .stat-card-modern,
+        body[data-sensory="high-contrast"] .page-architecture-card,
+        body[data-sensory="high-contrast"] .forum-card {
+            color: var(--nm-text-main) !important;
+        }
+
+        /* 3. Evitar que párrafos, listas y encabezados conserven el color negro por defecto del framework */
+        body[data-sensory="high-contrast"] .module-card p,
+        body[data-sensory="high-contrast"] .module-card span,
+        body[data-sensory="high-contrast"] .module-card li,
+        body[data-sensory="high-contrast"] .module-card h1,
+        body[data-sensory="high-contrast"] .module-card h2,
+        body[data-sensory="high-contrast"] .module-card h3,
+        body[data-sensory="high-contrast"] .module-card h4,
+        body[data-sensory="high-contrast"] .forum-card p,
+        body[data-sensory="high-contrast"] .forum-card span,
+        body[data-sensory="high-contrast"] .forum-card li {
+            color: var(--nm-text-main);
+        }
+
+        /* 4. Corregir clases utilitarias de texto secundario (ej. .text-muted de Bootstrap) */
+        body[data-sensory="high-contrast"] .text-muted,
+        body[data-sensory="high-contrast"] .small.text-muted,
+        body[data-sensory="high-contrast"] [class*="text-secondary"] {
+            color: var(--nm-text-muted) !important;
+        }
+
+        /* Corregir clase utilitaria .text-dark de Bootstrap en Alto Contraste */
+        body[data-sensory="high-contrast"] .text-dark {
+            color: var(--nm-text-main) !important;
+            /* Forzará el color a blanco (#ffffff) */
+        }
+
+        /* Corregir fondos utilitarios claros que pueden tener texto blanco encima */
+        body[data-sensory="high-contrast"] .bg-light {
+            background-color: var(--nm-soft-blue) !important;
+            border-color: var(--nm-border) !important;
+        }
+
+        /* Corregir el color de los iconos oscuros dentro de fondos claros */
+        body[data-sensory="high-contrast"] .bg-warning.bg-opacity-10.text-dark {
+            color: var(--nm-text-main) !important;
+        }
+
+
+        /* ==========================================================================
+   REGLAS DE TRANSICIÓN Y ACCESIBILIDAD
+   ========================================================================== */
+        body {
+            transition: background-color 0.4s ease, color 0.4s ease, filter 0.4s ease;
+        }
+
+        .module-card,
+        .stat-card-modern,
+        .page-architecture-card,
+        .forum-card {
+            background-color: var(--nm-card-bg);
+            color: var(--nm-text-main);
+            border-color: var(--nm-border);
+            transition: all 0.3s ease;
+        }
+
+        /* Asegurar que los textos secundarios obedezcan a las variables */
+        .text-muted,
+        .small.text-muted {
+            color: var(--nm-text-muted) !important;
+        }
+
+
+        /* ==========================================================================
+   PARCHE DE VISIBILIDAD: ETIQUETAS RECTANGULARES Y FORO
    ========================================================================== */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    border-radius: 0 !important; /* Estética 100% cuadrada */
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background-color: var(--bg-main);
-    color: var(--text-main);
-    font-family: var(--font-body);
-    font-size: 17px;
-    line-height: 1.7;
-}
-
-/* ==========================================================================
-    LAYOUT Y ESTRUCTURA GENERAL
-   ========================================================================== */
-
-/* Se aplica el ancho más extenso (1080px) a los contenedores principales del contenido */
-.app-container,
-.main-layout-container {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 32px 24px;
-}
-
-.content-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-.content-espaciado {
-    display: flex;
-    flex-direction: column;
-    gap: 32px !important;
-    margin-top: 30px;
-}
-
-.bloque-modulo {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-.divider-seccion {
-    border: none;
-    height: 1px;
-    background: var(--border-color);
-    margin: 32px 0;
-}
-
-.scroll-spacing {
-    height: 48px;
-}
-
-/* ==========================================================================
-   ESTRUCTURA DE SECCIONES
-   ========================================================================== */
-
-.seccion-bloque-contenedor {
-    padding: 32px;
-    margin-bottom: 40px;
-    border: 1px solid var(--border-color);
-    background-color: var(--bg-card);
-}
-
-.seccion-hero {
-    background-color: var(--sec-hero-bg);
-    border-left: 6px solid var(--sec-hero-border);
-}
-
-.seccion-metricas {
-    background-color: var(--sec-metrics-bg);
-    border-left: 6px solid var(--sec-metrics-border);
-}
-
-.seccion-paginas {
-    background-color: var(--sec-pages-bg);
-    border-left: 6px solid var(--sec-pages-border);
-}
-
-.seccion-ods {
-    background-color: var(--sec-ods-bg);
-    border-left: 6px solid var(--sec-ods-border);
-}
-
-.seccion-foro {
-    background-color: var(--sec-forum-bg);
-    border-left: 6px solid var(--sec-forum-border);
-}
-
-.seccion-bloque-titulo {
-    margin-bottom: 24px;
-}
-
-.badge-subtitulo {
-    font-family: var(--font-heading);
-    font-size: 0.85rem;
-    color: var(--accent-primary);
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    display: inline-block;
-    margin-bottom: 4px;
-}
-
-.seccion-bloque-titulo h3 {
-    font-family: var(--font-heading);
-    font-size: 1.6rem;
-    color: var(--accent-dark);
-    letter-spacing: -0.5px;
-    text-transform: uppercase;
-}
-
-/* ==========================================================================
-   BARRA DE NAVEGACIÓN (HEADER)
-   ========================================================================== */
-
-.header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: var(--bg-card);
-    border-bottom: 2px solid var(--border-color);
-    border-top: 5px solid var(--accent-primary);
-    width: 100%;
-}
-
-.header-container {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 16px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Logo */
-.logo {
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-}
-
-.logo-title {
-    font-family: var(--font-heading);
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--accent-dark);
-    line-height: 1.1;
-    text-transform: uppercase;
-    letter-spacing: -0.5px;
-}
-
-.logo-sub {
-    font-family: var(--font-body);
-    font-size: 0.75rem;
-    color: var(--accent-primary);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-/* Menú de enlaces */
-.nav {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-}
-
-.nav a {
-    text-decoration: none;
-    color: var(--text-muted);
-    font-family: var(--font-heading);
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: color 0.2s ease;
-}
-
-.nav a:hover {
-    color: var(--accent-primary);
-}
-
-/* Botón Selector de Idioma y Nav */
-.btn-nav, 
-.lang-btn {
-    background-color: var(--accent-dark);
-    color: #FFFFFF !important;
-    font-family: var(--font-heading);
-    font-size: 0.85rem;
-    font-weight: 700;
-    padding: 10px 20px;
-    border: 1px solid var(--accent-dark);
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
-    position: relative;
-    z-index: 9999;
-    pointer-events: auto !important;
-}
-
-.btn-nav:hover, 
-.lang-btn:hover {
-    background-color: var(--accent-primary);
-    border-color: var(--accent-primary);
-}
-
-.btn-nav:active, 
-.lang-btn:active {
-    background-color: var(--accent-primary-hover);
-    border-color: var(--accent-primary-hover);
-}
-
-/* ==========================================================================
-   TARJETAS Y MÓDULOS HERO DE CONTENIDO
-   ========================================================================== */
-
-.tool-card, 
-.card-hero-welcome, 
-.card-ficha-detalles, 
-.card-pagina-maqueta, 
-.card-ods-wrapper {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
-    padding: 28px !important;
-    transition: border-color 0.2s ease;
-}
-
-.tool-card:hover,
-.card-pagina-maqueta:hover {
-    border-color: var(--accent-primary);
-}
-
-.card-hero-welcome {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color) !important;
-    border-left: 6px solid var(--accent-primary) !important;
-}
-
-.hero-badge-top {
-    font-family: var(--font-heading);
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--accent-primary);
-    margin-bottom: 8px;
-    text-transform: uppercase;
-}
-
-.welcome-title {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    color: var(--accent-dark);
-    font-weight: 700;
-}
-
-.welcome-subtitle {
-    font-size: 1rem;
-    color: var(--text-muted);
-}
-
-.hero-description {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: var(--text-main);
-}
-
-.speech-bubble, 
-.speech-bubble-destacado {
-    background: var(--bg-main);
-    border-left: 4px solid var(--accent-primary);
-    border-top: 1px solid var(--border-color);
-    border-right: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-    padding: 18px 20px;
-    margin: 20px 0;
-    color: var(--accent-dark);
-    font-weight: 600;
-    font-size: 1rem;
-}
-
-.speech-bubble p {
-    font-size: 0.95rem;
-    color: var(--accent-primary);
-}
-
-/* ==========================================================================
-   MÉTRICAS Y STATS
-   ========================================================================== */
-
-.grid-cuatro-metricas-amplio,
-.grid-cuatro-metricas {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.stat-card-pro, 
-.stat-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    padding: 24px 20px;
-    text-align: center;
-    transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.stat-card-pro:hover, 
-.stat-card:hover {
-    transform: translateY(-2px);
-    border-color: var(--accent-primary);
-}
-
-.stat-icon-wrapper {
-    font-size: 1.8rem;
-    margin-bottom: 8px;
-}
-
-.stat-number {
-    font-family: var(--font-heading);
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--accent-dark);
-    display: block;
-}
-
-.stat-label {
-    font-size: 0.88rem;
-    color: var(--text-muted);
-    margin-top: 4px;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-/* ==========================================================================
-   FICHA TÉCNICA DEL PROYECTO
-   ========================================================================== */
-
-.ficha-proyecto-grid-amplio, 
-.ficha-proyecto-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
-}
-
-.ficha-item-pro, 
-.ficha-item {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    padding: 18px 20px;
-}
-
-.ficha-label {
-    font-family: var(--font-heading);
-    font-size: 0.8rem;
-    color: var(--accent-primary);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.ficha-val {
-    font-size: 1rem;
-    color: var(--accent-dark);
-    font-weight: 500;
-    margin-top: 6px;
-}
-
-/* ==========================================================================
-   TARJETAS DE NAVEGACIÓN Y PÁGINAS (GRIDS Y VARIACIONES DE BORDES)
-   ========================================================================== */
-
-.card-pagina-maqueta {
-    background: var(--bg-card) !important;
-}
-
-.border-left-yellow, .border-yellow { border-left: 5px solid var(--accent-yellow) !important; }
-.border-left-blue,   .border-blue   { border-left: 5px solid var(--accent-blue) !important; }
-.border-left-purple, .border-purple { border-left: 5px solid var(--accent-purple) !important; }
-.border-left-green,  .border-green  { border-left: 5px solid var(--accent-green) !important; }
-
-.tag-yellow { background: #FEF3C7; color: #B45309; }
-.tag-blue   { background: #DBEAFE; color: #1E40AF; }
-.tag-purple { background: #F3E8FF; color: #6B21A8; }
-.tag-green  { background: #D1FAE5; color: #065F46; }
-
-.page-tag {
-    font-family: var(--font-heading);
-    font-size: 0.78rem;
-    font-weight: 700;
-    padding: 6px 12px;
-    display: inline-block;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.block-title {
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    color: var(--accent-dark);
-    font-weight: 700;
-}
-
-.explicacion-proposito, 
-.proposito-box {
-    background: var(--bg-main);
-    border: 1px solid var(--border-color);
-    padding: 18px 20px;
-    margin: 20px 0;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--text-muted);
-}
-
-.hero-mini-banner {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-top: 3px solid var(--accent-primary);
-    padding: 20px;
-    text-align: center;
-}
-
-.banner-tag, 
-.hero-mini-banner span {
-    font-family: var(--font-heading);
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--accent-primary);
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-}
-
-.hero-mini-banner h4 {
-    margin-top: 6px;
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    color: var(--accent-dark);
-}
-
-.grid-dos-col, .grid-dos-col-amplio {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
-
-.grid-tres-col, .grid-tres-col-amplio {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
-}
-
-.tarjeta-interna, 
-.tarjeta-interna-pro {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    padding: 20px;
-}
-
-.tarjeta-interna h5, 
-.tarjeta-interna-pro h5 {
-    font-family: var(--font-heading);
-    font-size: 1.05rem;
-    margin-bottom: 8px;
-    color: var(--accent-dark);
-}
-
-.tarjeta-interna p, 
-.tarjeta-interna-pro p {
-    font-size: 0.92rem;
-    color: var(--text-muted);
-    line-height: 1.5;
-}
-
-/* ==========================================================================
-   MATRIZ ODS
-   ========================================================================== */
-
-.ods-header-banner {
-    background: #D1FAE5;
-    border: 1px solid #10B981;
-    color: #065F46;
-    text-align: center;
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 0.9rem;
-    padding: 12px;
-    margin-bottom: 24px;
-    text-transform: uppercase;
-}
-
-.ods-grid, 
-.ods-grid-espacioso {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
-
-.ods-box, 
-.ods-box-pro {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    padding: 22px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.ods-badge {
-    display: inline-block;
-    font-family: var(--font-heading);
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 4px 10px;
-    color: #FFF;
-    margin-bottom: 10px;
-}
-
-.badge-3 { background: #4C9F38; }
-.badge-4 { background: #C5192D; }
-.badge-10 { background: #DD1367; }
-.badge-8 { background: #A21942; }
-
-.ods-box h4, .ods-top-bar h4 {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    color: var(--accent-dark);
-}
-
-.ods-problema {
-    font-size: 0.92rem;
-    color: var(--text-muted);
-    margin: 12px 0;
-    line-height: 1.5;
-}
-
-.ods-solucion {
-    background: var(--bg-main);
-    border: 1px solid var(--border-color);
-    padding: 14px;
-    font-size: 0.9rem;
-    color: var(--accent-dark);
-    line-height: 1.5;
-}
-
-/* ==========================================================================
-   RESPALDOS DE INNOVACIÓN
-   ========================================================================== */
-
-.respaldos-grid, 
-.respaldos-grid-espacioso {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
-
-.respaldo-card, 
-.respaldo-card-pro {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-.respaldo-icon-large, .respaldo-icon {
-    font-size: 2rem;
-    background: var(--bg-main);
-    border: 1px solid var(--border-color);
-    padding: 10px 14px;
-    width: fit-content;
-}
-
-.respaldo-content h4, .respaldo-header h4 {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    color: var(--accent-dark);
-}
-
-.respaldo-content p, .respaldo-body p {
-    font-size: 0.92rem;
-    color: var(--text-muted);
-    line-height: 1.5;
-}
-
-.respaldo-why-box, .respaldo-why {
-    background: var(--bg-main);
-    padding: 12px 14px;
-    font-size: 0.88rem;
-    color: var(--accent-primary);
-    line-height: 1.5;
-    border-left: 4px solid var(--accent-primary);
-    border-top: 1px solid var(--border-color);
-    border-right: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-    font-weight: 600;
-}
-
-/* ==========================================================================
-   FORO Y COMUNIDAD (BANCO DE CASOS Y CATEGORÍAS)
-   ========================================================================== */
-
-.foro-header-main {
-    margin-bottom: 8px;
-    text-align: left;
-}
-
-.foro-title {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: var(--text-dark);
-    margin-bottom: 6px;
-}
-
-.foro-description {
-    font-size: 1rem;
-    color: var(--text-muted);
-}
-
-.foro-casos-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.categoria-header, 
-.categoria-header-destacado {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 18px 24px;
-    border-radius: var(--radius-main);
-    background-color: var(--card-bg);
-    box-shadow: var(--shadow-sm);
-    margin: 24px 0 16px 0;
-}
-
-.cat-icon {
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-}
-
-.categoria-header h4, .categoria-header-destacado h4 {
-    font-family: var(--font-heading);
-    font-size: 1.05rem;
-    font-weight: 700;
-}
-
-.cat-sub {
-    font-size: 0.88rem;
-    color: var(--text-muted);
-    display: block;
-    opacity: 0.9;
-}
-
-/* Variantes de Color de Categoría */
-/* Cambiados a los tonos exactos de los botones de la imagen ("Inicio", "Pictogramas", "Regu") */
-.cat-red    { background: #FEE2E2; border: none; border-radius: 50px; color: #991B1B; font-weight: bold; }
-.cat-yellow { background: #FFD43A; border: none; border-radius: 50px; color: #1E293B; font-weight: bold; } /* Como el botón amarillo de "Inicio" */
-.cat-green  { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 50px; color: #1E293B; font-weight: bold; } /* Como el botón "Pictogramas" */
-
-/* Cabeceras destacadas: ahora usan el degradado azul del banner superior */
-.categoria-header-destacado.cat-blue {
-    border-left: none;
-    border-radius: var(--radius-main);
-    background: linear-gradient(135deg, #0A43A4 0%, #0A65F3 100%);
-    padding: 16px;
-}
-.categoria-header-destacado.cat-blue h4 { color: #FFFFFF; font-size: 1.15rem; font-weight: 700; }
-
-.categoria-header-destacado.cat-orange {
-    border-left: none;
-    border-radius: var(--radius-main);
-    background: #FFD43A; /* Tono dorado del botón Vista PC */
-    padding: 16px;
-}
-.categoria-header-destacado.cat-orange h4 { color: #002266; font-size: 1.15rem; font-weight: 700; }
-
-.categoria-header-destacado.cat-green {
-    border-left: none;
-    border-radius: var(--radius-main);
-    background: #FFFFFF;
-    border: 1px solid #E2E8F0;
-    padding: 16px;
-}
-.categoria-header-destacado.cat-green h4 { color: #0A53CD; font-size: 1.15rem; font-weight: 700; }
-
-/* Tarjetas de Foro (Post Cards) */
-/* Ahora usan la sombra suave azulada y esquinas más redondeadas de la tarjeta "Vista General" */
-.foro-post-card, 
-.foro-post-card-pro {
-    background: var(--card-bg);
-    border-radius: 24px; /* Bordes redondeados más amplios como la app */
-    box-shadow: 0 10px 25px -5px rgba(10, 83, 205, 0.06), 0 8px 16px -6px rgba(10, 83, 205, 0.04);
-    border: 1px solid #EFF6FF;
-    overflow: hidden;
-    margin-bottom: 24px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.foro-post-card-pro:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 24px rgba(10, 83, 205, 0.12);
-}
-
-.post-pregunta, .post-pregunta-box {
-    padding: 24px;
-    border-bottom: 1px solid #EFF6FF;
-}
-
-.user-meta, .user-meta-pro {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 16px;
-}
-
-/* Avatars: Actualizados con sombras modernas basadas en el azul y amarillo de la app */
-.avatar-circle {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 0.95rem;
-    color: #ffffff;
-    flex-shrink: 0;
-}
-
-.red-avatar    { background: #EF4444; box-shadow: 0 4px 10px rgba(239, 68, 68, 0.2); }
-.yellow-avatar { background: #FFD43A; color: #002266; box-shadow: 0 4px 10px rgba(255, 212, 58, 0.3); }
-.green-avatar  { background: #22C55E; box-shadow: 0 4px 10px rgba(34, 197, 94, 0.2); }
-
-.blue-avatar   { background-color: #0A53CD; box-shadow: 0 4px 10px rgba(10, 83, 205, 0.3); }
-.orange-avatar { background-color: #F97316; box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3); }
-
-.username, .user-meta strong {
-    display: block;
-    font-size: 1rem;
-    color: #002266; /* Azul marino ultra oscuro para los nombres de usuario */
-    font-weight: 700;
-}
-
-.post-time, .post-time-tag {
-    display: block;
-    font-size: 0.82rem;
-    color: #64748B; /* Gris azulado limpio */
-    margin-top: 1px;
-}
-
-.post-body, .post-text {
-    font-size: 0.98rem;
-    color: #475569; /* Gris oscuro suave para el texto del post, igual al de la app */
-    line-height: 1.65;
-}
-
-/* Respuesta Validada */
-/* Cambiado de un gris genérico a un tono celeste-azul purificado de fondo */
-.post-respuesta, .post-respuesta-box {
-    padding: 22px 24px;
-    background-color: #F3F7FF; 
-}
-
-
-.valida-badge, .valida-badge-pro {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background-color: var(--cat-green-bg);
-    color: var(--cat-green-dark);
-    font-family: var(--font-heading);
-    font-size: 0.82rem;
-    font-weight: 700;
-    padding: 6px 14px;
-    border-radius: 20px;
-    margin-bottom: 14px;
-    border: 1px solid var(--cat-green-border);
-    text-transform: uppercase;
-}
-
-.check-icon { font-weight: 800; }
-
-.respuesta-body, .respuesta-text {
-    font-size: 0.96rem;
-    color: var(--text-dark);
-    line-height: 1.65;
-}
-
-/* ==========================================================================
-   PIE DE PÁGINA (NEUMÓRFICO) Y COPILOTO INSTITUCIONAL
-   ========================================================================== */
-
-.footer-neu {
-    margin-top: 40px;
-    padding: 20px 24px;
-    background-color: var(--bg-main);
-    border-radius: var(--radius-main);
-    box-shadow: inset 2px 2px 5px #e2e8f0, inset -2px -2px 5px #ffffff;
-}
-
-.copiloto-box, .copiloto-box-pro {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-left: 5px solid var(--accent-dark);
-    padding: 24px;
-}
-
-.copiloto-icon-large, .copiloto-icon {
-    font-size: 2.2rem;
-    line-height: 1;
-}
-
-.copiloto-text h4, #footer-org {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    color: var(--accent-dark);
-    font-weight: 700;
-}
-
-.copiloto-text p, #footer-desc {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-}
-
-/* ==========================================================================
-   DISEÑO RESPONSIVO (MEDIA QUERIES)
-   ========================================================================== */
-
-@media (max-width: 768px) {
-    .app-container {
-        padding: 16px;
-    }
-
-    .seccion-bloque-contenedor {
-        padding: 20px;
-    }
-
-    .app-header {
-        padding: 20px !important;
-    }
-
-    .header-container {
-        flex-direction: column;
-        gap: 16px;
-        align-items: flex-start;
-    }
-
-    .nav {
-        width: 100%;
-        flex-wrap: wrap;
-        gap: 12px;
-        justify-content: space-between;
-    }
-
-    .btn-nav {
-        width: 100%;
-        text-align: center;
-        margin-top: 8px;
-    }
-
-    .grid-dos-col, .grid-tres-col, .ods-grid, .respaldos-grid, .grid-cuatro-metricas {
-        grid-template-columns: 1fr;
-    }
-
-    .copiloto-box-pro {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-@media (max-width: 640px) {
-    .main-layout-container { padding: 16px 12px; }
-    .post-pregunta-box, .post-respuesta-box { padding: 16px; }
-    .categoria-header-destacado { padding: 14px 16px; }
-    .foro-title { font-size: 1.4rem; }
-}sss
-/* --- VARIABLES DE COLOR (Extraídas de tu Landing Page) --- */
-:root {
-    --azul-marino: #001F60;    /* Color de tus títulos principales */
-    --azul-electrico: #0046C7;  /* Color del botón LANGUAGE y acentos */
-    --azul-celeste: #EBF2FF;    /* Fondo suave del bloque secundario */
-    --texto-cuerpo: #334155;    /* Gris oscuro profesional */
-    --blanco: #FFFFFF;
-    --fondo-gris: #F8FAFC;     
-    
-    /* Colores de tus indicadores (Detalles de marca) */
-    --ind-azul: #0070F3;
-    --ind-verde: #00B474;
-    --ind-naranja: #FF9900;
-    --ind-violeta: #7928CA;
-}
-
-/* --- CONTENEDOR DEL BANNER --- */
-.hero-banner {
-    background-color: var(--blanco);
-    min-height: 480px;
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    align-items: center;
-    padding: 40px 8%;
-    gap: 40px;
-    border-bottom: 4px solid var(--azul-marino);
-    position: relative;
-    overflow: hidden;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* --- COLUMNA IZQUIERDA: CONTENIDO --- */
-.hero-content {
-    z-index: 2;
-}
-
-.hero-tagline {
-    color: var(--azul-electrico);
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
-    display: inline-block;
-}
-
-.hero-title {
-    color: var(--azul-marino);
-    font-size: 2.8rem;
-    font-weight: 800;
-    line-height: 1.15;
-    margin: 0 0 20px 0;
-    letter-spacing: -0.5px;
-}
-
-.hero-highlight-box {
-    background-color: var(--azul-celeste);
-    border-left: 5px solid var(--azul-electrico);
-    padding: 12px 20px;
-    border-radius: 0 8px 8px 0;
-    margin-bottom: 24px;
-}
-
-.hero-highlight-text {
-    color: var(--azul-marino);
-    font-size: 0.95rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin: 0;
-}
-
-.hero-description {
-    color: var(--texto-cuerpo);
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin: 0 0 30px 0;
-    max-width: 620px;
-}
-
-/* Botones de Acción */
-.hero-actions {
-    display: flex;
-    gap: 16px;
-}
-
-.btn-primary {
-    background-color: var(--azul-marino);
-    color: var(--blanco);
-    padding: 14px 28px;
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background 0.2s ease;
-    box-shadow: 0 4px 12px rgba(0, 31, 96, 0.15);
-}
-
-.btn-primary:hover {
-    background-color: var(--azul-electrico);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: var(--azul-marino);
-    padding: 14px 28px;
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    border: 2px solid var(--azul-marino);
-    border-radius: 4px;
-    transition: all 0.2s ease;
-}
-
-.btn-secondary:hover {
-    background-color: var(--azul-celeste);
-}
-
-/* --- COLUMNA DERECHA: DISEÑO VISUAL --- */
-.hero-visual {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.abstract-graphic {
-    width: 300px;
-    height: 300px;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    background: linear-gradient(135deg, var(--ind-azul), var(--ind-violeta));
-    animation: morphing 10s infinite ease-in-out;
-    position: relative;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-}
-
-.tech-badge {
-    position: absolute;
-    background: var(--blanco);
-    padding: 12px 20px;
-    border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    border-top: 3px solid var(--ind-verde);
-    bottom: 40px;
-    right: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--azul-marino);
-}
-
-@keyframes morphing {
-    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-    50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
-    100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-}
-
-/* --- RESPONSIVE DESIGN --- */
-@media (max-width: 968px) {
-    .hero-banner {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding: 60px 5%;
-    }
-    .hero-description {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .hero-actions {
-        justify-content: center;
-    }
-    .hero-highlight-box {
-        border-left: none;
-        border-top: 4px solid var(--azul-electrico);
-        border-radius: 8px;
-    }
-    .hero-visual {
-        display: none; /* Oculta el gráfico animado en pantallas móviles */
-    }
-}
-
-
-
-
-
-
-/* ==========================================================================
-   DESPLEGABLE DE RESPUESTAS CON ANIMACIÓN FLUIDA
-   ========================================================================== */
-
-/* Botón estilo limpio */
-.btn-desplegar-respuestas {
-    background: none;
-    border: none;
-    color: var(--accent-primary, #3B5A5C);
-    font-weight: 600;
-    font-size: 0.9rem;
-    cursor: pointer;
-    padding: 8px 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-/* Rotación suave de la flecha indicador */
-.btn-desplegar-respuestas .flecha {
-    display: inline-block;
-    font-size: 0.75rem;
-    transition: transform 0.3s ease;
-}
-
-/* Panel oculto por defecto */
-.panel-respuestas {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transform: translateY(-8px);
-    
-    /* Animación fluida de apertura con ease */
-    transition: max-height 0.4s ease, 
-                opacity 0.3s ease, 
-                transform 0.3s ease;
-}
-
-/* ESTADO ACTIVO: Se despliega suavemente */
-.panel-respuestas.desplegado {
-    max-height: 500px; /* Altura máxima para permitir que fluya el contenido */
-    opacity: 1;
-    transform: translateY(0);
-    margin-top: 12px;
-}
-
-/* Rotación de la flecha al desplegar */
-.btn-desplegar-respuestas.activo .flecha {
-    transform: rotate(180deg);
-}
-
-/* Estilo del botón interactivo desplegable */
-.btn-toggle-respuesta {
-  width: 100%;
-  background-color: #f8fafc;
-  border: none;
-  border-top: 1px solid #f1f5f9;
-  border-bottom: 1px solid #f1f5f9;
-  padding: 12px 24px;
-  text-align: left;
-  font-family: var(--font-heading, sans-serif);
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--cat-green-dark, #047857);
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background-color 0.2s ease;
-}
-
-.btn-toggle-respuesta:hover {
-  background-color: #f1f5f9;
-}
-
-.btn-toggle-respuesta .flecha-icon {
-  font-size: 0.75rem;
-  transition: transform 0.3s ease;
-}
-
-/* Rotación de la flecha cuando se oculta */
-.btn-toggle-respuesta.oculto .flecha-icon {
-  transform: rotate(-90deg);
-}
-
-/* Transición fluida del panel de respuesta */
-.post-respuesta-box {
-  max-height: 1000px;
-  opacity: 1;
-  overflow: hidden;
-  transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
-}
-
-/* Estado oculto */
-.post-respuesta-box.cerrado {
-  max-height: 0;
-  opacity: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-}
+        /* 1. Declaración de variables de fondos suaves faltantes */
+        :root {
+            --nm-soft-amber: #fffbeb;
+            --nm-soft-green: #f0fdf4;
+            --nm-soft-purple: #f5f3ff;
+        }
+
+        body[data-sensory="high-contrast"] {
+            --nm-soft-amber: #2a1f10;
+            --nm-soft-green: #08281e;
+            --nm-soft-purple: #1e132b;
+        }
+
+        /* 2. Garantizar legibilidad en la etiqueta de "Respuesta Validada" */
+        .verified-solution-tag {
+            background-color: #d1fae5 !important;
+            border: 1px solid #a7f3d0 !important;
+        }
+
+        .verified-solution-tag,
+        .verified-solution-tag span,
+        .verified-solution-tag i {
+            color: #065f46 !important;
+            /* Verde oscuro para alto contraste sobre fondo claro */
+        }
+
+        /* Adaptación de etiqueta verificada para Modo Alto Contraste */
+        body[data-sensory="high-contrast"] .verified-solution-tag {
+            background-color: #064e3b !important;
+            border-color: #059669 !important;
+        }
+
+        body[data-sensory="high-contrast"] .verified-solution-tag,
+        body[data-sensory="high-contrast"] .verified-solution-tag span,
+        body[data-sensory="high-contrast"] .verified-solution-tag i {
+            color: #a7f3d0 !important;
+        }
+
+        /* 3. Corrección para etiquetas pequeñas e insignias dentro del foro */
+        .forum-card .badge.bg-light,
+        .forum-card .badge-light {
+            background-color: #e2e8f0 !important;
+            color: #1e293b !important;
+            border: 1px solid #cbd5e1 !important;
+        }
+
+        body[data-sensory="high-contrast"] .forum-card .badge.bg-light,
+        body[data-sensory="high-contrast"] .forum-card .badge-light {
+            background-color: #1e293b !important;
+            color: #f8fafc !important;
+            border-color: #475569 !important;
+        }
+
+        /* 4. Evitar que la regla general de Alto Contraste rompa etiquetas con fondo propio */
+        body[data-sensory="high-contrast"] .forum-card .verified-solution-tag span,
+        body[data-sensory="high-contrast"] .forum-card .badge span {
+            color: inherit !important;
+        }
+
+        /* Corregir los fondos blancos de las tarjetas de Problema en ODS para Alto Contraste */
+        body[data-sensory="high-contrast"] .ods-card .bg-white {
+            background-color: var(--nm-soft-blue) !important;
+            border-color: var(--nm-border) !important;
+        }
+
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--nm-bg-main);
+            color: var(--nm-text-main);
+            line-height: 1.65;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .font-heading {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--nm-text-main);
+        }
+
+        /* Sticky Glassmorphism Header */
+        .header-navbar {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--nm-border);
+            transition: all 0.3s ease;
+        }
+
+        [data-sensory="high-contrast"] .header-navbar {
+            background: rgba(19, 27, 46, 0.92);
+        }
+
+        .navbar-brand-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--nm-primary), #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.03em;
+        }
+
+        .navbar-brand-subtitle {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+            color: var(--nm-text-muted);
+            display: block;
+            margin-top: -2px;
+        }
+
+        .nav-link-custom {
+            font-size: 0.93rem;
+            font-weight: 600;
+            color: var(--nm-text-main);
+            padding: 0.5rem 0.9rem !important;
+            border-radius: var(--nm-radius-sm);
+            transition: all 0.2s ease;
+        }
+
+        .nav-link-custom:hover,
+        .nav-link-custom:focus {
+            color: var(--nm-primary);
+            background-color: var(--nm-soft-blue);
+        }
+
+        /* Hero Banner Section */
+        .hero-banner-wrapper {
+            position: relative;
+            background: linear-gradient(145deg, #1e293b 0%, #0f172a 60%, #1e1b4b 100%);
+            color: #ffffff;
+            border-radius: var(--nm-radius-lg);
+            overflow: hidden;
+            padding: 4.5rem 2.5rem;
+            box-shadow: var(--nm-shadow-lg);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-banner-wrapper::before {
+            content: "";
+            position: absolute;
+            top: -30%;
+            right: -15%;
+            width: 550px;
+            height: 550px;
+            background: radial-gradient(circle, rgba(59, 102, 245, 0.35) 0%, rgba(99, 102, 241, 0.1) 60%, transparent 80%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-banner-wrapper::after {
+            content: "";
+            position: absolute;
+            bottom: -25%;
+            left: -10%;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(13, 148, 136, 0.3) 0%, rgba(16, 185, 129, 0.08) 60%, transparent 80%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-badge-top {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            color: #93c5fd;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.4rem 1rem;
+            border-radius: 50rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .hero-manifesto-badge {
+            background: linear-gradient(90deg, rgba(59, 102, 245, 0.25), rgba(13, 148, 136, 0.25));
+            border-left: 4px solid #38bdf8;
+            padding: 0.85rem 1.25rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            color: #e0f2fe;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        /* Stats Cards */
+        .stat-card-modern {
+            background-color: var(--nm-card-bg);
+            border: 1px solid var(--nm-border);
+            border-radius: var(--nm-radius-md);
+            padding: 1.5rem;
+            box-shadow: var(--nm-shadow-sm);
+            transition: all 0.28s ease;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .stat-card-modern:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--nm-shadow-hover);
+        }
+
+        .stat-card-modern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+
+        .border-top-primary::before {
+            background: var(--nm-primary);
+        }
+
+        .border-top-success::before {
+            background: var(--nm-accent-emerald);
+        }
+
+        .border-top-amber::before {
+            background: var(--nm-accent-amber);
+        }
+
+        .border-top-purple::before {
+            background: var(--nm-accent-purple);
+        }
+
+        .stat-icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* General Module Card */
+        .module-card {
+            background-color: var(--nm-card-bg);
+            border: 1px solid var(--nm-border);
+            border-radius: var(--nm-radius-lg);
+            padding: 2rem;
+            box-shadow: var(--nm-shadow-sm);
+            margin-bottom: 2rem;
+            transition: all 0.25s ease;
+        }
+
+        .module-card:hover {
+            box-shadow: var(--nm-shadow-md);
+        }
+
+        .section-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--nm-primary);
+            background-color: var(--nm-soft-blue);
+            padding: 0.35rem 0.8rem;
+            border-radius: 50rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Architecture Page Cards */
+        .page-architecture-card {
+            background-color: var(--nm-card-bg);
+            border: 1px solid var(--nm-border);
+            border-radius: var(--nm-radius-md);
+            border-left-width: 6px !important;
+            padding: 1.75rem;
+            margin-bottom: 1.75rem;
+            box-shadow: var(--nm-shadow-sm);
+            transition: all 0.25s ease;
+        }
+
+        .page-architecture-card:hover {
+            box-shadow: var(--nm-shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .purpose-box {
+            background-color: var(--nm-soft-blue);
+            border-radius: var(--nm-radius-sm);
+            padding: 1rem 1.25rem;
+            margin: 1.25rem 0;
+            font-size: 0.94rem;
+            border-left: 3px solid var(--nm-primary);
+        }
+
+        .feature-subcard {
+            background: var(--nm-bg-main);
+            border: 1px solid var(--nm-border);
+            border-radius: var(--nm-radius-sm);
+            padding: 1.15rem;
+            height: 100%;
+            transition: all 0.2s ease;
+        }
+
+.feature-subcard:hover {
+    border-color: var(--nm-primary);
+    background: var(--nm-card-bg); /* Se adapta al modo sensorial activo */
+}
+
+        /* ODS Matrix */
+        .ods-card {
+            border-radius: var(--nm-radius-md);
+            padding: 1.5rem;
+            height: 100%;
+            transition: all 0.25s ease;
+            position: relative;
+            border: 1px solid var(--nm-border);
+        }
+
+        .ods-3-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f0fdf4 100%);
+            border-top: 5px solid #4c9f38;
+        }
+
+        .ods-10-card {
+            background: linear-gradient(145deg, #ffffff 0%, #fdf2f8 100%);
+            border-top: 5px solid #dd1367;
+        }
+
+        [data-sensory="high-contrast"] .ods-3-card,
+        [data-sensory="high-contrast"] .ods-10-card {
+            background: #131b2e;
+        }
+
+        .ods-badge-pill {
+            font-size: 0.8rem;
+            font-weight: 800;
+            padding: 0.35rem 0.85rem;
+            border-radius: 50rem;
+            color: #ffffff;
+            display: inline-block;
+        }
+
+        .badge-ods-3 {
+            background-color: #4c9f38;
+        }
+
+        .badge-ods-10 {
+            background-color: #dd1367;
+        }
+
+        /* Respaldo Cards */
+        .respaldo-card {
+            background-color: var(--nm-card-bg);
+            border: 1px solid var(--nm-border);
+            border-radius: var(--nm-radius-md);
+            padding: 1.5rem;
+            height: 100%;
+            box-shadow: var(--nm-shadow-sm);
+            transition: all 0.25s ease;
+        }
+
+        .respaldo-card:hover {
+            border-color: var(--nm-primary);
+            box-shadow: var(--nm-shadow-md);
+            transform: translateY(-3px);
+        }
+
+        .respaldo-why {
+            background-color: var(--nm-soft-teal);
+            border-radius: var(--nm-radius-sm);
+            padding: 0.75rem 1rem;
+            font-size: 0.88rem;
+            margin-top: 1rem;
+            color: var(--nm-secondary);
+            font-weight: 500;
+        }
+
+        /* Community Forum Post Cards */
+        .forum-card {
+            background-color: var(--nm-card-bg);
+            border: 1px solid var(--nm-border);
+            border-radius: var(--nm-radius-md);
+            margin-bottom: 1.5rem;
+            box-shadow: var(--nm-shadow-sm);
+            overflow: hidden;
+            transition: all 0.25s ease;
+        }
+
+        .forum-card:hover {
+            box-shadow: var(--nm-shadow-md);
+        }
+
+        .forum-question-pane {
+            padding: 1.5rem;
+            background-color: var(--nm-card-bg);
+            border-bottom: 1px dashed var(--nm-border);
+        }
+
+        .forum-answer-pane {
+            padding: 1.35rem 1.5rem;
+            background-color: var(--nm-soft-blue);
+        }
+
+        .user-avatar-badge {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #ffffff;
+        }
+
+        .verified-solution-tag {
+            background-color: #ecfdf5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 0.3rem 0.75rem;
+            border-radius: 50rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        /* Interactive Copilot Floating Widget */
+        .copilot-floating-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 1040;
+            background: linear-gradient(135deg, var(--nm-primary), #6366f1);
+            color: #ffffff;
+            border: none;
+            border-radius: 50rem;
+            padding: 0.75rem 1.35rem;
+            font-weight: 700;
+            box-shadow: 0 10px 25px -3px rgba(59, 102, 245, 0.45);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .copilot-floating-btn:hover {
+            transform: scale(1.05) translateY(-2px);
+            color: #ffffff;
+            box-shadow: 0 15px 30px -3px rgba(59, 102, 245, 0.6);
+        }
+
+        /* Footer */
+        .footer-neu-modern {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 3.5rem 0 2rem;
+            border-top: 1px solid #1e293b;
+        }
+
+        /* Accessibility Focus Outline */
+        *:focus-visible {
+            outline: 3px solid var(--nm-primary);
+            outline-offset: 2px;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--nm-bg-main);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
