@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-bs-theme="light">
+<html lang="es" data-theme="dark" data-sensory="estandar">
 
 <head>
     <meta charset="UTF-8">
@@ -16,47 +16,42 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+    <!-- Google Fonts: Inter & Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="static/css/style.css">
-    </head>
+</head>
 
-<body data-sensory="estandar" id="top">
+<body id="top">
 
-    <!-- TOP ACCESSIBILITY BAR & NAVBAR -->
+    <!-- ================================================================= -->
+    <!-- 1. HEADER / BARRA DE NAVEGACIÓN Y ACCESIBILIDAD                   -->
+    <!-- ================================================================= -->
     <header class="sticky-top header-navbar">
-        <!-- Mini Accessibility Sensory Strip -->
-        <div class="bg-light border-bottom py-1 small text-muted d-none d-md-block">
+        <!-- Barra Superior de Accesibilidad y Modo Sensorial -->
+        <div class="top-sensory-bar py-1.5 small d-none d-md-block">
             <div class="container d-flex justify-content-between align-items-center">
                 <div class="d-flex align-items-center gap-2">
-                    <i class="bi bi-shield-check text-primary"></i>
+                    <i class="bi bi-shield-check text-accent"></i>
                     <span>Espacio Seguro • Protocolo Pseudónimo y Accesibilidad Neuroinclusiva</span>
                 </div>
                 <div class="d-flex align-items-center gap-3">
                     <span class="fw-semibold">Modo Sensorial:</span>
                     <div class="btn-group btn-group-sm" role="group" aria-label="Selector de Modo Sensorial">
-                        <button type="button" class="btn btn-outline-secondary btn-sm active"
-                            onclick="cambiarModoSensorial('estandar')" id="btn-sensory-std">Estándar</button>
-                        <button type="button" class="btn btn-outline-secondary btn-sm"
-                            onclick="cambiarModoSensorial('calm')" id="btn-sensory-calm">Calmado</button>
-                        <button type="button" class="btn btn-outline-secondary btn-sm"
-                            onclick="cambiarModoSensorial('high-contrast')" id="btn-sensory-hc">Alto Contraste</button>
+                        <button type="button" class="btn btn-sensory active" onclick="cambiarModoSensorial('estandar')" id="btn-sensory-std">Estándar</button>
+                        <button type="button" class="btn btn-sensory" onclick="cambiarModoSensorial('high-contrast')" id="btn-sensory-hc">Contraste</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Main Navigation Bar -->
-        <nav class="navbar navbar-expand-lg py-2 py-lg-3" aria-label="Navegación principal">
+        <!-- Navbar Principal -->
+        <nav class="navbar navbar-expand-lg py-3" aria-label="Navegación principal">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none" href="#top">
-                    <div class="bg-primary bg-gradient text-white p-2 rounded-3 d-flex align-items-center justify-content-center shadow-sm"
-                        style="width: 40px; height: 40px;">
+                    <div class="logo-icon-box">
                         <i class="bi bi-infinity fs-4"></i>
                     </div>
                     <div>
@@ -65,39 +60,31 @@
                     </div>
                 </a>
 
-                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                <button class="navbar-toggler border-0 shadow-none text-white" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNeuroMundo" aria-controls="navbarNeuroMundo" aria-expanded="false"
                     aria-label="Abrir navegación">
-                    <span class="navbar-toggler-icon"></span>
+                    <i class="bi bi-list fs-2 text-primary-custom"></i>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarNeuroMundo">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-1">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-2">
                         <li class="nav-item">
-                            <a id="nav-link-problematica" class="nav-link nav-link-custom" href="#problematica">
-                                <i class="bi bi-diagram-3 me-1 text-primary"></i> Problemática
+                            <a class="nav-link nav-link-custom" href="#bienvenida">
+                                <i class="bi bi-sparkles me-1 text-accent"></i> Bienvenida
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a id="nav-link-ods" class="nav-link nav-link-custom" href="#ods">
-                                <i class="bi bi-globe-americas me-1 text-success"></i> ODS ONU
+                            <a class="nav-link nav-link-custom" href="#ficha-proyecto">
+                                <i class="bi bi-card-heading me-1 text-accent"></i> Ficha del Proyecto
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a id="nav-link-solucion" class="nav-link nav-link-custom" href="#solucion">
-                                <i class="bi bi-cpu me-1 text-purple" style="color: var(--nm-accent-purple);"></i>
-                                Solución y VR
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="nav-link-foro" class="nav-link nav-link-custom" href="#foro">
-                                <i class="bi bi-chat-heart me-1 text-danger"></i> Casos y Foro
+                            <a class="nav-link nav-link-custom" href="#indicadores">
+                                <i class="bi bi-graph-up-arrow me-1 text-accent"></i> Indicadores Clave
                             </a>
                         </li>
                         <li class="nav-item ms-lg-2">
-                            <button id="btn-idioma"
-                                class="btn btn-outline-primary btn-sm rounded-pill px-3 fw-bold d-flex align-items-center gap-1"
-                                onclick="alternarIdioma()">
+                            <button id="btn-idioma" class="btn btn-accent-outline btn-sm rounded-pill px-3 fw-bold d-flex align-items-center gap-1" onclick="alternarIdioma()">
                                 <i class="bi bi-translate"></i> <span id="lbl-idioma-btn">ESP</span>
                             </button>
                         </li>
@@ -107,13 +94,13 @@
         </nav>
     </header>
 
-    <!-- MAIN CONTAINER -->
+    <!-- CONTENEDOR PRINCIPAL -->
     <main class="container my-4 my-lg-5">
 
         <!-- ================================================================= -->
-        <!-- BANNER HERO PRINCIPAL Y MANIFIESTO                                -->
+        <!-- 2. BANNER HERO PRINCIPAL Y MANIFIESTO (BIENVENIDA)               -->
         <!-- ================================================================= -->
-        <section class="hero-banner-wrapper text-white position-relative">
+        <section id="bienvenida" class="hero-banner-wrapper position-relative mb-5">
             <div class="row align-items-center position-relative" style="z-index: 2;">
                 <div class="col-lg-8">
                     <div class="mb-3">
@@ -122,54 +109,51 @@
                         </span>
                     </div>
 
-                    <h1 id="hero-title" class="display-4 fw-extrabold text-white mb-3 lh-tight">
+                    <h1 id="hero-title" class="display-4 fw-extrabold text-primary-custom mb-3 lh-tight">
                         Amar, Respetar e Incluir
                     </h1>
 
                     <div class="hero-manifesto-badge">
                         <div class="d-flex align-items-center gap-2">
-                            <i class="bi bi-heart-pulse-fill text-info fs-5"></i>
+                            <i class="bi bi-heart-pulse-fill text-accent fs-5"></i>
                             <span id="hero-subtitle">AMAR, RESPETAR E INCLUIR • UN ENFOQUE HUMANO Y TECNOLÓGICO</span>
                         </div>
                     </div>
 
-                    <p id="hero-description" class="lead text-light opacity-90 fs-6 mb-4" style="max-width: 720px;">
+                    <p id="hero-description" class="lead text-secondary-custom fs-6 mb-4" style="max-width: 720px;">
                         NeuroMundo es un ecosistema digital e inmersivo orientado a acompañar a familias de personas
                         neurodivergentes. Combina contención comunitaria, tecnología predictiva y experiencias de
                         simulador para reducir el colapso, el estigma y la sobrecarga emocional.
                     </p>
 
                     <div class="d-flex flex-wrap gap-3">
-                        <a href="#problematica" class="btn btn-primary btn-lg rounded-pill px-4 fw-bold shadow">
-                            <i class="bi bi-compass me-2"></i> Explorar Ecosistema
+                        <a href="#ficha-proyecto" class="btn btn-accent btn-lg rounded-pill px-4 fw-bold">
+                            <i class="bi bi-compass me-2"></i> Ver Ficha Técnica
                         </a>
-                        <a href="#foro" class="btn btn-outline-light btn-lg rounded-pill px-4 fw-bold">
-                            <i class="bi bi-people me-2"></i> Ver Foro Comunitario
+                        <a href="#indicadores" class="btn btn-glass-outline btn-lg rounded-pill px-4 fw-bold">
+                            <i class="bi bi-activity me-2"></i> Métricas de Impacto
                         </a>
                     </div>
                 </div>
 
                 <div class="col-lg-4 d-none d-lg-block">
-                    <div
-                        class="bg-white bg-opacity-10 p-4 rounded-4 border border-white border-opacity-25 shadow-lg backdrop-blur">
-                        <div
-                            class="d-flex align-items-center gap-3 mb-3 border-bottom border-white border-opacity-20 pb-3">
-                            <div class="bg-info text-dark p-2 rounded-3">
+                    <div class="glass-card p-4 rounded-4 shadow-lg position-relative overflow-hidden">
+                        <div class="d-flex align-items-center gap-3 mb-3 border-bottom-glass pb-3">
+                            <div class="icon-box-accent p-2.5 rounded-3">
                                 <i class="bi bi-headset-vr fs-3"></i>
                             </div>
                             <div>
-                                <div class="fw-bold fs-6">Ecosistema Conectado</div>
-                                <div class="small text-light opacity-75">Web Pseudónima + VR/IoT</div>
+                                <div class="fw-bold fs-6 text-primary-custom">Ecosistema Conectado</div>
+                                <div class="small text-secondary-custom">Web Pseudónima + VR/IoT</div>
                             </div>
                         </div>
-                        <div class="small text-light opacity-90 mb-3">
-                            <i class="bi bi-check-circle-fill text-success me-1"></i> Reducción de crisis y colapsos
-                            <br><i class="bi bi-check-circle-fill text-success me-1"></i> Soporte a cuidadores 24/7
-                            <br><i class="bi bi-check-circle-fill text-success me-1"></i> Traductor empático con IA
+                        <div class="small text-secondary-custom mb-3 lh-lg">
+                            <i class="bi bi-check-circle-fill text-accent me-1.5"></i> Reducción de crisis y colapsos<br>
+                            <i class="bi bi-check-circle-fill text-accent me-1.5"></i> Soporte a cuidadores 24/7<br>
+                            <i class="bi bi-check-circle-fill text-accent me-1.5"></i> Traductor empático con IA
                         </div>
                         <div class="text-center pt-2">
-                            <span class="badge bg-light text-dark fw-bold px-3 py-2 rounded-pill">Desarrollado por Neu
-                                Industries</span>
+                            <span class="badge-tag-futuristic">Desarrollado por Neu Industries</span>
                         </div>
                     </div>
                 </div>
@@ -177,754 +161,439 @@
         </section>
 
         <!-- ================================================================= -->
-        <!-- BLOQUE: FICHA INSTITUCIONAL Y MÉTRICAS DE IMPACTO                 -->
+        <!-- 3. INFORMACIÓN DE LA APP Y FICHA DEL PROYECTO                    -->
         <!-- ================================================================= -->
-        <section class="module-card">
-            <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 pb-2 border-bottom">
+        <section id="ficha-proyecto" class="module-card mb-5">
+            <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 pb-3 border-bottom-glass">
                 <div>
                     <span id="ficha-badge" class="section-badge">INFORMACIÓN DE LA APP Y FICHA DEL PROYECTO</span>
-                    <h2 id="ficha-titulo" class="h3 mb-0">Ficha Técnica e Indicadores Clave</h2>
+                    <h2 id="ficha-titulo" class="h3 mb-0 text-primary-custom">Ficha Técnica e Indicadores Clave</h2>
                 </div>
-                <div class="text-muted small mt-2 mt-md-0">
-                    <i class="bi bi-activity text-primary me-1"></i> Métricas validadas con impacto medible
+                <div class="text-secondary-custom small mt-2 mt-md-0">
+                    <i class="bi bi-activity text-accent me-1"></i> Métricas validadas con impacto medible
                 </div>
             </div>
 
-            <!-- GRID DE 4 MÉTRICAS CLAVE -->
-            <div class="row g-3 g-md-4 mb-4">
+            <!-- GRID DE INDICADORES CLAVE -->
+            <div id="indicadores" class="row g-3 g-md-4 mb-4">
                 <div class="col-6 col-lg-3">
-                    <div class="stat-card-modern border-top-primary">
-                        <div class="stat-icon-box bg-primary bg-opacity-10 text-primary">
+                    <div class="stat-card-futuristic">
+                        <div class="stat-icon-box">
                             <i class="bi bi-graph-down-arrow"></i>
                         </div>
-                        <div id="stat1-val" class="display-6 fw-extrabold text-primary mb-1">40%</div>
-                        <div id="stat1-lbl" class="small fw-semibold text-muted">Reducción del Estrés Familiar</div>
+                        <div id="stat1-val" class="display-6 fw-extrabold text-primary-custom mb-1">40%</div>
+                        <div id="stat1-lbl" class="small fw-semibold text-secondary-custom">Reducción del Estrés Familiar</div>
                     </div>
                 </div>
                 <div class="col-6 col-lg-3">
-                    <div class="stat-card-modern border-top-success">
-                        <div class="stat-icon-box bg-success bg-opacity-10 text-success">
+                    <div class="stat-card-futuristic">
+                        <div class="stat-icon-box">
                             <i class="bi bi-search-heart"></i>
                         </div>
-                        <div id="stat2-val" class="display-6 fw-extrabold text-success mb-1">25%</div>
-                        <div id="stat2-lbl" class="small fw-semibold text-muted">Subdiagnóstico Identificado</div>
+                        <div id="stat2-val" class="display-6 fw-extrabold text-primary-custom mb-1">25%</div>
+                        <div id="stat2-lbl" class="small fw-semibold text-secondary-custom">Subdiagnóstico Identificado</div>
                     </div>
                 </div>
                 <div class="col-6 col-lg-3">
-                    <div class="stat-card-modern border-top-amber">
-                        <div class="stat-icon-box bg-warning bg-opacity-10 text-warning">
+                    <div class="stat-card-futuristic">
+                        <div class="stat-icon-box">
                             <i class="bi bi-shield-exclamation"></i>
                         </div>
-                        <div id="stat3-val" class="display-6 fw-extrabold text-warning mb-1">80.2%</div>
-                        <div id="stat3-lbl" class="small fw-semibold text-muted">Atención a la Ansiedad del Cuidador
-                        </div>
+                        <div id="stat3-val" class="display-6 fw-extrabold text-primary-custom mb-1">80.2%</div>
+                        <div id="stat3-lbl" class="small fw-semibold text-secondary-custom">Atención a la Ansiedad del Cuidador</div>
                     </div>
                 </div>
                 <div class="col-6 col-lg-3">
-                    <div class="stat-card-modern border-top-purple">
-                        <div class="stat-icon-box text-purple bg-opacity-10"
-                            style="background-color: var(--nm-soft-purple); color: var(--nm-accent-purple);">
+                    <div class="stat-card-futuristic">
+                        <div class="stat-icon-box">
                             <i class="bi bi-layers-half"></i>
                         </div>
-                        <div id="stat4-val" class="display-6 fw-extrabold mb-1" style="color: var(--nm-accent-purple);">
-                            4 Páginas</div>
-                        <div id="stat4-lbl" class="small fw-semibold text-muted">Ecosistema Integrado Web/VR</div>
+                        <div id="stat4-val" class="display-6 fw-extrabold text-primary-custom mb-1">4 Páginas</div>
+                        <div id="stat4-lbl" class="small fw-semibold text-secondary-custom">Ecosistema Integrado Web/VR</div>
                     </div>
                 </div>
             </div>
 
-            <!-- DETALLES DE FICHA TÉCNICA ESTRUCTURADA -->
-            <div class="bg-light p-3 p-md-4 rounded-4 border">
-                <div class="row g-3">
+            <!-- DETALLES TÉCNICOS ESTRUCTURADOS -->
+            <div class="ficha-details-box p-3 p-md-4 rounded-4">
+                <div class="row g-4">
                     <div class="col-md-6 col-lg-3">
                         <div class="d-flex flex-column h-100">
-                            <span id="ficha-lbl-nombre" class="small text-muted text-uppercase fw-bold mb-1">Nombre del
-                                Proyecto</span>
-                            <span id="ficha-val-nombre" class="fw-bold text-dark">NeuroMundo — Ecosistema Digital e
-                                Inmersivo para Neurodivergencias</span>
+                            <span id="ficha-lbl-nombre" class="small text-secondary-custom text-uppercase fw-bold mb-1">Nombre del Proyecto</span>
+                            <span id="ficha-val-nombre" class="fw-bold text-primary-custom">NeuroMundo — Ecosistema Digital e Inmersivo para Neurodivergencias</span>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="d-flex flex-column h-100">
-                            <span id="ficha-lbl-org" class="small text-muted text-uppercase fw-bold mb-1">Organización /
-                                Desarrollador</span>
-                            <span id="ficha-val-org" class="fw-bold text-primary">
+                            <span id="ficha-lbl-org" class="small text-secondary-custom text-uppercase fw-bold mb-1">Organización / Desarrollador</span>
+                            <span id="ficha-val-org" class="fw-bold text-accent">
                                 <i class="bi bi-building me-1"></i> Neu Industries
                             </span>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="d-flex flex-column h-100">
-                            <span id="ficha-lbl-metodo" class="small text-muted text-uppercase fw-bold mb-1">Enfoque
-                                Metodológico</span>
-                            <span id="ficha-val-metodo" class="fw-semibold text-secondary">Apoyo Comunitario Pseudónimo,
-                                Corregulación Sensorial, Simulación VR/IoT</span>
+                            <span id="ficha-lbl-metodo" class="small text-secondary-custom text-uppercase fw-bold mb-1">Enfoque Metodológico</span>
+                            <span id="ficha-val-metodo" class="fw-semibold text-secondary-custom">Apoyo Comunitario Pseudónimo, Corregulación Sensorial, Simulación VR/IoT</span>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="d-flex flex-column h-100">
-                            <span id="ficha-lbl-poblacion"
-                                class="small text-muted text-uppercase fw-bold mb-1">Población Objetivo</span>
-                            <span id="ficha-val-poblacion" class="fw-semibold text-dark">Familias, Cuidadores de Primer
-                                Diagnóstico, Docentes y Profesionales de Apoyo</span>
+                            <span id="ficha-lbl-poblacion" class="small text-secondary-custom text-uppercase fw-bold mb-1">Población Objetivo</span>
+                            <span id="ficha-val-poblacion" class="fw-semibold text-primary-custom">Familias, Cuidadores de Primer Diagnóstico, Docentes y Profesionales de Apoyo</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ================================================================= -->
-        <!-- BLOQUE 1: MAQUETA DE LA PLATAFORMA WEB (ESTRUCTURA DE 4 PÁGINAS)   -->
-        <!-- ================================================================= -->
-        <section id="problematica" class="module-card">
-            <div class="mb-4 pb-2 border-bottom">
-                <span id="arq-badge" class="section-badge">ARQUITECTURA DE NAVEGACIÓN</span>
-                <h2 id="arq-titulo" class="h3 mb-1">1. Maqueta de la Plataforma Web (4 Páginas Interactivas)</h2>
-                <p class="text-muted small mb-0">Estructura modular optimizada para resolver la brecha de información,
-                    soporte diario, simulación sensorial y bienestar familiar.</p>
-            </div>
 
-            <!-- PÁGINA 1: DIAGNÓSTICO E INVISIBILIDAD -->
-            <div class="page-architecture-card border-warning">
-                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
-                    <span id="p1-tag" class="badge bg-warning text-dark fw-bold px-3 py-2 rounded-pill">PÁGINA 1</span>
-                    <span class="text-muted small"><i class="bi bi-eye-slash me-1"></i> Visibilidad y
-                        Concientización</span>
-                </div>
-                <h3 id="p1-title" class="h4 fw-bold mt-2 mb-3 text-dark">Diagnóstico e Invisibilidad — El Desafío Oculto
-                    del Autismo</h3>
+        
+<div class="main-container">
 
-                <div id="p1-purpose" class="purpose-box">
-                    <strong><i class="bi bi-lightbulb-fill text-warning me-1"></i> ¿Por qué existe?</strong> Visibiliza
-                    la realidad del subdiagnóstico y rompe la barrera de la desinformación inicial (35%-40% de ideas
-                    erróneas). Ayuda a identificar señales tempranas sin caer en culpa o confusión con "rebeldía".
-                </div>
+    <!-- 1. Introducción -->
+    <section id="introduccion" class="card-section">
+        <span class="section-badge">
+            <span class="lang-es"><i class="bi bi-compass me-1"></i> VISIÓN GENERAL</span>
+            <span class="lang-en"><i class="bi bi-compass me-1"></i> OVERVIEW</span>
+        </span>
+        <h2 class="d-flex align-items-center gap-2">
+            <i class="bi bi-info-circle text-accent fs-4"></i>
+            <span class="lang-es">Introducción</span>
+            <span class="lang-en">Introduction</span>
+        </h2>
+        <p class="text-secondary-custom mt-3">
+            <span class="lang-es"><strong>NeuroMundo</strong> es una propuesta creada por la empresa <strong>Neu Industries</strong>. Consiste en una plataforma digital comunitaria y pseudónima dedicada exclusivamente a padres y cuidadores de personas en el Espectro Autista (TEA). Su objetivo principal es facilitar la consulta técnica de dudas conductuales, el intercambio de estrategias de manejo y el soporte mutuo, protegiendo siempre la privacidad e identidad de los menores.</span>
+            <span class="lang-en"><strong>NeuroMundo</strong> is a project created by <strong>Neu Industries</strong>. It consists of a pseudonymous digital community platform dedicated exclusively to parents and caregivers of individuals on the Autism Spectrum (ASD). Its main goal is to facilitate inquiries on behavioral management, strategy sharing, and mutual support, while strictly protecting the privacy and identity of minors.</span>
+        </p>
+    </section>
 
-                <div class="bg-warning bg-opacity-10 border border-warning rounded-3 p-3 mb-3 text-center">
-                    <span id="p1-banner-tag" class="badge bg-warning text-dark text-uppercase fw-bold mb-1">Hero Banner
-                        Impactante</span>
-                    <h4 id="p1-banner-title" class="h5 fw-bold text-dark mb-0">"No es rebeldía, es neurodivergencia:
-                        Entendiendo las señales no vistas"</h4>
-                </div>
+    <!-- 2. Problemática -->
+    <section id="problema" class="card-section highlight-card">
+        <span class="section-badge">
+            <span class="lang-es"><i class="bi bi-shield-exclamation me-1"></i> CONTEXTO ACTUAL</span>
+            <span class="lang-en"><i class="bi bi-shield-exclamation me-1"></i> CURRENT CONTEXT</span>
+        </span>
+        <h2 class="d-flex align-items-center gap-2">
+            <i class="bi bi-exclamation-triangle text-accent fs-4"></i>
+            <span class="lang-es">La Problemática: El Desafío del Autismo</span>
+            <span class="lang-en">The Problem: The Autism Challenge</span>
+        </h2>
+        <p class="text-secondary-custom mt-2">
+            <span class="lang-es">Las familias enfrentan dos grandes barreras: el subdiagnóstico y la falta de herramientas para el manejo diario.</span>
+            <span class="lang-en">Families face two major barriers: underdiagnosis and a lack of tools for daily management.</span>
+        </p>
+        <ul class="content-list list-unstyled mt-3">
+            <li class="d-flex align-items-start gap-2 mb-2">
+                <i class="bi bi-dot text-accent fs-3 lh-1"></i>
+                <span>
+                    <span class="lang-es"><strong class="text-primary-custom">Casos no diagnosticados:</strong> 1 de cada 4 niños menores de 8 años (25%) no tiene un diagnóstico oficial, al igual que el 25% de los adolescentes. Existe además una brecha socioeconómica crítica en comunidades de bajos ingresos.</span>
+                    <span class="lang-en"><strong class="text-primary-custom">Undiagnosed cases:</strong> 1 in 4 children under 8 (25%) lacks an official diagnosis, as do 25% of adolescents. There is also a critical socioeconomic gap in low-income communities.</span>
+                </span>
+            </li>
+            <li class="d-flex align-items-start gap-2 mb-2">
+                <i class="bi bi-dot text-accent fs-3 lh-1"></i>
+                <span>
+                    <span class="lang-es"><strong class="text-primary-custom">Impacto en la Salud Mental:</strong> El 72.5% de las madres de niños autistas presentan síntomas depresivos y el 80.2% sufre de ansiedad por falta de herramientas para manejar crisis sensoriales o conductuales.</span>
+                    <span class="lang-en"><strong class="text-primary-custom">Mental Health Impact:</strong> 72.5% of mothers of autistic children display depressive symptoms and 80.2% suffer from anxiety due to a lack of tools to manage sensory or behavioral crisis.</span>
+                </span>
+            </li>
+            <li class="d-flex align-items-start gap-2">
+                <i class="bi bi-dot text-accent fs-3 lh-1"></i>
+                <span>
+                    <span class="lang-es"><strong class="text-primary-custom">Impacto Económico:</strong> Entre el 25% y el 45% de los padres han tenido que reducir sus horas laborales o renunciar para dedicarse al cuidado de sus hijos.</span>
+                    <span class="lang-en"><strong class="text-primary-custom">Financial Impact:</strong> Between 25% and 45% of parents have had to reduce their work hours or quit entirely to dedicate themselves to caregiving.</span>
+                </span>
+            </li>
+        </ul>
+    </section>
 
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <div class="feature-subcard border-warning">
-                            <h5 id="p1-card1-title" class="h6 fw-bold text-dark"><i
-                                    class="bi bi-bar-chart-fill text-warning me-2"></i>Infografía Rutgers (Datos Casos)
-                            </h5>
-                            <p id="p1-card1-text" class="small text-muted mb-0">Tarjetas interactivas que destacan el
-                                25% de casos no detectados en menores de 8 años y en la adolescencia (16 años).</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="feature-subcard border-primary">
-                            <h5 id="p1-card2-title" class="h6 fw-bold text-dark"><i
-                                    class="bi bi-map-fill text-primary me-2"></i>Módulo de Brecha Social</h5>
-                            <p id="p1-card2-text" class="small text-muted mb-0">Gráfico comparativo que expone cómo la
-                                falta de acceso a especialistas afecta con mayor gravedad a comunidades vulnerables.</p>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="feature-subcard border-success">
-                            <h5 id="p1-card3-title" class="h6 fw-bold text-dark"><i
-                                    class="bi bi-puzzle-fill text-success me-2"></i>Test de Orientación Sensorial y
-                                Conductual (No Clínico)</h5>
-                            <p id="p1-card3-text" class="small text-muted mb-0">Cuestionario interactivo para ayudar a
-                                cuidadores a diferenciar entre un berrinche convencional y un colapso sensorial
-                                (meltdown).</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PÁGINA 2: COMUNIDAD Y RESPUESTAS (RED PSEUDÓNIMA) -->
-            <div class="page-architecture-card border-primary">
-                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
-                    <span id="p2-tag" class="badge bg-primary fw-bold px-3 py-2 rounded-pill">PÁGINA 2</span>
-                    <span class="text-muted small"><i class="bi bi-chat-dots me-1"></i> Red Comunitaria Estilo
-                        Reddit</span>
-                </div>
-                <h3 id="p2-title" class="h4 fw-bold mt-2 mb-3 text-dark">Comunidad y Respuestas — Red Pseudónima de
-                    Apoyo (Estilo Reddit)</h3>
-
-                <div id="p2-purpose" class="purpose-box" style="border-left-color: var(--nm-primary);">
-                    <strong><i class="bi bi-shield-lock-fill text-primary me-1"></i> ¿Por qué existe?</strong> Núcleo
-                    operativo del proyecto. Resuelve el soporte del día a día manteniendo la privacidad del menor y
-                    reduciendo el estigma social mediante perfiles basados en patrones conductuales.
-                </div>
-
-                <div class="row g-3">
-                    <div class="col-md-4">
-                        <div class="feature-subcard border-primary">
-                            <h5 id="p2-card1-title" class="h6 fw-bold text-dark"><i
-                                    class="bi bi-search text-primary me-2"></i>Barra de Búsqueda y Filtros Conductuales
-                            </h5>
-                            <p id="p2-card1-text" class="small text-muted mb-0">Filtros por variables: Sensibilidad
-                                Sensorial, Nivel de Comunicación, Manejo de Crisis en Público y Rutinas de
-                                Sueño/Alimentación.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="feature-subcard" style="border-color: var(--nm-accent-purple);">
-                            <h5 id="p2-card2-title" class="h6 fw-bold text-dark"><i
-                                    class="bi bi-chat-square-quote-fill me-2"
-                                    style="color: var(--nm-accent-purple);"></i>Feed de Hilos con Votación</h5>
-                            <p id="p2-card2-text" class="small text-muted mb-0">Visualización clara tipo foro con dudas
-                                reales y respuestas comunitarias validadas (las soluciones más efectivas quedan arriba).
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="feature-subcard border-success">
-                            <h5 id="p2-card3-title" class="h6 fw-bold text-dark"><i
-                                    class="bi bi-robot text-success me-2"></i>Asistente "Copiloto Comunitario IA"</h5>
-                            <p id="p2-card3-text" class="small text-muted mb-0">Widget discreto e inteligente en el
-                                margen inferior. Sintetiza y resume las mejores soluciones del foro para preguntas
-                                rápidas del usuario.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PÁGINA 3: EMPATÍA Y SIMULACIÓN (VR e IoT) -->
-            <div class="page-architecture-card" style="border-left-color: var(--nm-accent-purple) !important;">
-                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
-                    <span id="p3-tag" class="badge text-white fw-bold px-3 py-2 rounded-pill"
-                        style="background-color: var(--nm-accent-purple);">PÁGINA 3</span>
-                    <span class="text-muted small"><i class="bi bi-headset-vr me-1"></i> Inmersión Sensorial VR &
-                        IoT</span>
-                </div>
-                <h3 id="p3-title" class="h4 fw-bold mt-2 mb-3 text-dark">Empatía y Simulación — Experiencia Inmersiva VR
-                    e IoT</h3>
-
-                <div id="p3-purpose" class="purpose-box"
-                    style="border-left-color: var(--nm-accent-purple); background-color: var(--nm-soft-purple);">
-                    <strong><i class="bi bi-sliders text-purple me-1"></i> ¿Por qué existe?</strong> Traduce la teoría
-                    en una experiencia transformadora. Permite a los padres experimentar la hiper o hiposensibilidad
-                    sensorial para acelerar la adaptación del entorno en casa.
-                </div>
-
-                <div class="row g-3">
-                    <div class="col-md-4">
-                        <div class="feature-subcard border-warning">
-                            <h5 id="p3-card1-title" class="h6 fw-bold text-dark"><i
-                                    class="bi bi-headset-vr text-warning me-2"></i>Centro de Conexión VR</h5>
-                            <p id="p3-card1-text" class="small text-muted mb-0">Vinculación de visores accesibles para
-                                ajustar parámetros de luz, ruido ambiental o texturas según el perfil del niño.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="feature-subcard border-primary">
-                            <h5 id="p3-card2-title" class="h6 fw-bold text-dark"><i
-                                    class="bi bi-display text-primary me-2"></i>Simulador Web Interactivo</h5>
-                            <p id="p3-card2-text" class="small text-muted mb-0">Muestra visual y auditiva de un
-                                supermercado o centro médico con sobrecarga sensorial, explicando el origen del aleteo.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="feature-subcard border-success">
-                            <h5 id="p3-card3-title" class="h6 fw-bold text-dark"><i
-                                    class="bi bi-file-earmark-arrow-down-fill text-success me-2"></i>Guías Visuales
-                                Descargables</h5>
-                            <p id="p3-card3-text" class="small text-muted mb-0">Plantillas con pictogramas para el
-                                refrigerador, secuencias visuales médicas y temporizadores de uso de pantallas.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PÁGINA 4: IMPACTO Y BIENESTAR -->
-            <div class="page-architecture-card border-success">
-                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
-                    <span id="p4-tag" class="badge bg-success fw-bold px-3 py-2 rounded-pill">PÁGINA 4</span>
-                    <span class="text-muted small"><i class="bi bi-heart-pulse me-1"></i> Bienestar y
-                        Sostenibilidad</span>
-                </div>
-                <h3 id="p4-title" class="h4 fw-bold mt-2 mb-3 text-dark">Impacto y Bienestar — Reducción del Estrés y
-                    Sostenibilidad</h3>
-
-                <div id="p4-purpose" class="purpose-box"
-                    style="border-left-color: var(--nm-accent-emerald); background-color: var(--nm-soft-green);">
-                    <strong><i class="bi bi-graph-up-arrow text-success me-1"></i> ¿Por qué existe?</strong> Demuestra
-                    el valor social y la efectividad del modelo. Presenta los datos de salud mental de los cuidadores y
-                    los resultados del entrenamiento en corregulación.
-                </div>
-
-                <div class="row g-3">
-                    <div class="col-md-4">
-                        <div class="feature-subcard border-success">
-                            <h5 id="p4-card1-title" class="h6 fw-bold text-dark"><i
-                                    class="bi bi-clipboard-data-fill text-success me-2"></i>Dashboard Familiar</h5>
-                            <p id="p4-card1-text" class="small text-muted mb-0">Gráficos que muestran la reducción del
-                                estrés en un 40% al aplicar corregulación en lugar de castigos.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="feature-subcard border-warning">
-                            <h5 id="p4-card2-title" class="h6 fw-bold text-dark"><i
-                                    class="bi bi-heart-fill text-warning me-2"></i>Salud Mental Cuidador</h5>
-                            <p id="p4-card2-text" class="small text-muted mb-0">Recursos para validar y acompañar la
-                                ansiedad (80.2%) y depresión (72.5%) de las madres.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="feature-subcard border-primary">
-                            <h5 id="p4-card3-title" class="h6 fw-bold text-dark"><i
-                                    class="bi bi-globe-americas text-primary me-2"></i>Panel ODS ONU</h5>
-                            <p id="p4-card3-text" class="small text-muted mb-0">Exposición clara del impacto alineado
-                                con las metas globales (ODS 3, 4, 8 y 10).</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================================================================= -->
-        <!-- BLOQUE 2: MATRIZ GRÁFICA DE IMPACTO ODS                           -->
-        <!-- ================================================================= -->
-        <section id="ods" class="module-card">
-            <div class="mb-4 pb-2 border-bottom">
-                <span id="ods-badge" class="section-badge">SOSTENIBILIDAD Y RESULTADOS</span>
-                <h2 id="ods-titulo" class="h3 mb-1">2. Matriz Gráfica de Impacto ODS</h2>
-                <p id="ods-header-banner" class="text-muted small mb-0">Matriz de Impacto en Objetivos de Desarrollo
-                    Sostenible (ONU)</p>
-            </div>
-
-            <div class="row g-4">
-                <!-- ODS 3 -->
-                <div class="col-md-6">
-                    <div class="ods-card ods-3-card shadow-sm">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <span class="ods-badge-pill badge-ods-3">ODS 3</span>
-                            <span class="badge bg-success bg-opacity-25 text-success fw-bold"><i
-                                    class="bi bi-heart-pulse-fill me-1"></i> ONU Agenda 2030</span>
-                        </div>
-                        <h4 id="ods3-title" class="h5 fw-bold text-dark mb-3">Salud y Bienestar</h4>
-                        <div class="p-3 bg-white bg-opacity-80 rounded-3 border mb-3">
-                            <p id="ods3-problem" class="small text-dark mb-0">
-                                <strong class="text-danger"><i class="bi bi-exclamation-triangle-fill me-1"></i>
-                                    Problema:</strong> 72.5% de madres presentan depresión y 80.2% ansiedad por
-                                agotamiento y sobrecarga.
-                            </p>
-                        </div>
-                        <div id="ods3-impact"
-                            class="p-3 bg-success bg-opacity-10 text-success-emphasis rounded-3 border border-success border-opacity-25 small fw-semibold">
-                            <strong><i class="bi bi-check-circle-fill text-success me-1"></i> Impacto:</strong>
-                            Reducción del 40% del estrés familiar mediante corregulación e intervención preventiva en
-                            salud mental.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ODS 10 -->
-                <div class="col-md-6">
-                    <div class="ods-card ods-10-card shadow-sm">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <span class="ods-badge-pill badge-ods-10">ODS 10</span>
-                            <span class="badge bg-danger bg-opacity-25 text-danger fw-bold"><i
-                                    class="bi bi-people-fill me-1"></i> ONU Agenda 2030</span>
-                        </div>
-                        <h4 id="ods10-title" class="h5 fw-bold text-dark mb-3">Reducción de Desigualdades</h4>
-                        <div class="p-3 bg-white bg-opacity-80 rounded-3 border mb-3">
-                            <p id="ods10-problem" class="small text-dark mb-0">
-                                <strong class="text-danger"><i class="bi bi-exclamation-triangle-fill me-1"></i>
-                                    Problema:</strong> Falta de acceso especialista en sectores vulnerables o
-                                comunidades latinas/afro.
-                            </p>
-                        </div>
-                        <div id="ods10-impact"
-                            class="p-3 bg-danger bg-opacity-10 text-danger-emphasis rounded-3 border border-danger border-opacity-25 small fw-semibold">
-                            <strong><i class="bi bi-check-circle-fill text-danger me-1"></i> Impacto:</strong>
-                            Democratización del conocimiento especializado a través de una web gratuita y ligera.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================================================================= -->
-        <!-- BLOQUE 3: IDEAS DE RESPALDO Y PROFUNDIZACIÓN TÉCNICA               -->
-        <!-- ================================================================= -->
-        <section id="solucion" class="module-card">
-            <div class="mb-4 pb-2 border-bottom">
-                <span id="respaldo-badge" class="section-badge">INNOVACIÓN Y TECNOLOGÍA</span>
-                <h2 id="respaldo-titulo" class="h3 mb-1">3. Componentes de Respaldo para Profundizar la Solución</h2>
-                <p class="text-muted small mb-0">Módulos tecnológicos y metodológicos que garantizan la efectividad del
-                    acompañamiento.</p>
-            </div>
-
-            <div class="row g-4">
-                <!-- COMPONENTE A -->
-                <div class="col-md-6">
-                    <div class="respaldo-card">
-                        <div class="d-flex align-items-center gap-3 mb-3">
-                            <div class="bg-primary bg-opacity-10 text-primary p-3 rounded-3 fs-4">
-                                <i class="bi bi-tag-fill"></i>
-                            </div>
-                            <h4 id="resp1-title" class="h6 fw-bold mb-0 text-dark">A. Biblioteca de Patrones Sensoriales
-                                y Conductuales</h4>
-                        </div>
-                        <p id="resp1-detail" class="small text-muted mb-2">
-                            <strong>Detalle:</strong> En lugar de grados rígidos, las fichas mapean desencadenantes
-                            (ruidos, texturas) y reguladores (aleteo, abrazos de compresión).
-                        </p>
-                        <div id="resp1-why" class="respaldo-why">
-                            <i class="bi bi-stars me-1"></i> <strong>Por qué respalda:</strong> Permite encontrar
-                            cuidadores con la combinación exacta de sensibilidad para compartir soluciones.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- COMPONENTE B -->
-                <div class="col-md-6">
-                    <div class="respaldo-card">
-                        <div class="d-flex align-items-center gap-3 mb-3">
-                            <div class="bg-warning bg-opacity-10 text-warning p-3 rounded-3 fs-4">
-                                <i class="bi bi-award-fill"></i>
-                            </div>
-                            <h4 id="resp2-title" class="h6 fw-bold mb-0 text-dark">B. Algoritmo de Consenso Empático
-                            </h4>
-                        </div>
-                        <p id="resp2-detail" class="small text-muted mb-2">
-                            <strong>Detalle:</strong> Sistema de votación que prioriza respuestas con el indicador "Esto
-                            funcionó en mi caso en [X] semanas".
-                        </p>
-                        <div id="resp2-why" class="respaldo-why">
-                            <i class="bi bi-stars me-1"></i> <strong>Por qué respalda:</strong> Posiciona soluciones por
-                            tasa real de éxito en la práctica cotidiana y no solo por popularidad.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- COMPONENTE C -->
-                <div class="col-md-6">
-                    <div class="respaldo-card">
-                        <div class="d-flex align-items-center gap-3 mb-3">
-                            <div class="bg-success bg-opacity-10 text-success p-3 rounded-3 fs-4">
-                                <i class="bi bi-cpu-fill"></i>
-                            </div>
-                            <h4 id="resp3-title" class="h6 fw-bold mb-0 text-dark">C. Protocolo de "Traducción
-                                Sintomática" para Copiloto IA</h4>
-                        </div>
-                        <p id="resp3-detail" class="small text-muted mb-2">
-                            <strong>Detalle:</strong> La IA actúa como traductor no verbal. Si un padre ingresa "se
-                            muerde la mano en la cocina", la IA sugiere causas probables según la comunidad.
-                        </p>
-                        <div id="resp3-why" class="respaldo-why">
-                            <i class="bi bi-stars me-1"></i> <strong>Por qué respalda:</strong> Pasa del enojo o miedo a
-                            la empatía inmediata sugiriendo apoyos visuales antes de la crisis.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- COMPONENTE D -->
-                <div class="col-md-6">
-                    <div class="respaldo-card">
-                        <div class="d-flex align-items-center gap-3 mb-3">
-                            <div class="p-3 rounded-3 fs-4 text-purple"
-                                style="background-color: var(--nm-soft-purple); color: var(--nm-accent-purple);">
-                                <i class="bi bi-headset"></i>
-                            </div>
-                            <h4 id="resp4-title" class="h6 fw-bold mb-0 text-dark">D. Sesiones de "Descompresión Guiada"
-                                en VR (IoT)</h4>
-                        </div>
-                        <p id="resp4-detail" class="small text-muted mb-2">
-                            <strong>Detalle:</strong> Modo de contraste interactivo en VR donde el padre siente la
-                            sobrecarga del supermercado y luego aplica "filtros de regulación".
-                        </p>
-                        <div id="resp4-why" class="respaldo-why">
-                            <i class="bi bi-stars me-1"></i> <strong>Por qué respalda:</strong> Demuestra visual y
-                            auditivamente cómo un pequeño ajuste reduce la carga cognitiva del niño.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================================================================= -->
-        <!-- BLOQUE 4: BANCO DE CASOS Y RESPUESTAS INTEGRADAS (FORO PÁGINA 2)   -->
-        <!-- ================================================================= -->
-        <section id="foro" class="module-card">
-            <div class="text-center max-w-700 mx-auto mb-4 pb-3 border-bottom">
-                <span class="section-badge mb-2"><i class="bi bi-chat-heart-fill me-1"></i> COMUNIDAD ACTIVA</span>
-                <h2 id="foro-title" class="display-6 fw-bold mb-2">Comunidad y Foro de Casos Reales</h2>
-                <p id="foro-desc" class="text-muted">
-                    Espacio de acompañamiento, testimonios y respuestas validadas por la comunidad y especialistas para
-                    el desarrollo neurodivergente.
+    <!-- 3. Alineación con ODS -->
+    <section id="ods" class="card-section">
+        <span class="section-badge">
+            <span class="lang-es"><i class="bi bi-globe me-1"></i> COMPROMISO GLOBAL</span>
+            <span class="lang-en"><i class="bi bi-globe me-1"></i> GLOBAL COMMITMENT</span>
+        </span>
+        <h2 class="d-flex align-items-center gap-2">
+            <i class="bi bi-pie-chart text-accent fs-4"></i>
+            <span class="lang-es">Alineación con los ODS</span>
+            <span class="lang-en">Alignment with SDGs</span>
+        </h2>
+        <div class="ods-grid">
+            <div class="ods-card">
+                <div class="ods-badge ods-3-badge"><i class="bi bi-heart-pulse-fill me-1"></i> ODS 3</div>
+                <h3 class="fs-5">
+                    <span class="lang-es">Salud y Bienestar</span>
+                    <span class="lang-en">Good Health and Well-being</span>
+                </h3>
+                <p>
+                    <span class="lang-es">Ataca la crisis de salud mental en cuidadores, reduciendo el estrés familiar hasta en un 40% mediante herramientas de regulación.</span>
+                    <span class="lang-en">Addresses caregiver mental health crisis, reducing family stress by up to 40% through regulation tools.</span>
                 </p>
             </div>
-
-            <!-- CATEGORÍA 1 -->
-            <div class="mb-4">
-                <div
-                    class="d-flex align-items-center gap-2 p-3 rounded-3 bg-primary bg-opacity-10 border-start border-4 border-primary mb-3">
-                    <i class="bi bi-mortarboard-fill text-primary fs-5"></i>
-                    <div>
-                        <h4 id="cat1-title" class="h6 fw-bold mb-0 text-dark">Categoría 1: Diagnóstico Temprano e
-                            Integración Escolar</h4>
-                        <span id="cat1-sub" class="small text-muted">Acompañamiento inicial, trámites y adaptación
-                            académica</span>
-                    </div>
-                </div>
-
-                <!-- CASO 1 -->
-                <article class="forum-card">
-                    <div class="forum-question-pane">
-                        <div class="d-flex align-items-center justify-content-between mb-3">
-                            <div class="d-flex align-items-center gap-2">
-                                <div class="user-avatar-badge bg-primary">A1</div>
-                                <div>
-                                    <strong id="c1-user" class="d-block text-dark">Cuidador Anon_1024</strong>
-                                    <span id="c1-tag" class="badge bg-light text-muted border">Caso 1: Proceso de
-                                        diagnóstico y apoyo escolar</span>
-                                </div>
-                            </div>
-                            <span class="badge bg-primary bg-opacity-10 text-primary"><i class="bi bi-clock me-1"></i>
-                                Consulta Activa</span>
-                        </div>
-                        <p id="c1-q" class="text-dark fst-italic mb-0">
-                            "Hola a todos. Mi hijo de 4 años recién fue diagnosticado con TEA leve. En el jardín me
-                            dicen que necesita una sombra o tutor de apoyo pero no sé por dónde empezar con los trámites
-                            ni cómo manejarlo emocionalmente con la familia. ¿Alguien ha pasado por esto que me pueda
-                            guiar?"
-                        </p>
-                    </div>
-                    <div class="forum-answer-pane">
-                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
-                            <div class="verified-solution-tag">
-                                <i class="bi bi-patch-check-fill text-success"></i> <span id="c1-badge">Respuesta
-                                    Validada por la Comunidad (+142 confirmaciones)</span>
-                            </div>
-                            <span class="small text-muted"><i class="bi bi-hand-thumbs-up-fill text-primary"></i> 142
-                                familias encontraron útil esto</span>
-                        </div>
-                        <p id="c1-a" class="text-dark mb-0 small">
-                            "Tranquila, el primer paso siempre es el más abrumador. Te recomiendo solicitar en el
-                            colegio el informe psicopedagógico y acercarte a la dirección de educación local para
-                            averiguar los convenios de integración PIE o equivalentes. No estás sola en este camino."
-                        </p>
-                    </div>
-                </article>
-
-                <!-- CASO 2 -->
-                <article class="forum-card">
-                    <div class="forum-question-pane">
-                        <div class="d-flex align-items-center justify-content-between mb-3">
-                            <div class="d-flex align-items-center gap-2">
-                                <div class="user-avatar-badge bg-info">A2</div>
-                                <div>
-                                    <strong id="c2-user" class="d-block text-dark">Cuidador Anon_3081</strong>
-                                    <span id="c2-tag" class="badge bg-light text-muted border">Caso 2: Adaptaciones
-                                        curriculares</span>
-                                </div>
-                            </div>
-                            <span class="badge bg-info bg-opacity-10 text-info"><i class="bi bi-journal-check me-1"></i>
-                                Escolar</span>
-                        </div>
-                        <p id="c2-q" class="text-dark fst-italic mb-0">
-                            "¿Cómo lograron que el colegio adapte las evaluaciones de sus hijos sin que se sientan
-                            excluidos?"
-                        </p>
-                    </div>
-                    <div class="forum-answer-pane">
-                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
-                            <div class="verified-solution-tag">
-                                <i class="bi bi-patch-check-fill text-success"></i> <span id="c2-badge">Respuesta
-                                    Validada por la Comunidad (+98 confirmaciones)</span>
-                            </div>
-                            <span class="small text-muted"><i class="bi bi-hand-thumbs-up-fill text-primary"></i> 98
-                                familias encontraron útil esto</span>
-                        </div>
-                        <p id="c2-a" class="text-dark mb-0 small">
-                            "En nuestro caso solicitamos evaluaciones orales o con pictogramas en lugar de extensas
-                            pruebas escritas. Es fundamental coordinar directamente con el equipo diferencial del
-                            colegio."
-                        </p>
-                    </div>
-                </article>
-            </div>
-
-            <!-- CATEGORÍA 2 -->
-            <div class="mb-4">
-                <div
-                    class="d-flex align-items-center gap-2 p-3 rounded-3 bg-warning bg-opacity-10 border-start border-4 border-warning mb-3">
-                    <i class="bi bi-chat-quote-fill text-warning fs-5"></i>
-                    <div>
-                        <h4 id="cat2-title" class="h6 fw-bold mb-0 text-dark">Categoría 2: Manejo de Crisis y
-                            Comunicación No Verbal</h4>
-                        <span id="cat2-sub" class="small text-muted">Pautas de autorregulación y pictogramas de
-                            contención</span>
-                    </div>
-                </div>
-
-                <!-- CASO 3 -->
-                <article class="forum-card">
-                    <div class="forum-question-pane">
-                        <div class="d-flex align-items-center justify-content-between mb-3">
-                            <div class="d-flex align-items-center gap-2">
-                                <div class="user-avatar-badge bg-warning text-dark">A3</div>
-                                <div>
-                                    <strong id="c3-user" class="d-block text-dark">Cuidador Anon_5590</strong>
-                                    <span id="c3-tag" class="badge bg-light text-muted border">Caso 3: Desregulación
-                                        severa y autolesiones</span>
-                                </div>
-                            </div>
-                            <span class="badge bg-warning bg-opacity-25 text-dark"><i
-                                    class="bi bi-shield-exclamation me-1"></i> Crisis & Regulación</span>
-                        </div>
-                        <p id="c3-q" class="text-dark fst-italic mb-0">
-                            "Mi hija de 3 años cuando no le entiendo lo que quiere empieza a morderse las manitos y
-                            gritar. Me da desesperación no saber qué hacer en ese instante."
-                        </p>
-                    </div>
-                    <div class="forum-answer-pane" style="background-color: var(--nm-soft-amber);">
-                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
-                            <div class="verified-solution-tag bg-white">
-                                <i class="bi bi-patch-check-fill text-success"></i> <span id="c3-badge">Respuesta
-                                    Validada por la Comunidad (+210 confirmaciones)</span>
-                            </div>
-                            <span class="small text-muted"><i class="bi bi-hand-thumbs-up-fill text-warning"></i> 210
-                                familias encontraron útil esto</span>
-                        </div>
-                        <p id="c3-a" class="text-dark mb-0 small">
-                            "Sé lo feo que se siente esa desesperación y ver que se lastima, pero piensa que ella solo
-                            está desesperada por no poder decirte algo tan simple como que tiene sed. A mí me salvó la
-                            vida pegar fotos de la comida, el agua y la leche en la puerta del refrigerador a la altura
-                            de mi hijo para prevenir esos momentos, y lo que te recomiendo hacer hoy que pase de nuevo
-                            es no ponerte a adivinar como loca, sino llevarla de la mano hasta donde están las fotos,
-                            guiarle suavemente el dedito para que toque la imagen del agua, dársela enseguida y decirle
-                            'mira, agua', para que así vaya entendiendo que mostrándote la foto le vas a dar lo que
-                            necesita sin necesidad de morderse."
-                        </p>
-                    </div>
-                </article>
-            </div>
-
-            <!-- CATEGORÍA 3 -->
-            <div class="mb-2">
-                <div
-                    class="d-flex align-items-center gap-2 p-3 rounded-3 bg-success bg-opacity-10 border-start border-4 border-success mb-3">
-                    <i class="bi bi-egg-fried text-success fs-5"></i>
-                    <div>
-                        <h4 id="cat3-title" class="h6 fw-bold mb-0 text-dark">Categoría 3: Estrategias Sensoriales y
-                            Rutinas Diarias</h4>
-                        <span id="cat3-sub" class="small text-muted">Avances graduales en alimentación, sueño y límites
-                            tecnológicos</span>
-                    </div>
-                </div>
-
-                <!-- CASO 4 -->
-                <article class="forum-card">
-                    <div class="forum-question-pane">
-                        <div class="d-flex align-items-center justify-content-between mb-3">
-                            <div class="d-flex align-items-center gap-2">
-                                <div class="user-avatar-badge bg-success">A4</div>
-                                <div>
-                                    <strong id="c4-user" class="d-block text-dark">Cuidador Anon_7512</strong>
-                                    <span id="c4-tag" class="badge bg-light text-muted border">Caso 4: Selectividad
-                                        alimentaria y avance gradual</span>
-                                </div>
-                            </div>
-                            <span class="badge bg-success bg-opacity-10 text-success"><i class="bi bi-heart me-1"></i>
-                                Sensorial</span>
-                        </div>
-                        <p id="c4-q" class="text-dark fst-italic mb-0">
-                            "Hola a todos. Les cuento mi caso por si a alguien le sirve. Mi hijo tiene 8 años y su
-                            alimentación es súper limitada. Come pan, fideos, yogurt y manzana. Si intento darle algo
-                            nuevo hace arcadas y no hay caso. La nutricionista nos recomendó no forzarlo y trabajar
-                            primero la parte sensorial. Empezamos a 'jugar' con la comida sin presión: tocar fideos
-                            crudos, oler verduras, pintar con yogurt. La idea era que se familiarizara. Llevamos un mes
-                            así. Ayer por primera vez probó una papa frita solo. No come variado aún, pero al menos ya
-                            no hay llanto en la mesa. Para nosotros eso ya es un avance enorme."
-                        </p>
-                    </div>
-                    <div class="forum-answer-pane" style="background-color: var(--nm-soft-green);">
-                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
-                            <div class="verified-solution-tag bg-white">
-                                <i class="bi bi-patch-check-fill text-success"></i> <span id="c4-badge">Respuesta
-                                    Validada por la Comunidad (+165 confirmaciones)</span>
-                            </div>
-                            <span class="small text-muted"><i class="bi bi-hand-thumbs-up-fill text-success"></i> 165
-                                familias encontraron útil esto</span>
-                        </div>
-                        <p id="c4-a" class="text-dark mb-0 small">
-                            "Gracias por compartir esto. Me hizo sentir tan acompañada. Pensé que solo me pasaba a mí y
-                            que era mala mamá por ceder. Saber que a otros también les cuesta me alivia un montón no
-                            estar sola en esto."
-                        </p>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- COPILOTO COMUNITARIO FLOATING ACTION BUTTON -->
-    <button class="copilot-floating-btn" type="button" data-bs-toggle="modal" data-bs-target="#modalCopiloto">
-        <i class="bi bi-robot fs-5"></i>
-        <span>Copiloto IA</span>
-    </button>
-
-    <!-- MODAL COPILOTO IA -->
-    <div class="modal fade" id="modalCopiloto" tabindex="-1" aria-labelledby="modalCopilotoLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content rounded-4 border-0 shadow-lg">
-                <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title fw-bold d-flex align-items-center gap-2" id="modalCopilotoLabel">
-                        <i class="bi bi-robot"></i> Copiloto Comunitario IA
-                    </h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                        aria-label="Cerrar"></button>
-                </div>
-                <div class="modal-body p-4">
-                    <p class="text-muted small">Asistente de consulta rápida y traducción no verbal basado en el
-                        consenso comunitario de NeuroMundo.</p>
-                    <div class="mb-3">
-                        <label for="inputConsultaIA" class="form-label fw-bold text-dark">Describe una conducta o
-                            duda:</label>
-                        <input type="text" class="form-control form-control-lg rounded-3" id="inputConsultaIA"
-                            placeholder="Ej: Se tapa los oídos en la cocina o rechaza texturas...">
-                    </div>
-                    <div class="p-3 bg-light rounded-3 border">
-                        <div class="small fw-bold text-primary mb-1"><i class="bi bi-lightbulb"></i> Sugerencia
-                            Comunitaria:</div>
-                        <p class="small text-muted mb-0">Posible sobrecarga auditiva de baja frecuencia
-                            (refrigerador/extractor). Prueba anticipar con pictograma o utilizar protectores auditivos
-                            de reducción suave.</p>
-                    </div>
-                </div>
-                <div class="modal-footer border-top-0">
-                    <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary rounded-pill px-4 fw-bold">Consultar Foro</button>
-                </div>
+            <div class="ods-card">
+                <div class="ods-badge ods-10-badge"><i class="bi bi-people-fill me-1"></i> ODS 10</div>
+                <h3 class="fs-5">
+                    <span class="lang-es">Reducción de Desigualdades</span>
+                    <span class="lang-en">Reduced Inequalities</span>
+                </h3>
+                <p>
+                    <span class="lang-es">Democratiza el acceso a recursos adaptativos gratuitos para familias sin acceso a especialistas.</span>
+                    <span class="lang-en">Democratizes access to free adaptive resources for families without access to specialists.</span>
+                </p>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- FOOTER -->
+<!-- 4. Solución Tecnológica -->
+<section id="solucion" class="card-section">
+    <span class="section-badge">
+        <span class="lang-es"><i class="bi bi-cpu me-1"></i> ARQUITECTURA DE SOFTWARE</span>
+        <span class="lang-en"><i class="bi bi-cpu me-1"></i> SOFTWARE ARCHITECTURE</span>
+    </span>
+    <h2 class="d-flex align-items-center gap-2 mb-3">
+        <i class="bi bi-layers text-accent fs-4"></i>
+        <span class="lang-es">Solución Tecnológica: NeuroMundo</span>
+        <span class="lang-en">Technological Solution: NeuroMundo</span>
+    </h2>
+    <div class="tech-grid">
+        <div class="tech-card">
+            <div class="tech-icon text-accent"><i class="bi bi-robot"></i></div>
+            <h3 class="fs-6 fw-bold">
+                <span class="lang-es">Copiloto IA</span>
+                <span class="lang-en">AI Copilot</span>
+            </h3>
+            <p class="small mb-0 text-secondary-custom">
+                <span class="lang-es">Asistente de orientación adaptativa, contextualizada y segura para situaciones críticas.</span>
+                <span class="lang-en">Adaptive, contextualized, and safe guidance assistant for critical situations.</span>
+            </p>
+        </div>
+
+        <div class="tech-card">
+            <div class="tech-icon text-accent"><i class="bi bi-grid-3x3-gap"></i></div>
+            <h3 class="fs-6 fw-bold">
+                <span class="lang-es">Tablero AAC</span>
+                <span class="lang-en">AAC Board</span>
+            </h3>
+            <p class="small mb-0 text-secondary-custom">
+                <span class="lang-es">Sistema de pictogramas interactivos diseñado para facilitar la expresión no verbal.</span>
+                <span class="lang-en">Interactive pictogram system designed to facilitate non-verbal expression.</span>
+            </p>
+        </div>
+
+        <!-- Modo Claro Sensorial (Actualizado) -->
+        <div class="tech-card">
+            <div class="tech-icon text-accent"><i class="bi bi-sun-fill"></i></div>
+            <h3 class="fs-6 fw-bold">
+                <span class="lang-es">Modo Claro Sensorial</span>
+                <span class="lang-en">Sensory Light Mode</span>
+            </h3>
+            <p class="small mb-0 text-secondary-custom">
+                <span class="lang-es">Paleta clara y suave optimizada para evitar el deslumbramiento y sobreestimulación, sustituyendo al antiguo modo contraste.</span>
+                <span class="lang-en">Soft, glare-free light palette optimized to avoid sensory overload, replacing the old contrast mode.</span>
+            </p>
+        </div>
+
+        <div class="tech-card">
+            <div class="tech-icon text-accent"><i class="bi bi-calendar-check"></i></div>
+            <h3 class="fs-6 fw-bold">
+                <span class="lang-es">Agenda Visual</span>
+                <span class="lang-en">Visual Schedule</span>
+            </h3>
+            <p class="small mb-0 text-secondary-custom">
+                <span class="lang-es">Secuenciador de rutinas e indicador emocional tipo semáforo para prevención de crisis.</span>
+                <span class="lang-en">Routine sequencer and traffic-light emotional indicator for crisis prevention.</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+    <!-- 5. Tecnologías Utilizadas -->
+    <section id="tecnologias" class="card-section">
+        <span class="section-badge">
+            <span class="lang-es"><i class="bi bi-code-slash me-1"></i> STACK TECNOLÓGICO</span>
+            <span class="lang-en"><i class="bi bi-code-slash me-1"></i> TECH STACK</span>
+        </span>
+        <h2 class="d-flex align-items-center gap-2 mb-3">
+            <i class="bi bi-terminal text-accent fs-4"></i>
+            <span class="lang-es">Tecnologías Utilizadas</span>
+            <span class="lang-en">Technologies Used</span>
+        </h2>
+        <div class="tech-grid">
+            <div class="tech-card">
+                <div class="tech-icon text-accent"><i class="bi bi-filetype-html"></i></div>
+                <h3 class="fs-6 fw-bold">JS / HTML5 / CSS3</h3>
+                <p class="small mb-0">Interfaz responsiva, accesible, semántica y dinámicamente adaptada.</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon text-accent"><i class="bi bi-cpu"></i></div>
+                <h3 class="fs-6 fw-bold">Inteligencia Artificial</h3>
+                <p class="small mb-0">Modelos entrenados para sugerir respuestas empáticas y validadas por profesionales.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Preguntas Frecuentes (FAQ) -->
+    <section id="faq" class="card-section">
+        <span class="section-badge">
+            <span class="lang-es"><i class="bi bi-question-circle me-1"></i> SOPORTE & DUDAS</span>
+            <span class="lang-en"><i class="bi bi-question-circle me-1"></i> SUPPORT & FAQ</span>
+        </span>
+        <h2 class="d-flex align-items-center gap-2 mb-3">
+            <i class="bi bi-chat-left-dots text-accent fs-4"></i>
+            <span class="lang-es">Preguntas Frecuentes</span>
+            <span class="lang-en">Frequently Asked Questions</span>
+        </h2>
+        <div class="faq-item">
+            <h3 class="d-flex align-items-center gap-2">
+                <i class="bi bi-shield-lock text-accent"></i>
+                <span class="lang-es">¿Cómo protegemos la privacidad de los niños?</span>
+                <span class="lang-en">How do we protect children's privacy?</span>
+            </h3>
+            <p class="mb-0">
+                <span class="lang-es">La plataforma opera de forma 100% pseudónima. No requerimos ni almacenamos nombres reales, fotografías ni datos sensibles de menores.</span>
+                <span class="lang-en">The platform is 100% pseudonymous. We do not store real names, photos, or sensitive data of minors.</span>
+            </p>
+        </div>
+        <div class="faq-item">
+            <h3 class="d-flex align-items-center gap-2">
+                <i class="bi bi-currency-dollar text-accent"></i>
+                <span class="lang-es">¿Tiene algún costo de suscripción?</span>
+                <span class="lang-en">Is there any subscription fee?</span>
+            </h3>
+            <p class="mb-0">
+                <span class="lang-es">No. NeuroMundo es una plataforma comunitaria totalmente gratuita y abierta a familias y cuidadores.</span>
+                <span class="lang-en">No. NeuroMundo is a completely free community platform open to families and caregivers.</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- 7. Código QR -->
+    <section id="qr" class="card-section highlight-card">
+        <span class="section-badge">
+            <span class="lang-es"><i class="bi bi-qr-code-scan me-1"></i> ACCESO RÁPIDO</span>
+            <span class="lang-en"><i class="bi bi-qr-code-scan me-1"></i> QUICK ACCESS</span>
+        </span>
+        <h2 class="d-flex align-items-center gap-2 mb-3">
+            <i class="bi bi-qr-code text-accent fs-4"></i>
+            <span class="lang-es">Código QR del Proyecto</span>
+            <span class="lang-en">Project QR Code</span>
+        </h2>
+        <div class="qr-container my-3">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://tu-usuario.github.io/tu-repositorio" alt="Código QR NeuroMundo" class="qr-img">
+            <p class="qr-url font-monospace text-accent mt-2 mb-0">https://tu-usuario.github.io/tu-repositorio</p>
+        </div>
+    </section>
+
+    <!-- 8. Galería -->
+    <section id="galeria" class="card-section">
+        <span class="section-badge">
+            <span class="lang-es"><i class="bi bi-images me-1"></i> DEMOSTRACIÓN VISUAL</span>
+            <span class="lang-en"><i class="bi bi-images me-1"></i> VISUAL PREVIEW</span>
+        </span>
+        <h2 class="d-flex align-items-center gap-2 mb-3">
+            <i class="bi bi-aspect-ratio text-accent fs-4"></i>
+            <span class="lang-es">Galería de la Plataforma</span>
+            <span class="lang-en">Platform Gallery</span>
+        </h2>
+        <div class="gallery-grid">
+            <div class="gallery-item text-center">
+                <img src="https://via.placeholder.com/400x300/1e293b/38bdf8?text=Tablero+AAC+y+Pictogramas" alt="Tablero AAC" class="img-fluid">
+                <p class="fw-semibold text-primary-custom mb-0 mt-2">Tablero AAC de Comunicación</p>
+            </div>
+            <div class="gallery-item text-center">
+                <img src="https://via.placeholder.com/400x300/1e293b/38bdf8?text=Copiloto+IA+Adaptativo" alt="Copiloto IA" class="img-fluid">
+                <p class="fw-semibold text-primary-custom mb-0 mt-2">Copiloto IA Adaptativo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Demostración -->
+    <section id="demostracion" class="card-section">
+        <span class="section-badge">
+            <span class="lang-es"><i class="bi bi-play-circle me-1"></i> MULTIMEDIA</span>
+            <span class="lang-en"><i class="bi bi-play-circle me-1"></i> MULTIMEDIA</span>
+        </span>
+        <h2 class="d-flex align-items-center gap-2 mb-3">
+            <i class="bi bi-camera-video text-accent fs-4"></i>
+            <span class="lang-es">Video Demostrativo</span>
+            <span class="lang-en">Demonstration Video</span>
+        </h2>
+        <div class="video-container shadow-sm">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demo Video NeuroMundo" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- 10. Equipo de Trabajo -->
+    <section id="equipo" class="card-section">
+        <span class="section-badge">
+            <span class="lang-es"><i class="bi bi-people me-1"></i> TALENTO HUMANO</span>
+            <span class="lang-en"><i class="bi bi-people me-1"></i> OUR TEAM</span>
+        </span>
+        <h2 class="d-flex align-items-center gap-2 mb-4">
+            <i class="bi bi-person-badge text-accent fs-4"></i>
+            <span class="lang-es">Equipo de Neu Industries</span>
+            <span class="lang-en">Neu Industries Team</span>
+        </h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="avatar text-accent"><i class="bi bi-person-gear"></i></div>
+                <h3 class="fs-6 fw-bold mb-1">Nayara Pérez</h3>
+                <span class="role">Líder de Proyecto</span>
+                <p class="mb-0">Liderazgo general y vocera principal.</p>
+            </div>
+            <div class="team-card">
+                <div class="avatar text-accent"><i class="bi bi-code-square"></i></div>
+                <h3 class="fs-6 fw-bold mb-1">Mathías Abarca</h3>
+                <span class="role">Sub-Líder & Dev</span>
+                <p class="mb-0">Co-coordinación y lógica JavaScript.</p>
+            </div>
+            <div class="team-card">
+                <div class="avatar text-accent"><i class="bi bi-layout-text-window-reverse"></i></div>
+                <h3 class="fs-6 fw-bold mb-1">Iris Ccallomamani</h3>
+                <span class="role">Dev & Contenidos</span>
+                <p class="mb-0">Estructuración y maquetación web.</p>
+            </div>
+            <div class="team-card">
+                <div class="avatar text-accent"><i class="bi bi-palette"></i></div>
+                <h3 class="fs-6 fw-bold mb-1">Javiera León</h3>
+                <span class="role">UI/UX & Guiones</span>
+                <p class="mb-0">Diseño visual y guion técnico.</p>
+            </div>
+            <div class="team-card">
+                <div class="avatar text-accent"><i class="bi bi-cpu-fill"></i></div>
+                <h3 class="fs-6 fw-bold mb-1">Yhojans Silva</h3>
+                <span class="role">Dev & Copiloto IA</span>
+                <p class="mb-0">Integración de herramientas e IA.</p>
+            </div>
+        </div>
+    </section>
+
+</div>
+    </main>
+
+    <!-- ================================================================= -->
+    <!-- 4. FOOTER                                                         -->
+    <!-- ================================================================= -->
     <footer class="footer-neu-modern">
         <div class="container">
             <div class="row align-items-center gy-4">
                 <div class="col-md-6 text-center text-md-start">
                     <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-3">
-                        <div class="bg-primary text-white p-2 rounded-3">
-                            <i class="bi bi-building fs-4"></i>
+                        <div class="logo-icon-box p-2.5 rounded-3">
+                            <i class="bi bi-building fs-4 text-white"></i>
                         </div>
                         <div>
-                            <h5 id="footer-org" class="text-white fw-bold mb-0">Neu Industries</h5>
-                            <p id="footer-desc" class="small text-muted mb-0">Ficha del Proyecto e Información de la App
-                                • Ecosistema NeuroMundo</p>
+                            <h5 id="footer-org" class="text-primary-custom fw-bold mb-0">Neu Industries</h5>
+                            <p id="footer-desc" class="small text-secondary-custom mb-0">Ficha del Proyecto e Información de la App • Ecosistema NeuroMundo</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <span class="badge bg-secondary bg-opacity-25 text-light px-3 py-2 rounded-pill small">
-                        <i class="bi bi-universal-access me-1"></i> Diseñado con principios de accesibilidad universal y
-                        empatía
+                    <span class="badge-tag-futuristic">
+                        <i class="bi bi-universal-access me-1 text-accent"></i> Diseñado con principios de accesibilidad universal y empatía
                     </span>
-                    <div class="text-muted small mt-2">© 2026 Neu Industries. Todos los derechos reservados.</div>
+                    <div class="text-secondary-custom small mt-2">© 2026 Neu Industries. Todos los derechos reservados.</div>
                 </div>
             </div>
         </div>
@@ -934,8 +603,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-
-    <!-- Interactive Scripts (Sensory mode switcher & Bilingual toggle) -->
     <script src="static/js/script.js"></script>
 </body>
-</ht
+</html>
