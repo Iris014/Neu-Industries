@@ -968,3 +968,24 @@ footer a {
         justify-content: center;
     }
 }
+
+
+/* Estados Hover, Focus y Active para enlaces de navegación */
+.nav-link-custom:hover,
+.nav-link-custom:focus,
+.nav-link-custom:active,
+.nav-link-custom.active {
+    color: var(--text-primary) !important;
+    background: var(--bg-glass-hover);
+    outline: none;
+    box-shadow: none;
+}
+
+/* Estados Focus y Active para el botón de idioma */
+.btn-accent-outline:focus,
+.btn-accent-outline:active {
+    background: var(--accent-glow);
+    border-color: var(--accent);
+    color: var(--text-primary) !important;
+    box-shadow: none;
+}
