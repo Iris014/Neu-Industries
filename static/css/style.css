@@ -218,19 +218,32 @@ body[data-lang="en"] .lang-es { display: none !important; }
 
     --font-family: 'Inter', system-ui, -apple-system, sans-serif;
     --transition-fluid: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
 }
 
 /* Modo Alto Contraste */
+/* Modo Alto Contraste */
 body[data-sensory="high-contrast"] {
-    --bg-main: #000000;
-    --bg-gradient: #000000;
-    --bg-card: #0d1117;
-    --bg-card-hover: #161b22;
-    --text-primary: #ffffff;
-    --text-secondary: #c9d1d9;
-    --accent: #58a6ff;
-    --border-color: #30363d;
-    --border-hover: #58a6ff;
+    --bg-main: #edf2f7;
+    --bg-gradient: #edf2f7;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f8fafc;
+    --bg-card-ods: #ffffff; /* <- AGREGAR ESTA LÍNEA */
+    --bg-glass-transparent: #e2e8f0;
+    --bg-glass-hover: #cbd5e1;
+
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+
+    --accent: #1d5271;
+    --accent-hover: #13384f;
+    --accent-glow: transparent;
+    --accent-glow-subtle: rgba(29, 82, 113, 0.08);
+
+    --border-color: #0f172a;
+    --border-hover: #1d5271;
+    --card-shadow: none;
+    --card-shadow-hover: 0 4px 12px rgba(15, 23, 42, 0.12);
 }
 
 /* ==========================================================================
@@ -860,13 +873,11 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid var(--border-color);
 }
 
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
+#demo-video {
     width: 100%;
-    height: 100%;
-    border: 0;
+    border-radius: 8px; /* Bordes redondeados (opcional) */
+    display: block;
+    margin: 0 auto; /* Centrar el video */
 }
 
 /* ==========================================================================
@@ -950,7 +961,6 @@ footer a {
     }
 }
 
-
 /* Estados Hover, Focus y Active para enlaces de navegación */
 .nav-link-custom:hover,
 .nav-link-custom:focus,
@@ -972,23 +982,61 @@ footer a {
 }
 
 /* ==========================================================================
-   NEUROMUNDO — MODO SENSORIAL ALTO CONTRASTE (HOJA INDEPENDIENTE)
+   CONSOLIDACIÓN DEL HERO Y TARJETAS INTERNAS (MODO ESTÁNDAR)
+   ========================================================================== */
+.hero-banner-wrapper {
+    position: relative;
+    background: linear-gradient(145deg, #0f172a 0%, #1e293b 60%, #1e1b4b 100%) !important;
+    color: #ffffff !important;
+    border: 1px solid var(--border-color);
+    border-radius: var(--nm-radius-lg);
+    overflow: hidden;
+    padding: 3.5rem 2.5rem;
+    box-shadow: var(--nm-shadow-lg);
+    margin-bottom: 2.5rem;
+}
+
+/* Garantizar contraste en la tarjeta 'Ecosistema Conectado' interna */
+.hero-banner-wrapper .glass-card {
+    background: rgba(15, 23, 42, 0.85) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Corrección de legibilidad en botones secundarios sobre el hero */
+.hero-banner-wrapper .btn-glass-outline {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+}
+
+.hero-banner-wrapper .btn-glass-outline:hover {
+    background: rgba(255, 255, 255, 0.18) !important;
+    color: #ffffff !important;
+}
+
+/* ==========================================================================
+   NEUROMUNDO — MODO SENSORIAL ALTO CONTRASTE (CORREGIDO)
    ========================================================================== */
 
+:root {
+    --bg-card-ods: rgba(15, 23, 42, 0.6);
+}
+
 body[data-sensory="high-contrast"] {
-    /* Fondos: Hielo Pizarra (Mitiga el deslumbrado visual) */
+    /* Fondos */
     --bg-main: #edf2f7;
     --bg-gradient: #edf2f7;
     --bg-card: #ffffff;
     --bg-card-hover: #f8fafc;
+    --bg-card-ods: #ffffff;
     --bg-glass-transparent: #e2e8f0;
     --bg-glass-hover: #cbd5e1;
 
-    /* Textos: Basados en la paleta marina (#0f172a) */
+    /* Textos */
     --text-primary: #0f172a;
     --text-secondary: #334155;
 
-    /* Color de Acento: Azul acero oscurecido (Legibilidad AAA) */
+    /* Color de Acento */
     --accent: #1d5271;
     --accent-hover: #13384f;
     --accent-glow: transparent;
@@ -1001,31 +1049,33 @@ body[data-sensory="high-contrast"] {
     --card-shadow-hover: 0 4px 12px rgba(15, 23, 42, 0.12);
 }
 
-/* --- REGLAS EXCLUSIVAS DE ALTO CONTRAS TE --- */
+/* --- REGLAS EXCLUSIVAS DE ALTO CONTRASTE --- */
 
-/* Quitar efectos de cristal/desenfoque para reducir fatiga cognitiva */
 body[data-sensory="high-contrast"] * {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
     text-shadow: none !important;
 }
 
-/* Enmarcado rígido de tarjetas y secciones */
+/* Enmarcado rígido de tarjetas fuera del Hero */
 body[data-sensory="high-contrast"] .card-section,
 body[data-sensory="high-contrast"] .module-card,
 body[data-sensory="high-contrast"] .stat-card-futuristic,
+body[data-sensory="high-contrast"] .ods-card,
+body[data-sensory="high-contrast"] .tech-card,
+body[data-sensory="high-contrast"] .faq-item,
+body[data-sensory="high-contrast"] .team-card,
 body[data-sensory="high-contrast"] .header-navbar,
 body[data-sensory="high-contrast"] footer {
     border: 2px solid var(--border-color) !important;
 }
 
-/* Badges e insignias de alto contraste */
+/* Badges fuera del Hero */
 body[data-sensory="high-contrast"] .badge,
-body[data-sensory="high-contrast"] .section-badge,
-body[data-sensory="high-contrast"] .hero-badge-top {
+body[data-sensory="high-contrast"] .section-badge {
     background-color: #0f172a !important;
     color: #ffffff !important;
-    border-color: #0f172a !important;
+    border: 1px solid #0f172a !important;
 }
 
 /* Botón activo del modo sensorial */
@@ -1034,3 +1084,59 @@ body[data-sensory="high-contrast"] .btn-sensory.active {
     color: #ffffff !important;
     font-weight: 700;
 }
+
+/* ==========================================================================
+   PRESERVACIÓN EXCLUSIVA DE LA TARJETA HERO DE BIENVENIDA (.hero-banner-wrapper)
+   ========================================================================== */
+
+/* Fondo original oscuro */
+body[data-sensory="high-contrast"] .hero-banner-wrapper {
+    background: linear-gradient(145deg, #0f172a 0%, #1e293b 60%, #1e1b4b 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Textos claros forzados dentro del Hero */
+body[data-sensory="high-contrast"] .hero-banner-wrapper h1,
+body[data-sensory="high-contrast"] .hero-banner-wrapper h2,
+body[data-sensory="high-contrast"] .hero-banner-wrapper h3,
+body[data-sensory="high-contrast"] .hero-banner-wrapper h4,
+body[data-sensory="high-contrast"] .hero-banner-wrapper p,
+body[data-sensory="high-contrast"] .hero-banner-wrapper span,
+body[data-sensory="high-contrast"] .hero-banner-wrapper li,
+body[data-sensory="high-contrast"] .hero-banner-wrapper div {
+    color: #ffffff !important;
+}
+
+body[data-sensory="high-contrast"] .hero-banner-wrapper .subtitle,
+body[data-sensory="high-contrast"] .hero-banner-wrapper .text-secondary-custom {
+    color: #cbd5e1 !important;
+}
+
+/* Insignia superior e insignia de manifiesto */
+body[data-sensory="high-contrast"] .hero-banner-wrapper .hero-badge-top {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #93c5fd !important;
+}
+
+body[data-sensory="high-contrast"] .hero-banner-wrapper .hero-manifesto-badge {
+    background: linear-gradient(90deg, rgba(59, 102, 245, 0.25), rgba(13, 148, 136, 0.25)) !important;
+    border-left: 4px solid #38bdf8 !important;
+    color: #e0f2fe !important;
+}
+
+/* Tarjeta interna flotante "Ecosistema Conectado" */
+body[data-sensory="high-contrast"] .hero-banner-wrapper .glass-card {
+    background: rgba(15, 23, 42, 0.85) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Botones secundarios e internos dentro del Hero */
+body[data-sensory="high-contrast"] .hero-banner-wrapper .btn-glass-outline,
+body[data-sensory="high-contrast"] .hero-banner-wrapper .btn-secondary,
+body[data-sensory="high-contrast"] .hero-banner-wrapper button:not(.btn-accent):not(.btn-primary) {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+}
+

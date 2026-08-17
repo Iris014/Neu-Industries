@@ -213,3 +213,25 @@ document.querySelectorAll('.navbar-nav .nav-link-custom').forEach(anchor => {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const video = document.getElementById('demo-video');
+
+    // Creamos el "observador"
+    const observer = new IntersectionObserver((entradas) => {
+        entradas.forEach(entrada => {
+            if (entrada.isIntersecting) {
+                video.play(); // Reproducir si se ve en pantalla
+            } else {
+                video.pause(); // Pausar si ya no se ve
+            }
+        });
+    }, { 
+        threshold: 0.5 // Se activa cuando al menos la mitad (50%) del video es visible
+    });
+
+    // Le decimos al observador que vigile nuestro video
+    if (video) {
+        observer.observe(video);
+    }
+});
