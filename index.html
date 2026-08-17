@@ -35,10 +35,10 @@
             <div class="container d-flex justify-content-between align-items-center">
                 <div class="d-flex align-items-center gap-2">
                     <i class="bi bi-shield-check text-accent"></i>
-                    <span>Espacio Seguro • Protocolo Pseudónimo y Accesibilidad Neuroinclusiva</span>
+                    <span id="topbar-secure-txt">Espacio Seguro • Protocolo Pseudónimo y Accesibilidad Neuroinclusiva</span>
                 </div>
                 <div class="d-flex align-items-center gap-3">
-                    <span class="fw-semibold">Modo Sensorial:</span>
+                    <span id="topbar-sensory-lbl" class="fw-semibold">Modo Sensorial:</span>
                     <div class="btn-group btn-group-sm" role="group" aria-label="Selector de Modo Sensorial">
                         <button type="button" class="btn btn-sensory active" onclick="cambiarModoSensorial('estandar')" id="btn-sensory-std">Estándar</button>
                         <button type="button" class="btn btn-sensory" onclick="cambiarModoSensorial('high-contrast')" id="btn-sensory-hc">Contraste</button>
@@ -47,7 +47,6 @@
             </div>
         </div>
 
-        <!-- Navbar Principal -->
         <nav class="navbar navbar-expand-lg py-3" aria-label="Navegación principal">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none" href="#top">
@@ -69,18 +68,33 @@
                 <div class="collapse navbar-collapse" id="navbarNeuroMundo">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-2">
                         <li class="nav-item">
-                            <a class="nav-link nav-link-custom" href="#bienvenida">
-                                <i class="bi bi-sparkles me-1 text-accent"></i> Bienvenida
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link nav-link-custom" href="#ficha-proyecto">
-                                <i class="bi bi-card-heading me-1 text-accent"></i> Ficha del Proyecto
+                                <i class="bi bi-card-heading me-1 text-accent"></i>
+                                <span id="nav-link-ficha">Ficha e Indicadores</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-link-custom" href="#indicadores">
-                                <i class="bi bi-graph-up-arrow me-1 text-accent"></i> Indicadores Clave
+                            <a class="nav-link nav-link-custom" href="#ods">
+                                <i class="bi bi-globe-americas me-1 text-accent"></i>
+                                <span id="nav-link-ods">ODS y Problemática</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom" href="#tecnologias">
+                                <i class="bi bi-code-slash me-1 text-accent"></i>
+                                <span id="nav-link-tech">Tecnologías</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom" href="#faq">
+                                <i class="bi bi-question-circle me-1 text-accent"></i>
+                                <span id="nav-link-faq">Preguntas Frecuentes</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom" href="#equipo">
+                                <i class="bi bi-people me-1 text-accent"></i>
+                                <span id="nav-link-team">Equipo</span>
                             </a>
                         </li>
                         <li class="nav-item ms-lg-2">
@@ -100,6 +114,7 @@
         <!-- ================================================================= -->
         <!-- 2. BANNER HERO PRINCIPAL Y MANIFIESTO (BIENVENIDA)               -->
         <!-- ================================================================= -->
+        <!-- BIENVENIDA / HERO -->
         <section id="bienvenida" class="hero-banner-wrapper position-relative mb-5">
             <div class="row align-items-center position-relative" style="z-index: 2;">
                 <div class="col-lg-8">
@@ -127,10 +142,10 @@
                     </p>
 
                     <div class="d-flex flex-wrap gap-3">
-                        <a href="#ficha-proyecto" class="btn btn-accent btn-lg rounded-pill px-4 fw-bold">
+                        <a id="btn-hero-ficha" href="#ficha-proyecto" class="btn btn-accent btn-lg rounded-pill px-4 fw-bold">
                             <i class="bi bi-compass me-2"></i> Ver Ficha Técnica
                         </a>
-                        <a href="#indicadores" class="btn btn-glass-outline btn-lg rounded-pill px-4 fw-bold">
+                        <a id="btn-hero-impacto" href="#indicadores" class="btn btn-glass-outline btn-lg rounded-pill px-4 fw-bold">
                             <i class="bi bi-activity me-2"></i> Métricas de Impacto
                         </a>
                     </div>
@@ -143,17 +158,17 @@
                                 <i class="bi bi-headset-vr fs-3"></i>
                             </div>
                             <div>
-                                <div class="fw-bold fs-6 text-primary-custom">Ecosistema Conectado</div>
-                                <div class="small text-secondary-custom">Web Pseudónima + VR/IoT</div>
+                                <div id="ecosystem-title" class="fw-bold fs-6 text-primary-custom">Ecosistema Conectado</div>
+                                <div id="ecosystem-subtitle" class="small text-secondary-custom">Web Pseudónima + VR/IoT</div>
                             </div>
                         </div>
                         <div class="small text-secondary-custom mb-3 lh-lg">
-                            <i class="bi bi-check-circle-fill text-accent me-1.5"></i> Reducción de crisis y colapsos<br>
-                            <i class="bi bi-check-circle-fill text-accent me-1.5"></i> Soporte a cuidadores 24/7<br>
-                            <i class="bi bi-check-circle-fill text-accent me-1.5"></i> Traductor empático con IA
+                            <div id="ecosystem-feat-1"><i class="bi bi-check-circle-fill text-accent me-1.5"></i> Reducción de crisis y colapsos</div>
+                            <div id="ecosystem-feat-2"><i class="bi bi-check-circle-fill text-accent me-1.5"></i> Soporte a cuidadores 24/7</div>
+                            <div id="ecosystem-feat-3"><i class="bi bi-check-circle-fill text-accent me-1.5"></i> Traductor empático con IA</div>
                         </div>
                         <div class="text-center pt-2">
-                            <span class="badge-tag-futuristic">Desarrollado por Neu Industries</span>
+                            <span id="ecosystem-author" class="badge-tag-futuristic">Desarrollado por Neu Industries</span>
                         </div>
                     </div>
                 </div>
@@ -208,7 +223,7 @@
                         <div class="stat-icon-box">
                             <i class="bi bi-layers-half"></i>
                         </div>
-                        <div id="stat4-val" class="display-6 fw-extrabold text-primary-custom mb-1">4 Páginas</div>
+                        <div id="metric-pages-val" class="display-6 fw-extrabold text-primary-custom mb-1">4 Páginas</div>
                         <div id="stat4-lbl" class="small fw-semibold text-secondary-custom">Ecosistema Integrado Web/VR</div>
                     </div>
                 </div>
@@ -407,31 +422,28 @@
         </div>
     </div>
 </section>
-
-    <!-- 5. Tecnologías Utilizadas -->
-    <section id="tecnologias" class="card-section">
-        <span class="section-badge">
-            <span class="lang-es"><i class="bi bi-code-slash me-1"></i> STACK TECNOLÓGICO</span>
-            <span class="lang-en"><i class="bi bi-code-slash me-1"></i> TECH STACK</span>
-        </span>
-        <h2 class="d-flex align-items-center gap-2 mb-3">
-            <i class="bi bi-terminal text-accent fs-4"></i>
-            <span class="lang-es">Tecnologías Utilizadas</span>
-            <span class="lang-en">Technologies Used</span>
-        </h2>
-        <div class="tech-grid">
-            <div class="tech-card">
-                <div class="tech-icon text-accent"><i class="bi bi-filetype-html"></i></div>
-                <h3 class="fs-6 fw-bold">JS / HTML5 / CSS3</h3>
-                <p class="small mb-0">Interfaz responsiva, accesible, semántica y dinámicamente adaptada.</p>
-            </div>
-            <div class="tech-card">
-                <div class="tech-icon text-accent"><i class="bi bi-cpu"></i></div>
-                <h3 class="fs-6 fw-bold">Inteligencia Artificial</h3>
-                <p class="small mb-0">Modelos entrenados para sugerir respuestas empáticas y validadas por profesionales.</p>
-            </div>
+<!-- TECNOLOGÍAS UTILIZADAS -->
+<section id="tecnologias" class="card-section mb-5">
+    <span class="section-badge">
+        <i class="bi bi-code-slash me-1"></i> STACK TECNOLÓGICO
+    </span>
+    <h2 class="d-flex align-items-center gap-2 mb-3">
+        <i class="bi bi-terminal text-accent fs-4"></i>
+        <span id="tech-title">Tecnologías Utilizadas</span>
+    </h2>
+    <div class="tech-grid">
+        <div class="tech-card">
+            <div class="tech-icon text-accent"><i class="bi bi-filetype-html"></i></div>
+            <h3 class="fs-6 fw-bold">JS / HTML5 / CSS3</h3>
+            <p id="tech-frontend-desc" class="small mb-0">Interfaz responsiva, accesible, semántica y dinámicamente adaptada.</p>
         </div>
-    </section>
+        <div class="tech-card">
+            <div class="tech-icon text-accent"><i class="bi bi-cpu"></i></div>
+            <h3 id="tech-ai-title" class="fs-6 fw-bold">Inteligencia Artificial</h3>
+            <p id="tech-ai-desc" class="small mb-0">Modelos entrenados para sugerir respuestas empáticas y validadas por profesionales.</p>
+        </div>
+    </div>
+</section>
 
     <!-- 6. Preguntas Frecuentes (FAQ) -->
     <section id="faq" class="card-section">
@@ -525,49 +537,52 @@
     </section>
 
     <!-- 10. Equipo de Trabajo -->
-    <section id="equipo" class="card-section">
-        <span class="section-badge">
-            <span class="lang-es"><i class="bi bi-people me-1"></i> TALENTO HUMANO</span>
-            <span class="lang-en"><i class="bi bi-people me-1"></i> OUR TEAM</span>
-        </span>
-        <h2 class="d-flex align-items-center gap-2 mb-4">
-            <i class="bi bi-person-badge text-accent fs-4"></i>
-            <span class="lang-es">Equipo de Neu Industries</span>
-            <span class="lang-en">Neu Industries Team</span>
-        </h2>
-        <div class="team-grid">
-            <div class="team-card">
-                <div class="avatar text-accent"><i class="bi bi-person-gear"></i></div>
-                <h3 class="fs-6 fw-bold mb-1">Nayara Pérez</h3>
-                <span class="role">Líder de Proyecto</span>
-                <p class="mb-0">Liderazgo general y vocera principal.</p>
-            </div>
-            <div class="team-card">
-                <div class="avatar text-accent"><i class="bi bi-code-square"></i></div>
-                <h3 class="fs-6 fw-bold mb-1">Mathías Abarca</h3>
-                <span class="role">Sub-Líder & Dev</span>
-                <p class="mb-0">Co-coordinación y lógica JavaScript.</p>
-            </div>
-            <div class="team-card">
-                <div class="avatar text-accent"><i class="bi bi-layout-text-window-reverse"></i></div>
-                <h3 class="fs-6 fw-bold mb-1">Iris Ccallomamani</h3>
-                <span class="role">Dev & Contenidos</span>
-                <p class="mb-0">Estructuración y maquetación web.</p>
-            </div>
-            <div class="team-card">
-                <div class="avatar text-accent"><i class="bi bi-palette"></i></div>
-                <h3 class="fs-6 fw-bold mb-1">Javiera León</h3>
-                <span class="role">UI/UX & Guiones</span>
-                <p class="mb-0">Diseño visual y guion técnico.</p>
-            </div>
-            <div class="team-card">
-                <div class="avatar text-accent"><i class="bi bi-cpu-fill"></i></div>
-                <h3 class="fs-6 fw-bold mb-1">Yhojans Silva</h3>
-                <span class="role">Dev & Copiloto IA</span>
-                <p class="mb-0">Integración de herramientas e IA.</p>
-            </div>
+<!-- ========================================== -->
+<!-- SECCIÓN DE EQUIPO CON CONEXIÓN A JS       -->
+<!-- ========================================== -->
+<section id="equipo" class="card-section">
+    <span class="section-badge">
+        <span class="lang-es"><i class="bi bi-people me-1"></i> TALENTO HUMANO</span>
+        <span class="lang-en"><i class="bi bi-people me-1"></i> OUR TEAM</span>
+    </span>
+    <h2 class="d-flex align-items-center gap-2 mb-4">
+        <i class="bi bi-person-badge text-accent fs-4"></i>
+        <span class="lang-es">Equipo de Neu Industries</span>
+        <span class="lang-en">Neu Industries Team</span>
+    </h2>
+    <div class="team-grid">
+        <div class="team-card">
+            <div class="avatar text-accent"><i class="bi bi-person-gear"></i></div>
+            <h3 class="fs-6 fw-bold mb-1">Nayara Pérez</h3>
+            <span id="team-role-1" class="role">Líder de Proyecto</span>
+            <p id="team-desc-1" class="mb-0">Liderazgo general y vocera principal.</p>
         </div>
-    </section>
+        <div class="team-card">
+            <div class="avatar text-accent"><i class="bi bi-code-square"></i></div>
+            <h3 class="fs-6 fw-bold mb-1">Mathías Abarca</h3>
+            <span id="team-role-2" class="role">Sub-Líder & Dev</span>
+            <p id="team-desc-2" class="mb-0">Co-coordinación y lógica JavaScript.</p>
+        </div>
+        <div class="team-card">
+            <div class="avatar text-accent"><i class="bi bi-layout-text-window-reverse"></i></div>
+            <h3 class="fs-6 fw-bold mb-1">Iris Ccallomamani</h3>
+            <span id="team-role-3" class="role">Dev & Contenidos</span>
+            <p id="team-desc-3" class="mb-0">Estructuración, maquetación y dinámica de web.</p>
+        </div>
+        <div class="team-card">
+            <div class="avatar text-accent"><i class="bi bi-palette"></i></div>
+            <h3 class="fs-6 fw-bold mb-1">Javiera León</h3>
+            <span id="team-role-4" class="role">UI/UX & Guiones</span>
+            <p id="team-desc-4" class="mb-0">Diseño visual y guion técnico.</p>
+        </div>
+        <div class="team-card">
+            <div class="avatar text-accent"><i class="bi bi-cpu-fill"></i></div>
+            <h3 class="fs-6 fw-bold mb-1">Yhojans Silva</h3>
+            <span id="team-role-5" class="role">Dev & Copiloto IA</span>
+            <p id="team-desc-5" class="mb-0">Integración de herramientas e IA.</p>
+        </div>
+    </div>
+</section>
 
 </div>
     </main>
@@ -575,29 +590,29 @@
     <!-- ================================================================= -->
     <!-- 4. FOOTER                                                         -->
     <!-- ================================================================= -->
-    <footer class="footer-neu-modern">
-        <div class="container">
-            <div class="row align-items-center gy-4">
-                <div class="col-md-6 text-center text-md-start">
-                    <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-3">
-                        <div class="logo-icon-box p-2.5 rounded-3">
-                            <i class="bi bi-building fs-4 text-white"></i>
-                        </div>
-                        <div>
-                            <h5 id="footer-org" class="text-primary-custom fw-bold mb-0">Neu Industries</h5>
-                            <p id="footer-desc" class="small text-secondary-custom mb-0">Ficha del Proyecto e Información de la App • Ecosistema NeuroMundo</p>
-                        </div>
+<footer class="footer-neu-modern">
+    <div class="container">
+        <div class="row align-items-center gy-4">
+            <div class="col-md-6 text-center text-md-start">
+                <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-3">
+                    <div class="logo-icon-box p-2.5 rounded-3">
+                        <i class="bi bi-building fs-4 text-white"></i>
+                    </div>
+                    <div>
+                        <h5 id="footer-org" class="text-primary-custom fw-bold mb-0">Neu Industries</h5>
+                        <p id="footer-desc" class="small text-secondary-custom mb-0">Ficha del Proyecto e Información de la App • Ecosistema NeuroMundo</p>
                     </div>
                 </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <span class="badge-tag-futuristic">
-                        <i class="bi bi-universal-access me-1 text-accent"></i> Diseñado con principios de accesibilidad universal y empatía
-                    </span>
-                    <div class="text-secondary-custom small mt-2">© 2026 Neu Industries. Todos los derechos reservados.</div>
-                </div>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <span id="footer-accessibility-tag" class="badge-tag-futuristic">
+                    <i class="bi bi-universal-access me-1 text-accent"></i> Diseñado con principios de accesibilidad universal y empatía
+                </span>
+                <div id="footer-copyright" class="text-secondary-custom small mt-2">© 2026 Neu Industries. Todos los derechos reservados.</div>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
     <!-- Bootstrap 5.3.3 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

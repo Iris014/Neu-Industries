@@ -8,6 +8,13 @@
 
 html {
     scroll-behavior: smooth;
+    /* Define la altura exacta ocupada por la barra + espacio visual */
+    scroll-padding-top: 120px; 
+}
+
+/* Compensación de respaldo directa para las secciones */
+section[id] {
+    scroll-margin-top: 120px;
 }
 
 body {
@@ -961,5 +968,3 @@ footer a {
         justify-content: center;
     }
 }
-
-
