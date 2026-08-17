@@ -179,8 +179,12 @@ body[data-lang="en"] .lang-es { display: none !important; }
    SISTEMA DE PALETA MINIMALISTA, SOBRIA Y FUTURISTA
    ========================================================================== */
 
+/* ==========================================================================
+   SISTEMA DE PALETA MINIMALISTA, SOBRIA Y FUTURISTA
+   ========================================================================== */
+
 :root {
-    /* Fondo ambiental con gradientes radiales tenues */
+    /* Modo Estándar (Predeterminado) */
     --bg-main: #070a12;
     --bg-gradient: 
         radial-gradient(circle at 15% 15%, rgba(58, 134, 173, 0.08) 0%, transparent 45%),
@@ -214,29 +218,6 @@ body[data-lang="en"] .lang-es { display: none !important; }
 
     --font-family: 'Inter', system-ui, -apple-system, sans-serif;
     --transition-fluid: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Soporte Tema Claro */
-body[data-theme="light"] {
-    --bg-main: #f1f5f9;
-    --bg-gradient: 
-        radial-gradient(circle at 15% 15%, rgba(44, 107, 138, 0.06) 0%, transparent 45%),
-        radial-gradient(circle at 85% 65%, rgba(79, 90, 140, 0.05) 0%, transparent 50%),
-        #f1f5f9;
-    --bg-card: rgba(255, 255, 255, 0.75);
-    --bg-card-hover: rgba(255, 255, 255, 0.92);
-    --bg-glass-transparent: rgba(255, 255, 255, 0.35);
-    --bg-glass-hover: rgba(255, 255, 255, 0.55);
-    --accent: #2c6b8a;
-    --accent-hover: #1f4f67;
-    --accent-glow: rgba(44, 107, 138, 0.18);
-    --accent-glow-subtle: rgba(44, 107, 138, 0.06);
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --border-color: rgba(0, 0, 0, 0.07);
-    --border-hover: rgba(44, 107, 138, 0.35);
-    --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
-    --card-shadow-hover: 0 15px 35px -10px rgba(44, 107, 138, 0.15);
 }
 
 /* Modo Alto Contraste */
@@ -988,4 +969,68 @@ footer a {
     border-color: var(--accent);
     color: var(--text-primary) !important;
     box-shadow: none;
+}
+
+/* ==========================================================================
+   NEUROMUNDO — MODO SENSORIAL ALTO CONTRASTE (HOJA INDEPENDIENTE)
+   ========================================================================== */
+
+body[data-sensory="high-contrast"] {
+    /* Fondos: Hielo Pizarra (Mitiga el deslumbrado visual) */
+    --bg-main: #edf2f7;
+    --bg-gradient: #edf2f7;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f8fafc;
+    --bg-glass-transparent: #e2e8f0;
+    --bg-glass-hover: #cbd5e1;
+
+    /* Textos: Basados en la paleta marina (#0f172a) */
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+
+    /* Color de Acento: Azul acero oscurecido (Legibilidad AAA) */
+    --accent: #1d5271;
+    --accent-hover: #13384f;
+    --accent-glow: transparent;
+    --accent-glow-subtle: rgba(29, 82, 113, 0.08);
+
+    /* Bordes y Estructura */
+    --border-color: #0f172a;
+    --border-hover: #1d5271;
+    --card-shadow: none;
+    --card-shadow-hover: 0 4px 12px rgba(15, 23, 42, 0.12);
+}
+
+/* --- REGLAS EXCLUSIVAS DE ALTO CONTRAS TE --- */
+
+/* Quitar efectos de cristal/desenfoque para reducir fatiga cognitiva */
+body[data-sensory="high-contrast"] * {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    text-shadow: none !important;
+}
+
+/* Enmarcado rígido de tarjetas y secciones */
+body[data-sensory="high-contrast"] .card-section,
+body[data-sensory="high-contrast"] .module-card,
+body[data-sensory="high-contrast"] .stat-card-futuristic,
+body[data-sensory="high-contrast"] .header-navbar,
+body[data-sensory="high-contrast"] footer {
+    border: 2px solid var(--border-color) !important;
+}
+
+/* Badges e insignias de alto contraste */
+body[data-sensory="high-contrast"] .badge,
+body[data-sensory="high-contrast"] .section-badge,
+body[data-sensory="high-contrast"] .hero-badge-top {
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+    border-color: #0f172a !important;
+}
+
+/* Botón activo del modo sensorial */
+body[data-sensory="high-contrast"] .btn-sensory.active {
+    background-color: #1d5271 !important;
+    color: #ffffff !important;
+    font-weight: 700;
 }

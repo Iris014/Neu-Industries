@@ -6,22 +6,19 @@ const traducciones = {
     // ==========================================
     // BARRA SUPERIOR Y MODO SENSORIAL
     // ==========================================
-    'topbar-secure-txt': {
+'topbar-secure-txt': {
         es: 'Espacio Seguro • Protocolo Pseudónimo y Accesibilidad Neuroinclusiva',
         en: 'Safe Space • Pseudonymous Protocol & Neuroinclusive Accessibility'
     },
     'topbar-sensory-lbl': { es: 'Modo Sensorial:', en: 'Sensory Mode:' },
     'btn-sensory-std': { es: 'Estándar', en: 'Standard' },
     'btn-sensory-hc': { es: 'Contraste', en: 'High Contrast' },
-    'nav-logo-title': { es: 'NeuroMundo', en: 'NeuroMundo' },
-    'nav-logo-sub': { es: 'Plataforma Comunitaria', en: 'Community Platform' },
-    'lbl-idioma-btn': { es: 'ESP', en: 'ENG' },
 
     // NAVEGACIÓN
     'nav-logo-title': { es: 'NeuroMundo', en: 'NeuroMundo' },
     'nav-logo-sub': { es: 'Plataforma Comunitaria', en: 'Community Platform' },
     'nav-link-ficha': { es: 'Ficha e Indicadores', en: 'Project & Key Metrics' },
-    'nav-link-ods': { es: 'ODS y Problemática', en: 'SDGs & Problem Statement' },
+    'nav-link-ods': { es: 'ODS & Problemática', en: 'SDGs & Problem Statement' },
     'nav-link-tech': { es: 'Tecnologías', en: 'Tech Stack' },
     'nav-link-faq': { es: 'Preguntas Frecuentes', en: 'FAQ' },
     'nav-link-team': { es: 'Equipo', en: 'Team' },
@@ -152,6 +149,26 @@ function cambiarModoSensorial(modo) {
     document.body.setAttribute('data-sensory', modo);
     localStorage.setItem('neu_modo_sensorial', modo);
 
+    // Gestor de hoja de estilo externa para Alto Contraste
+    let sensoryStylesheet = document.getElementById('sensory-contrast-link');
+
+    if (modo === 'high-contrast') {
+        // Carga la hoja de CSS si no existe en el DOM
+        if (!sensoryStylesheet) {
+            sensoryStylesheet = document.createElement('link');
+            sensoryStylesheet.id = 'sensory-contrast-link';
+            sensoryStylesheet.rel = 'stylesheet';
+            sensoryStylesheet.href = 'static/css/high-contrast.css';
+            document.head.appendChild(sensoryStylesheet);
+        }
+    } else {
+        // Remueve la hoja de CSS para volver al estándar
+        if (sensoryStylesheet) {
+            sensoryStylesheet.remove();
+        }
+    }
+
+    // Actualización del estado visual de los botones
     const btnStd = document.getElementById('btn-sensory-std');
     const btnHC = document.getElementById('btn-sensory-hc');
 
@@ -168,51 +185,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const modoGuardado = localStorage.getItem('neu_modo_sensorial') || 'estandar';
     cambiarModoSensorial(modoGuardado);
 
-    // LÓGICA DEL CARRUSEL DE DEBATES
-    const track = document.getElementById('forumCarouselTrack');
-    const prevBtn = document.getElementById('forumPrevBtn');
-    const nextBtn = document.getElementById('forumNextBtn');
-    const cardItems = document.querySelectorAll('.forum-card-item');
-
-    if (!track || !prevBtn || !nextBtn || cardItems.length === 0) return;
-
-    const getStepWidth = () => {
-        const firstCard = cardItems[0];
-        const style = window.getComputedStyle(track);
-        const gap = parseInt(style.getPropertyValue('gap')) || 32;
-        return firstCard.offsetWidth + gap;
-    };
-
-    nextBtn.addEventListener('click', () => {
-        track.scrollBy({ left: getStepWidth(), behavior: 'smooth' });
-    });
-
-    prevBtn.addEventListener('click', () => {
-        track.scrollBy({ left: -getStepWidth(), behavior: 'smooth' });
-    });
-
-    const updateFeaturedCard = () => {
-        const step = getStepWidth();
-        if (step <= 0) return;
-
-        let activeIndex = Math.round(track.scrollLeft / step);
-        activeIndex = Math.max(0, Math.min(activeIndex, cardItems.length - 1));
-
-        cardItems.forEach((item, index) => {
-            const article = item.querySelector('.split-forum-card');
-            if (article) {
-                if (index === activeIndex) {
-                    article.classList.add('forum-card-featured');
-                } else {
-                    article.classList.remove('forum-card-featured');
-                }
-            }
-        });
-    };
-
-    track.addEventListener('scroll', updateFeaturedCard, { passive: true });
-    window.addEventListener('resize', updateFeaturedCard);
-    updateFeaturedCard();
 });
 
 // Manejo de desplazamiento suave con cálculo dinámico del header
