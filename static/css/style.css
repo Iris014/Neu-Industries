@@ -854,6 +854,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 12px;
     padding: 8px;
     background: #ffffff;
+    width: 20%;
 }
 
 .qr-url {
@@ -883,28 +884,39 @@ h1, h2, h3, h4, h5, h6 {
 /* ==========================================================================
    Equipo de Trabajo (Flexbox Centrado)
    ========================================================================== */
+/* ==========================================================================
+   EQUIPO DE TRABAJO (ANCHO COMPLETO Y 5 COLUMNAS EN LÍNEA)
+   ========================================================================== */
+
 .team-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Fuerza las 5 tarjetas en una sola fila en escritorio */
     gap: 1.2rem;
     margin-top: 1.5rem;
+    width: 100%;
 }
 
 .team-card {
     background-color: var(--bg-card-ods);
     border: 1px solid var(--border-color);
     border-radius: 14px;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 0.8rem;
     text-align: center;
-    flex: 1 1 210px;
-    max-width: 270px;
+    width: 100%;
+    max-width: none; /* Elimina la restricción estrecha de 270px */
     transition: all 0.2s ease;
 }
 
 .team-card:hover {
     transform: translateY(-3px);
     border-color: var(--accent);
+}
+
+/* Adaptación responsive para pantallas más pequeñas */
+@media (max-width: 1024px) {
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
 }
 
 .avatar {
